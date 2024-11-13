@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: cyan;
+}
+
+.triangle-vertical{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.triangle-horizontal{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.triangle-top{
+    top: 0;
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    background-color: red;
+}
+
+.triangle-right{
+    right: 0;
+    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+    background-color: sienna;
+}
+
+.triangle-bottom{
+    bottom: 0;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    background-color: green;
+}
+
+.triangle-left{
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    background-color: wheat;
+}
