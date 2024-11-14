@@ -16,44 +16,23 @@ html, body{
     width: 100%;
 }
 
-.triangle-vertical{
+.triangle{
     position: absolute;
-    left: 0;
     width: 100%;
-    height: 50%;
-}
-
-.triangle-horizontal{
-    position: absolute;
-    top: 0;
-    width: 50%;
     height: 100%;
 }
 
-.triangle-top{
+.triangle__madrid{
     top: 0;
-    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
 }
 
-.triangle-right{
-    right: 0;
-    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
-    background-color: sienna;
-}
-
-.triangle-bottom{
+.triangle__andorra{
     bottom: 0;
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-    background-color: green;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
 }
 
-.triangle-left{
-    left: 0;
-    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-    background-color: wheat;
-}
-
-.triangles-img {
+.triangles__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
