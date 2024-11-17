@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mouseX = event.clientX;
         const mouseY = event.clientY;
 
-        let triangles = trianglesMax;
-        // let triangles = landingInitial? trianglesMax: trianglesMin;
+        let triangles = landingInitial? trianglesMax: trianglesMin;
         
         triangleHover = detectTriangleSelected(mouseX, mouseY, triangles);
     })

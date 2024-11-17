@@ -32,7 +32,6 @@
 .triangle--min .triangle__details{
   opacity: 0;
   transition: opacity 2s ease;
-
 }
 
 .triangle__details h2{
