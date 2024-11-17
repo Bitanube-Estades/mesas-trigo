@@ -1,8 +1,34 @@
+.mesas-trigo{
+  height: 100%;
+}
+
 .option{
   position: relative;
   width: 100%;
   height: 50%;
 }
+
+.option__abogados--hover,
+.option__economistas--hover{
+  height: 80%;
+
+}
+
+.option__abogados--not-hover,
+.option__economistas--not-hover{
+  height: 20%;
+}
+
+.option__economistas--not-hover .option__details__text,
+.option__abogados--not-hover .option__details__text{
+  display: none;
+}
+
+.option__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
 
 .option__details{
   position: absolute;
@@ -32,18 +58,29 @@
   color: antiquewhite;
 }
 
-.option__details p{
+.option__details__text{
   padding: 2rem;
   color: rgb(247, 237, 237);
-  background-color: rgba(0, 0, 0, 0.61);;
+  background-color: rgba(0, 0, 0, 0.61);
+  border-radius: 5px;
 }
 
 .option__details p span {
   font-weight: bold;
 }
 
-.option__img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} 
+.option__details__text a{
+  display: none;
+  text-decoration: none;
+  color: rgb(247, 237, 237);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 130px;
+  border: grey solid 2px;
+  border-radius: 5px;
+}
+
+.option__details__text .show-link{
+  display: block;
+}

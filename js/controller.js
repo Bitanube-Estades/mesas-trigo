@@ -1,5 +1,5 @@
 import { detectTriangleSelected, trianglesMax, trianglesMin } from "./model.js";
-import { maximizeTriangles, minimizeTriangles } from "./view.js";
+import { abogadosHover, economistasHover, maximizeTriangles, minimizeTriangles } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".container")
@@ -12,10 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
     container.addEventListener("mousemove", (event) => {
         const mouseX = event.clientX;
         const mouseY = event.clientY;
-
+        const halfVH = window.innerHeight / 2;
+        
+        // Donem les mesures dels triangles grans o petits depenent en quin estat es troba la landing
         let triangles = landingInitial? trianglesMax: trianglesMin;
         
         triangleHover = detectTriangleSelected(mouseX, mouseY, triangles);
+
+        if (!landingInitial && !triangleHover) {
+            if (mouseY < halfVH) {
+                abogadosHover();
+            } else {
+                economistasHover();
+            }
+        }
+
     })
     
     container.addEventListener("click", () => {

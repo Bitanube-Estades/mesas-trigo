@@ -40,7 +40,8 @@
 
 .triangle__details p{
   padding: 2rem;
-  color: rgb(167, 161, 161);
+  color: rgb(247, 237, 237);
+  border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.61);
 }
 
