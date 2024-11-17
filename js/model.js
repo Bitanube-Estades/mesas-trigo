@@ -27,8 +27,6 @@ export function detectTriangleSelected(mouseX, mouseY, triangles){
         }
     });
 
-    console.log(`El mouse está sobre el triángulo ${hoveredTriangleIndex}`);
-
     return hoveredTriangleIndex;
 }
 

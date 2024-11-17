@@ -6,6 +6,8 @@
   position: relative;
   width: 100%;
   height: 50%;
+  transition: height 2s ease;
+
 }
 
 .option__abogados--hover,
@@ -21,7 +23,9 @@
 
 .option__economistas--not-hover .option__details__text,
 .option__abogados--not-hover .option__details__text{
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
 }
 
 .option__img{
@@ -33,7 +37,6 @@
 .option__details{
   position: absolute;
   width: 55%;
-  height: 100%;
   margin: 3rem;
   display: flex;
   flex-direction: column;
@@ -63,6 +66,8 @@
   color: rgb(247, 237, 237);
   background-color: rgba(0, 0, 0, 0.61);
   border-radius: 5px;
+  max-height: 500px;
+  transition: max-height 1.5s ease, padding 1.5s ease;
 }
 
 .option__details p span {
