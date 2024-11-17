@@ -1,5 +1,5 @@
-import { detectTriangleSelected, trianglesMax, trianglesMin } from "./model.js";
-import { abogadosHover, economistasHover, maximizeTriangles, minimizeTriangles } from "./view.js";
+import { calculateOptionsSeparatorHeight, detectTriangleSelected, trianglesMax, trianglesMin } from "./model.js";
+import { abogadosHover, economistasHover, maximizeTriangles, minimizeTriangles, optionsClassHoverRemove } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".container")
@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let landingInitial = true;
     
     let triangleHover;
+    let optionHover; 
 
     container.addEventListener("mousemove", (event) => {
         const mouseX = event.clientX;
         const mouseY = event.clientY;
-        const halfVH = window.innerHeight / 2;
+        const optionsSeparator = calculateOptionsSeparatorHeight(optionHover);
         
         // Donem les mesures dels triangles grans o petits depenent en quin estat es troba la landing
         let triangles = landingInitial? trianglesMax: trianglesMin;
@@ -20,11 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
         triangleHover = detectTriangleSelected(mouseX, mouseY, triangles);
 
         if (!landingInitial && !triangleHover) {
-            if (mouseY < halfVH) {
+            if (mouseY < optionsSeparator) {
                 abogadosHover();
+                optionHover = 'abogados';
             } else {
                 economistasHover();
+                optionHover = 'economistas';
             }
+        } else {
+            optionHover = undefined;
+            optionsClassHoverRemove();
         }
 
     })

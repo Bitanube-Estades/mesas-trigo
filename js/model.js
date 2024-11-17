@@ -42,3 +42,15 @@ export const trianglesMin= [
     /* MADRID */    [{ x: window.innerWidth * 0.6, y: 0 }, { x: window.innerWidth, y: 0 }, { x: window.innerWidth, y: window.innerHeight * 0.6}],
     /* ANDORRA */    [{ x: 0, y: window.innerHeight *0.4 }, { x: 0, y: window.innerHeight }, { x: window.innerWidth * 0.4, y: window.innerHeight }]
 ];
+
+// Calcula la alçada de la divisió de les dues opcions advocats/economistes
+export function calculateOptionsSeparatorHeight(option) {
+    if (option === 'abogados') {
+        return window.innerHeight * 0.8;
+    } else if (option === 'economistas') {
+        return window.innerHeight * 0.2;
+    } else {
+        return window.innerHeight / 2;
+    }
+
+}
