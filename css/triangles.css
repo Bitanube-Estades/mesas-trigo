@@ -40,8 +40,12 @@
 
 .triangle__details p{
   padding: 2rem;
-  color: rgb(240, 230, 230);
-  background-color: rgba(0, 0, 0, 0.274);;
+  color: rgb(167, 161, 161);
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.triangle__details p span {
+  font-weight: bold;
 }
 
 .triangle__madrid__details{
