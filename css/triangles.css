@@ -11,9 +11,22 @@
   clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
 }
 
-.triangle--min{
+.triangle__madrid--min{
   width: 40%;
   height: 60%;
+}
+
+.triangle__andorra{
+  bottom: 0;
+  left:0;
+  clip-path: polygon(0% 0%,0% 0%, 100% 100%, 0% 100%);
+  transition: clip-path 3s ease, width 3s ease, height 3s ease;
+}
+
+.triangle__andorra--vertical {
+  width: 10%;
+  height: 100%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .triangle__details{
@@ -29,7 +42,8 @@
   transition: opacity 2.5s ease 0.5s;
 }
 
-.triangle--min .triangle__details{
+.triangle__andorra--vertical .triangle__details,
+.triangle__madrid--min .triangle__details{
   opacity: 0;
   transition: opacity 2s ease;
 }
@@ -59,11 +73,7 @@
   left: 0;
 }
 
-.triangle__andorra{
-  bottom: 0;
-  left:0;
-  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
-}
+
 
 .triangle__img {
   width: 100%;

@@ -7,13 +7,13 @@
 
 
 export function minimizeTriangles() {
-  triangleMadrid.classList.add('triangle--min');
-  triangleAndorra.classList.add('triangle--min');
+  triangleMadrid.classList.add('triangle__madrid--min');
+  triangleAndorra.classList.add('triangle__andorra--vertical');
 }
 
 export function maximizeTriangles() {
-  triangleMadrid.classList.remove('triangle--min');
-  triangleAndorra.classList.remove('triangle--min');
+  triangleMadrid.classList.remove('triangle__madrid--min');
+  triangleAndorra.classList.remove('triangle__andorra--vertical');
 }
 
 export function abogadosHover() {
