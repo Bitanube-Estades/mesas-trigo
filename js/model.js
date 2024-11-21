@@ -19,13 +19,18 @@ function isMouseInTriangle(mouseX, mouseY, triangle) {
 }
 
 // Funció que detecta sobre quin triangle estem
-export function detectTriangleSelected(mouseX, mouseY, triangles){
+export function detectTriangleSelected(mouseX, mouseY, triangles, landingInitial){
     let hoveredTriangleIndex = null;
     triangles.forEach((triangle, index) => {
         if (isMouseInTriangle(mouseX, mouseY, triangle)) {
             hoveredTriangleIndex = index + 1;
         }
     });
+
+    // per saber si estem sobre l'element vertical de l'esquerra
+    if (!landingInitial) {
+        if (triangleAndorra.matches(":hover")) hoveredTriangleIndex = 2;
+    }
 
     return hoveredTriangleIndex;
 }
@@ -37,8 +42,7 @@ export const trianglesMax = [
 ];
 
 export const trianglesMin= [
-    /* MADRID */    [{ x: window.innerWidth * 0.6, y: 0 }, { x: window.innerWidth, y: 0 }, { x: window.innerWidth, y: window.innerHeight * 0.6}],
-    /* ANDORRA */    [{ x: 0, y: window.innerHeight *0.4 }, { x: 0, y: window.innerHeight }, { x: window.innerWidth * 0.4, y: window.innerHeight }]
+    /* MADRID */    [{ x: window.innerWidth * 0.85, y: 0 }, { x: window.innerWidth, y: 0 }, { x: window.innerWidth, y: window.innerHeight * 0.25}]
 ];
 
 // Calcula la alçada de la divisió de les dues opcions advocats/economistes

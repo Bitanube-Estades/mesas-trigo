@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Donem les mesures dels triangles grans o petits depenent en quin estat es troba la landing
         let triangles = landingInitial? trianglesMax: trianglesMin;
         
-        triangleHover = detectTriangleSelected(mouseX, mouseY, triangles);
+        triangleHover = detectTriangleSelected(mouseX, mouseY, triangles, landingInitial);
 
         if (!landingInitial && !triangleHover) {
             if (mouseY < optionsSeparator) {
