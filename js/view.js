@@ -27,22 +27,22 @@ export function returnNotHover() {
 
 export function abogadosHover() {
   economistas.classList.remove("option__economistas--hover");
-  abogados.classList.remove("option__abogados--not-hover", "transition-show");
+  abogados.classList.remove("option__abogados--not-hover");
   economistasLink.classList.remove("show-link");
 
   abogados.classList.add("option__abogados--hover", "transition-show");
-  economistas.classList.add("option__economistas--not-hover", "transition-hide");
+  economistas.classList.add("option__economistas--not-hover");
   abogadosLink.classList.add("show-link");
   
 }
 
 export function economistasHover() {
   abogados.classList.remove("option__abogados--hover");
-  economistas.classList.remove("option__economistas--not-hover", "transition-show");
+  economistas.classList.remove("option__economistas--not-hover");
   abogadosLink.classList.remove("show-link");
 
-  economistas.classList.add("option__economistas--hover", "transition-show");
-  abogados.classList.add("option__abogados--not-hover", "transition-show");
+  economistas.classList.add("option__economistas--hover");
+  abogados.classList.add("option__abogados--not-hover");
   economistasLink.classList.add("show-link");
 }
 

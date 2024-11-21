@@ -65,17 +65,10 @@
   max-height: 0;
 } 
 
-.transition-show .option__details .prueba{
-  transition: max-height 2s ease;
-}
-
-.transition-hide .option__details .prueba{
-  transition: max-height 1.5s ease;
-
-}
 
 .option__abogados__details{
   top: 0;
+  margin-left: calc(10% + 3rem);
 }
 
 .option__economistas__details{
