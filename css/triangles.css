@@ -29,6 +29,38 @@
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
+.triangle__andorra--bg{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  opacity: 0.1;
+  transition: opacity 3s ease;
+}
+
+.triangle__andorra--vertical .triangle__andorra--bg{
+  opacity: 1;
+}
+
+.triangle__andorra--vertical--text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 3.5rem;
+  text-align: center;
+  word-break: break-word;
+  text-transform: uppercase;
+  font-size: 4rem;
+  transition: transform 1s ease ;
+}
+
+.triangle__andorra--vertical .triangle__andorra--vertical--text{
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 2s ease 1s;
+}
+
 .triangle__details{
   position: absolute;
   width: 50%;
