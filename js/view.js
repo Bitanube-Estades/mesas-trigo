@@ -1,5 +1,6 @@
     const triangleMadrid = document.querySelector(".triangle__madrid");
     const triangleAndorra = document.querySelector(".triangle__andorra");
+    const returnImageContainer = document.querySelector(".triangle__madrid--return");
     const abogados = document.querySelector(".option__abogados");
     const economistas = document.querySelector(".option__economistas");
     const abogadosLink = document.querySelector(".option__abogados--link");
@@ -14,6 +15,14 @@ export function minimizeTriangles() {
 export function maximizeTriangles() {
   triangleMadrid.classList.remove('triangle__madrid--min');
   triangleAndorra.classList.remove('triangle__andorra--vertical');
+}
+
+export function returnHover() {
+  returnImageContainer.classList.add('triangle__madrid--return--hover')
+}
+
+export function returnNotHover() {
+    returnImageContainer.classList.remove('triangle__madrid--return--hover')
 }
 
 export function abogadosHover() {
