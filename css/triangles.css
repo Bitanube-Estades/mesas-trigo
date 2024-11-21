@@ -5,15 +5,55 @@
   transition: width 3s ease, height 3s ease;
 }
 
+.triangle--bg{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  transition: opacity 3s ease;
+}
+
 .triangle__madrid{
   top: 0;
   right: 0;
   clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
 }
 
+.triangle__madrid--bg{
+  background-color: var(--secundary-color);
+}
+
+.triangle__madrid--min .triangle--bg{
+  opacity: 1;
+}
+
 .triangle__madrid--min{
-  width: 40%;
-  height: 60%;
+  width: 15%;
+  height: 25%;
+}
+
+.triangle__madrid--return{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top:0;
+  padding: 2rem;
+  transform: scale(0);
+  transition: transform 0.2s ease ;
+}
+
+.triangle__madrid--min .triangle__madrid--return{
+  transform: scale(1);
+  transition: transform 2s ease 1s;
+
+}
+
+.triangle__madrid--return img{
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
 }
 
 .triangle__andorra{
@@ -30,16 +70,10 @@
 }
 
 .triangle__andorra--bg{
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
   background-color: var(--primary-color);
-  opacity: 0.1;
-  transition: opacity 3s ease;
 }
 
-.triangle__andorra--vertical .triangle__andorra--bg{
+.triangle__andorra--vertical .triangle--bg{
   opacity: 1;
 }
 
@@ -53,7 +87,7 @@
   word-break: break-word;
   text-transform: uppercase;
   font-size: 4rem;
-  transition: transform 1s ease ;
+  transition: transform 0.5s ease ;
 }
 
 .triangle__andorra--vertical .triangle__andorra--vertical--text{
