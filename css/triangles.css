@@ -36,16 +36,20 @@
 .triangle__madrid--return{
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
+  height: 100%;
+  width: 100%;
   top:0;
-  padding: 2rem;
+  padding: 15%;
   transform: scale(0);
-  transition: transform 0.2s ease ;
+  visibility: hidden;
+  transition: transform 0.2s ease, visibility 0.5s ease;
 }
 
 .triangle__madrid--min .triangle__madrid--return{
   transform: scale(1);
+  visibility: visible;
   transition: transform 0.5s ease 1s;
 
 }
@@ -53,7 +57,7 @@
 .triangle__madrid--return img{
   width: 50%;
   height: 50%;
-  object-fit: cover;
+  object-fit: contain;
   transform: scale(1);
   transition: transform 1s ease;
 }
@@ -111,13 +115,15 @@
   align-items: center;
   padding: 0 5rem;
   opacity: 1;
-  transition: opacity 2.5s ease 0.5s;
+  visibility: visible;
+  transition: opacity 2.5s ease 0.5s, visibility 2s ease;
 }
 
 .triangle__andorra--vertical .triangle__details,
 .triangle__madrid--min .triangle__details{
   opacity: 0;
-  transition: opacity 2s ease;
+  visibility:hidden;
+  transition: opacity 2s ease, visibility 2s ease;
 }
 
 .triangle__details h2{
