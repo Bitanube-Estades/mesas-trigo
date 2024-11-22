@@ -73,10 +73,6 @@
   font-size: 5rem;
 }
 
-.option__abogados__details h2{
-  color: antiquewhite;
-}
-
 .option__details--text{
   height: 100%;
   color: rgb(247, 237, 237);
@@ -85,6 +81,7 @@
   transform: scaleY(1);
   transform-origin: top;
   visibility: visible;
+  overflow: hidden;
   transition: transform 1s ease, height 2s ease;
 }
 
@@ -111,15 +108,84 @@
 .option__details--text a{
   display: none;
   text-decoration: none;
-  color: rgb(247, 237, 237);
-  text-align: center;
-  margin: 0 0 2rem 2rem;
-  padding: 1rem;
+  margin: 0 0 2rem 2.5rem;
   width: 130px;
-  border: grey solid 2px;
-  border-radius: 5px;
+
 }
 
 .option__details--text .show-link{
   display: block;
+}
+
+/* Botó */
+
+.wrapper {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
+  height: 70px;
+}
+
+.card {
+  grid-area: 1 / 1;
+  height: 60px;
+  width: 149px;
+  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  background: var(--secondary-color);
+  opacity: 0.88;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 900;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+}
+
+h1 {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.card .enclosed {
+  background: #000;
+  line-height: 1;
+  color: var(--secondary-color);
+  padding: 0 5px;
+  display: inline-block;
+  transform: translate(-1px, 1px) scale(0.75);
+  transform-origin: right center;
+}
+
+.wrapper:before {
+  --bw: 9px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 86%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  transform: translateX(-6px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  pointer-events: none;
+  border: var(--bw) solid #000;
+  box-sizing: content-box;
+}
+
+
+.wrapper:hover > div,
+.wrapper:hover:before {
+  transform: none;
+}
+
+
+.wrapper > div,
+.wrapper:before {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
 }
