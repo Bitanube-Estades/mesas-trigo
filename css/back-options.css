@@ -110,11 +110,32 @@
   text-decoration: none;
   margin: 0 0 2rem 2.5rem;
   width: 130px;
+  /* transform: scale(0); */
+  /* transition: transform 1s ease; */
+  animation: fadeInOut 1s ease-in-out;
+}
 
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+      display: none;
+  }
+
+  50% {
+      opacity: 0.5;
+      display: block;
+  }
+
+  100% {
+      opacity: 1;
+      display: block;
+  }
 }
 
 .option__details--text .show-link{
   display: block;
+  opacity: 1;
+  /* transform: scale(1); */
 }
 
 /* Botó */
