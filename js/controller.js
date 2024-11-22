@@ -63,10 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (landingInitial) {
                 minimizeTriangles();
                 landingInitial = false;
-            } else {
-                maximizeTriangles();
-                landingInitial = true;
-            }
+            } 
         }
     })
 
