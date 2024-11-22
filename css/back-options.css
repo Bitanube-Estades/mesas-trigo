@@ -19,6 +19,16 @@
   z-index: -1;
 } 
 
+.option--bg{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: black;
+  transition: opacity 1s ease;
+}
+
 .option__abogados .option__img{
   top: 0;
 }
@@ -40,12 +50,21 @@
 .option__abogados--hover,
 .option__economistas--hover{
   height: 80%;
-
 }
 
 .option__abogados--not-hover,
 .option__economistas--not-hover{
   height: 20%;
+}
+
+.option__abogados--not-hover .option__img,
+.option__economistas--not-hover .option__img{
+  filter:blur(5px);  
+}
+
+.option__abogados--not-hover .option--bg,
+.option__economistas--not-hover .option--bg{
+  opacity: 0.6;  
 }
 
 .option__details{
@@ -110,9 +129,7 @@
   text-decoration: none;
   margin: 0 0 2rem 2.5rem;
   width: 130px;
-  /* transform: scale(0); */
-  /* transition: transform 1s ease; */
-  animation: fadeInOut 1s ease-in-out;
+  animation: fadeInOut 0.7s ease-in-out;
 }
 
 @keyframes fadeInOut {
@@ -135,10 +152,9 @@
 .option__details--text .show-link{
   display: block;
   opacity: 1;
-  /* transform: scale(1); */
 }
 
-/* Botó */
+/* -------------------- Botó------------------------------- */
 
 .wrapper {
   position: relative;
