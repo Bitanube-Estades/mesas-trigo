@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: width 3s ease, height 3s ease;
+  transition: width 1s ease, height 1s ease;
 }
 
 .triangle--bg{
@@ -58,19 +58,19 @@
   width: 50%;
   height: 50%;
   object-fit: contain;
-  transform: scale(1);
-  transition: transform 1s ease;
+  transform: none;
+  transition: transform 0.5s ease;
 }
 
 .triangle__madrid--return--hover img{
-  transform: scale(1.5);
+  transform: scale(1.2) skew(10deg, 10deg) rotate(-45deg);
 }
 
 .triangle__andorra{
   bottom: 0;
   left:0;
   clip-path: polygon(0% 0%,0% 0%, 100% 100%, 0% 100%);
-  transition: clip-path 3s ease, width 3s ease, height 3s ease;
+  transition: clip-path 1s ease, width 1s ease, height 1s ease;
 }
 
 .triangle__andorra--vertical {
@@ -151,10 +151,14 @@
   left: 0;
 }
 
-
-
 .triangle__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: none;
+  transition: transform 0.5s ease;
+}
+
+.triangle__madrid--hover .triangle__img{
+  transform: scale(1.1)
 }

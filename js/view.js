@@ -7,6 +7,16 @@
     const economistasLink = document.querySelector(".option__economistas--link");
 
 
+export function triangleMadridHover() {
+  triangleAndorra.classList.remove('triangle__madrid--hover');
+  triangleMadrid.classList.add('triangle__madrid--hover');
+}
+
+export function triangleAndorraHover() {
+  triangleMadrid.classList.remove('triangle__madrid--hover');
+  triangleAndorra.classList.add('triangle__madrid--hover');
+}
+
 export function minimizeTriangles() {
   triangleMadrid.classList.add('triangle__madrid--min');
   triangleAndorra.classList.add('triangle__andorra--vertical');

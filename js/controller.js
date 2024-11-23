@@ -5,7 +5,9 @@ import {
     maximizeTriangles,
     minimizeTriangles,
     optionsClassHoverRemove,
-    returnHover, returnNotHover
+    returnHover, returnNotHover,
+    triangleAndorraHover,
+    triangleMadridHover
 } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let triangles = landingInitial? trianglesMax: trianglesMin;
 
         triangleHover = detectTriangleSelected(mouseX, mouseY, triangles, landingInitial);
+
+        if (landingInitial) {
+            if (triangleHover === 1) triangleMadridHover();
+            if (triangleHover === 2) triangleAndorraHover();
+        }
+
 
         // que el l'imatge del return torni al seu tamany normal quan no està hover
         returnNotHover();
@@ -51,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     
     container.addEventListener("click", () => {
-        if (triangleHover == 1) {
+        if (triangleHover === 1) {
             if (landingInitial){
                 window.location.href = "https://www.linkedin.com/company/mesastrigo-morales-arce/?originalSubdomain=es"
             } else {
@@ -59,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 landingInitial = true;
             }
         }
-        if (triangleHover == 2) {
+        if (triangleHover === 2) {
             if (landingInitial) {
                 minimizeTriangles();
                 landingInitial = false;
