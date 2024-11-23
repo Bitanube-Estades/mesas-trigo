@@ -59,11 +59,11 @@
   height: 50%;
   object-fit: contain;
   transform: none;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .triangle__madrid--return--hover img{
-  transform: scale(1.2) skew(10deg, 10deg) rotate(-45deg);
+  transform: scale(1.1) rotate(-45deg);
 }
 
 .triangle__andorra{
