@@ -1,11 +1,11 @@
-.triangle{
+.triangle {
   position: absolute;
   width: 100%;
   height: 100%;
   transition: width 1s ease, height 1s ease;
 }
 
-.triangle--bg{
+.triangle--bg {
   position: absolute;
   top: 0;
   height: 100%;
@@ -14,47 +14,46 @@
   transition: opacity 3s ease;
 }
 
-.triangle__madrid{
+.triangle__madrid {
   top: 0;
   right: 0;
   clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
 }
 
-.triangle__madrid--bg{
+.triangle__madrid--bg {
   background-color: var(--secondary-color);
 }
 
-.triangle__madrid--min .triangle--bg{
+.triangle__madrid--min .triangle--bg {
   opacity: 0.6;
 }
 
-.triangle__madrid--min{
+.triangle__madrid--min {
   width: 15%;
   height: 25%;
 }
 
-.triangle__madrid--return{
+.triangle__madrid--return {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   position: absolute;
   height: 100%;
   width: 100%;
-  top:0;
+  top: 0;
   padding: 15%;
   transform: scale(0);
   visibility: hidden;
   transition: transform 0.2s ease, visibility 0.5s ease;
 }
 
-.triangle__madrid--min .triangle__madrid--return{
+.triangle__madrid--min .triangle__madrid--return {
   transform: scale(1);
   visibility: visible;
   transition: transform 0.5s ease 1s;
-
 }
 
-.triangle__madrid--return img{
+.triangle__madrid--return img {
   width: 50%;
   height: 50%;
   object-fit: contain;
@@ -62,14 +61,14 @@
   transition: transform 0.3s ease;
 }
 
-.triangle__madrid--return--hover img{
+.triangle__madrid--return--hover img {
   transform: scale(1.1) rotate(-45deg);
 }
 
-.triangle__andorra{
+.triangle__andorra {
   bottom: 0;
-  left:0;
-  clip-path: polygon(0% 0%,0% 0%, 100% 100%, 0% 100%);
+  left: 0;
+  clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 0% 100%);
   transition: clip-path 1s ease, width 1s ease, height 1s ease;
 }
 
@@ -82,15 +81,15 @@
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.triangle__andorra--bg{
+.triangle__andorra--bg {
   background-color: var(--primary-color);
 }
 
-.triangle__andorra--vertical .triangle--bg{
+.triangle__andorra--vertical .triangle--bg {
   opacity: 0.4;
 }
 
-.triangle__andorra--vertical--div{
+.triangle__andorra--vertical--div {
   position: absolute;
   top: 0;
   height: 100%;
@@ -100,10 +99,10 @@
   align-items: center;
   transform: scale(0);
   width: 3rem;
-  transition: transform 0.5s ease ;
+  transition: transform 0.5s ease;
 }
 
-.triangle__andorra--vertical .triangle__andorra--vertical--div{
+.triangle__andorra--vertical .triangle__andorra--vertical--div {
   transform: scale(1);
   transition: transform 1s ease 0.5s;
 }
@@ -116,9 +115,9 @@
   width: 60px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  box-shadow: 0px -1px 11px 6px rgba(149,193,173,0.83);
-  -webkit-box-shadow: 0px -1px 11px 6px rgba(149,193,173,0.83);
-  -moz-box-shadow: 0px -1px 11px 6px rgba(149,193,173,0.83);
+  box-shadow: 0px -1px 11px 6px rgba(149, 193, 173, 0.83);
+  -webkit-box-shadow: 0px -1px 11px 6px rgba(149, 193, 173, 0.83);
+  -moz-box-shadow: 0px -1px 11px 6px rgba(149, 193, 173, 0.83);
 }
 
 .triangle__andorra--vertical .logo img {
@@ -127,12 +126,12 @@
   object-fit: contain;
 }
 
-.triangle__andorra--vertical .triangle__andorra--vertical--div p{
+.triangle__andorra--vertical .triangle__andorra--vertical--div p {
   text-align: center;
   word-break: break-word;
   text-transform: uppercase;
   font-size: 3.5rem;
-  text-shadow: 1px -1px 5px rgba(149,193,173,0.6);
+  text-shadow: 1px -1px 5px rgba(149, 193, 173, 0.6);
 }
 
 /* .triangle__details{
@@ -189,8 +188,8 @@
   transition: transform 0.5s ease;
 }
 
-.triangle__madrid--hover .triangle__img{
-  transform: scale(1.1)
+.triangle__madrid--hover .triangle__img {
+  transform: scale(1.1);
 }
 
 /* ---------------- Cards Landing -------------- */
@@ -198,7 +197,7 @@
 /* --------------- prueba madrid ----------------------------*/
 .cards_item {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   width: 50%;
   height: 50%;
@@ -206,29 +205,34 @@
   padding: 1rem;
   max-width: 800px;
   margin: 0 auto;
-  transform: rotateY(30deg) rotateX(15deg);
+  transform: rotateY(30deg) rotateX(10deg);
   transform-style: preserve-3d;
+  opacity: 1;
+  transition: transform 1s, opacity 1s, visibility 1s;
 }
 
-.cards_item:hover{
-  transform: rotateY(-30deg) rotateX(-15deg);
-  transition: transform 1s;
+.triangle__madrid--min .cards_item#item__madrid {
+  opacity: 0;
+  visibility: hidden;
 }
 
-#item_madrid{
+.cards_item:hover {
+  transform: rotateY(20deg) rotateX(5deg);
+}
+
+#item__madrid {
   justify-content: flex-end;
 }
 
 .card_image {
-  max-height: 250px;
-  margin-top: -24px;
+  max-height: 150px;
   img {
     width: 100%;
     max-width: 800px;
     height: 100%;
     object-fit: cover;
   }
-  
+
   &:after {
     content: "";
     display: block;
@@ -246,6 +250,8 @@
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -264,32 +270,55 @@
 }
 
 .card_text {
-  color: #DDDACB;
+  color: #dddacb;
   font-weight: 200;
   p {
     max-width: 700px;
   }
 }
 
-/* ------------------ prueba andorra ---------------------------*/
-
-.card_bis_container{
-  position: absolute;
-  bottom:0;
-  margin: 3rem;
+.card .card_content #button__card__madrid {
+  margin: 15px 0 0;
+  display: inline-block;
+  background-color: #dddacb;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
 }
 
-.card_bis{
+.cards_item .card .card_content #button__card__madrid:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* ------------------ prueba andorra ---------------------------*/
+
+.card_bis_container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 3rem;
+  opacity: 1;
+  transition: 0.5s visibility, 0.5s opacity;
+}
+
+.triangle__andorra--vertical .card_bis_container#item__andorra{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card_bis {
   position: relative;
 }
 
-.card_bis .face{
+.card_bis .face {
   width: 550px;
   height: 200px;
   transition: 0.5s;
 }
 
-.card_bis .face.face1{
+.card_bis .face.face1 {
   position: relative;
   background: #3333339f;
   display: flex;
@@ -299,12 +328,12 @@
   transform: translateY(100px);
 }
 
-.card_bis:hover .face.face1{
+.card_bis:hover .face.face1 {
   background: var(--primary-color);
   transform: translateY(0);
 }
 
-.card_bis .face.face1 .content{
+.card_bis .face.face1 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,15 +344,15 @@
   transition: 0.5s;
 }
 
-.card_bis:hover .face.face1 .content{
+.card_bis:hover .face.face1 .content {
   opacity: 1;
 }
 
-.card_bis .face.face1 .content img{
+.card_bis .face.face1 .content img {
   max-width: 200px;
 }
 
-.card_bis .face.face1 .content h3{
+.card_bis .face.face1 .content h3 {
   margin: 10px 0 0;
   padding: 0;
   color: #fff;
@@ -331,7 +360,7 @@
   font-size: 1.5em;
 }
 
-.card_bis .face.face2{
+.card_bis .face.face2 {
   position: relative;
   background: #fff;
   display: flex;
@@ -344,20 +373,19 @@
   opacity: 0;
 }
 
-.card_bis:hover .face.face2{
+.card_bis:hover .face.face2 {
   transform: translateY(0);
-  opacity:1
+  opacity: 1;
 }
 
-.card_bis .face.face2 .content p{
+.card_bis .face.face2 .content p {
   margin: 0;
   padding: 0;
 }
 
-.card_bis .face.face2 .content .button__card{
+.card_bis .face.face2 .content #button__card__andorra {
   margin: 15px 0 0;
-  display:  inline-block;
-  text-decoration: none;
+  display: inline-block;
   font-weight: 900;
   color: #333;
   padding: 5px;
@@ -365,7 +393,7 @@
   cursor: pointer;
 }
 
-.card_bis .face.face2 .content .button__card:hover{
+.card_bis .face.face2 .content #button__card__andorra:hover {
   background: #333;
   color: #fff;
 }

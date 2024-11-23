@@ -12,6 +12,11 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".container")
+    const buttonCardAndorra = document.querySelector("#button__card__andorra");
+    const buttonCardMadrid = document.querySelector("#button__card__madrid");
+    const triangleMadridReturn = document.querySelector(".triangle__madrid--return");
+
+
 
     // Saber si només es veuen els dos triangles grans
     let landingInitial = true;
@@ -28,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let triangles = landingInitial? trianglesMax: trianglesMin;
 
         triangleHover = detectTriangleSelected(mouseX, mouseY, triangles, landingInitial);
-
+        
         if (landingInitial) {
             if (triangleHover === 1) triangleMadridHover();
             if (triangleHover === 2) triangleAndorraHover();
@@ -58,21 +63,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
     
-    container.addEventListener("click", () => {
-        if (triangleHover === 1) {
-            if (landingInitial){
-                window.location.href = "https://www.linkedin.com/company/mesastrigo-morales-arce/?originalSubdomain=es"
-            } else {
+    triangleMadridReturn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (!landingInitial && triangleHover === 1) {
                 maximizeTriangles();
                 landingInitial = true;
             }
-        }
-        if (triangleHover === 2) {
-            if (landingInitial) {
-                minimizeTriangles();
-                landingInitial = false;
-            } 
-        }
+        // if (triangleHover === 2) {
+        //     if (landingInitial) {
+        //         minimizeTriangles();
+        //         landingInitial = false;
+        //     } 
+        // }
+    })
+
+    buttonCardAndorra.addEventListener("click", (e) => {
+        e.stopPropagation();
+        minimizeTriangles();
+        landingInitial = false;
+    });
+
+    buttonCardMadrid.addEventListener("click", (e) => {
+        e.stopPropagation();
+        window.location.href = "https://www.linkedin.com/company/mesastrigo-morales-arce/?originalSubdomain=es"
     })
 
 })
