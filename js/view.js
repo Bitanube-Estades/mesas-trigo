@@ -3,8 +3,8 @@
     const returnImageContainer = document.querySelector(".triangle__madrid--return");
     const abogados = document.querySelector(".option__abogados");
     const economistas = document.querySelector(".option__economistas");
-    const abogadosLink = document.querySelector(".option__abogados--link");
-    const economistasLink = document.querySelector(".option__economistas--link");
+    // const abogadosLink = document.querySelector(".option__abogados--link");
+    // const economistasLink = document.querySelector(".option__economistas--link");
 
 
 export function triangleMadridHover() {
@@ -38,30 +38,30 @@ export function returnNotHover() {
 export function abogadosHover() {
   economistas.classList.remove("option__economistas--hover");
   abogados.classList.remove("option__abogados--not-hover");
-  economistasLink.classList.remove("show-link");
+  // economistasLink.classList.remove("show-link");
 
   abogados.classList.add("option__abogados--hover");
   economistas.classList.add("option__economistas--not-hover");
-  abogadosLink.classList.add("show-link");
+  // abogadosLink.classList.add("show-link");
   
 }
 
 export function economistasHover() {
   abogados.classList.remove("option__abogados--hover");
   economistas.classList.remove("option__economistas--not-hover");
-  abogadosLink.classList.remove("show-link");
+  // abogadosLink.classList.remove("show-link");
 
   economistas.classList.add("option__economistas--hover");
   abogados.classList.add("option__abogados--not-hover");
-  economistasLink.classList.add("show-link");
+  // economistasLink.classList.add("show-link");
 }
 
 export function optionsClassHoverRemove() {
   abogados.classList.remove("option__abogados--hover");
   economistas.classList.remove("option__economistas--not-hover");
-  abogadosLink.classList.remove("show-link");
+  // abogadosLink.classList.remove("show-link");
 
   economistas.classList.remove("option__economistas--hover");
   abogados.classList.remove("option__abogados--not-hover");
-  economistasLink.classList.remove("show-link");
+  // economistasLink.classList.remove("show-link");
 }
