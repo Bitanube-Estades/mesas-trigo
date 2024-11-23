@@ -87,7 +87,7 @@
 }
 
 .triangle__andorra--vertical .triangle--bg{
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .triangle__andorra--vertical--div{
@@ -135,7 +135,7 @@
   text-shadow: 1px -1px 5px rgba(149,193,173,0.6);
 }
 
-.triangle__details{
+/* .triangle__details{
   position: absolute;
   width: 50%;
   height: 50%;
@@ -179,7 +179,7 @@
 .triangle__andorra__details{
   bottom: 0;
   left: 0;
-}
+} */
 
 .triangle__img {
   width: 100%;
@@ -191,4 +191,181 @@
 
 .triangle__madrid--hover .triangle__img{
   transform: scale(1.1)
+}
+
+/* ---------------- Cards Landing -------------- */
+
+/* --------------- prueba madrid ----------------------------*/
+.cards_item {
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  transform: rotateY(30deg) rotateX(15deg);
+  transform-style: preserve-3d;
+}
+
+.cards_item:hover{
+  transform: rotateY(-30deg) rotateX(-15deg);
+  transition: transform 1s;
+}
+
+#item_madrid{
+  justify-content: flex-end;
+}
+
+.card_image {
+  max-height: 250px;
+  margin-top: -24px;
+  img {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    top: -100px;
+    background: linear-gradient(0deg, #091014 10%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+.card {
+  background-color: #091014b4;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  z-index: 1;
+  display: block;
+}
+
+.card_title {
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 10px;
+  text-shadow: black 1px 0 15px;
+  color: white;
+}
+
+.card_text {
+  color: #DDDACB;
+  font-weight: 200;
+  p {
+    max-width: 700px;
+  }
+}
+
+/* ------------------ prueba andorra ---------------------------*/
+
+.card_bis_container{
+  position: absolute;
+  bottom:0;
+  margin: 3rem;
+}
+
+.card_bis{
+  position: relative;
+}
+
+.card_bis .face{
+  width: 550px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.card_bis .face.face1{
+  position: relative;
+  background: #3333339f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.card_bis:hover .face.face1{
+  background: var(--primary-color);
+  transform: translateY(0);
+}
+
+.card_bis .face.face1 .content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 70%;
+  height: 100%;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+.card_bis:hover .face.face1 .content{
+  opacity: 1;
+}
+
+.card_bis .face.face1 .content img{
+  max-width: 200px;
+}
+
+.card_bis .face.face1 .content h3{
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.card_bis .face.face2{
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
+.card_bis:hover .face.face2{
+  transform: translateY(0);
+  opacity:1
+}
+
+.card_bis .face.face2 .content p{
+  margin: 0;
+  padding: 0;
+}
+
+.card_bis .face.face2 .content .button__card{
+  margin: 15px 0 0;
+  display:  inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.card_bis .face.face2 .content .button__card:hover{
+  background: #333;
+  color: #fff;
 }
