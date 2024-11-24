@@ -1,8 +1,8 @@
-.mesas-trigo{
+.mesas-trigo {
   height: 100%;
 }
 
-.option{
+.option {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,15 +11,15 @@
   transition: height 0.5s ease;
 }
 
-.option__img{
+.option__img {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
-} 
+}
 
-.option--bg{
+.option--bg {
   position: absolute;
   top: 0;
   height: 100%;
@@ -29,127 +29,51 @@
   transition: opacity 1s ease;
 }
 
-.option__abogados .option__img{
+.option__abogados .option__img {
   top: 0;
 }
 
-.option__abogados .option__img{
+.option__abogados .option__img {
   bottom: 0;
 }
 
-.option__abogados{
+.option__abogados {
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.option__economistas{
+.option__economistas {
   justify-content: flex-end;
   align-items: flex-end;
 }
 
 .option__abogados--hover,
-.option__economistas--hover{
+.option__economistas--hover {
   height: 80%;
 }
 
 .option__abogados--not-hover,
-.option__economistas--not-hover{
+.option__economistas--not-hover {
   height: 20%;
   justify-content: center;
 }
 
 .option__abogados--not-hover .option__img,
-.option__economistas--not-hover .option__img{
-  filter:blur(5px);  
+.option__economistas--not-hover .option__img {
+  filter: blur(5px);
 }
 
 .option__abogados--not-hover .option--bg,
-.option__economistas--not-hover .option--bg{
-  opacity: 0.6;  
+.option__economistas--not-hover .option--bg {
+  opacity: 0.6;
 }
 
-.card3-box{
+.card3-box {
   padding: 3rem 3rem 3rem calc(10% + 5rem);
-  height: 80%;
+  height: 100%;
   width: 80%;
-  max-height: 415px;
+  max-width: 1500px;
 }
-
-.option__abogados--not-hover .card3-box,
-.option__economistas--not-hover .card3-box{
-  padding: 0 3rem 0 calc(10% + 5rem);
-}
-
-/* -------------------- Botó------------------------------- */
-
-/* .wrapper {
-  position: relative;
-  perspective: 40em;
-  display: grid;
-  transform-style: preserve-3d;
-  height: 70px;
-}
-
-.card {
-  grid-area: 1 / 1;
-  height: 60px;
-  width: 149px;
-  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
-  background: var(--secondary-color);
-  opacity: 0.88;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 30px;
-  color: #000;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
-  backface-visibility: hidden;
-  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
-}
-
-h1 {
-  font-size: 1.3rem;
-  font-weight: 900;
-}
-
-.card .enclosed {
-  background: #000;
-  line-height: 1;
-  color: var(--secondary-color);
-  padding: 0 5px;
-  display: inline-block;
-  transform: translate(-1px, 1px) scale(0.75);
-  transform-origin: right center;
-}
-
-.wrapper:before {
-  --bw: 9px;
-  grid-area: 1 / 1;
-  content: '';
-  backface-visibility: hidden;
-  height: 86%;
-  width: 100%;
-  margin-top: calc(-1 * var(--bw));
-  margin-left: calc(-1 * var(--bw));
-  background: transparent;
-  transform: translateX(-6px) rotateY(-30deg) rotateX(15deg) scale(1.03);
-  pointer-events: none;
-  border: var(--bw) solid #000;
-  box-sizing: content-box;
-}
-
-.wrapper:hover > div,
-.wrapper:hover:before {
-  transform: none;
-}
-
-.wrapper > div,
-.wrapper:before {
-  will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
-} */
 
 /* ------------------------ Card -----------------------------*/
 
@@ -162,7 +86,6 @@ h1 {
     height: 100%;
     border-radius: 50px;
     transition: all 0.5s ease-in-out;
-    transform-style: preserve-3d;
     box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px,
       rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
 
@@ -185,7 +108,7 @@ h1 {
     }
 
     .content {
-      padding: 40px 60px 0px 30px;
+      padding: 15px 85px 0px 30px;
       transform: translate3d(0, 0, 26px);
       .title {
         display: block;
@@ -195,6 +118,7 @@ h1 {
       }
       .text {
         display: block;
+        width: 95%;
         color: var(--primary-color);
         font-size: 15px;
         margin-top: 20px;
@@ -214,8 +138,6 @@ h1 {
       opacity: 0;
       transition: 0.2s opacity ease, 0.5s visibility ease;
 
-
-
       .social-buttons-container {
         transform-style: preserve-3d;
         .social-button {
@@ -229,7 +151,7 @@ h1 {
           align-items: center;
           gap: 1rem;
           box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
-          color:var(--primary-color);
+          color: var(--primary-color);
 
           &:first-child {
             transition: transform 0.2s ease-in-out 0.4s,
@@ -267,7 +189,6 @@ h1 {
       box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px,
         rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
 
-
       .bottom {
         .social-buttons-container {
           .social-button {
@@ -281,16 +202,247 @@ h1 {
 }
 
 .option__abogados--hover .card3-box .bottom,
-.option__economistas--hover .card3-box .bottom{
+.option__economistas--hover .card3-box .bottom {
   visibility: visible;
   opacity: 1;
   transition: 0.5s opacity 0.2s ease, 0.5s visibility ease;
 }
 
 .option__abogados--not-hover .card3-box .text,
-.option__economistas--not-hover .card3-box .text{
+.option__economistas--not-hover .card3-box .text {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s opacity, 0.1s visibility 0.4s;
+}
 
+/* -----------------   Desplegables ----------------*/
+
+.desplegable-front__heading {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+/* Main heading for inside page */
+.inside-page__heading {
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+/* Mixed */
+
+/* For both inside page's main heading and 'view me' text on card front cover */
+.inside-page__heading,
+.desplegable-front__text-view {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+
+.inside-page__heading--as-jur,
+.desplegable-front__text-view--as-jur {
+  color: var(--primary-color);
+}
+
+.inside-page__heading--der-adm,
+.desplegable-front__text-view--der-adm {
+  color: var(--secondary-color);
+}
+
+/* Front cover */
+
+.desplegable-front__tp {
+  color: #fafbfa;
+}
+
+/* Back cover */
+
+/* For inside page's body text */
+.inside-page__text {
+  color: #333;
+}
+
+/* Icons ===========================================*/
+
+.desplegable-front__icon {
+  fill: #fafbfa;
+  font-size: 3vw;
+  height: 3.25rem;
+  margin-top: -0.5rem;
+  width: 3.25rem;
+}
+
+/* Layout Structure=========================================*/
+
+.main {
+  background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Container to hold all cards in one place */
+.desplegables__area {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 50%;
+  justify-content: space-evenly;
+  padding: 3rem;
+}
+
+/* desplegables__section ============================================*/
+
+/* Area to hold an individual card */
+.desplegables__section {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+/* A container to hold the flip card and the inside page */
+.desplegable {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 15rem;
+  position: relative;
+  transition: all 1s ease;
+  width: 15rem;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-desplegable {
+  height: 15rem;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 15rem;
+  z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+.flip-desplegable > * {
+  visibility: visible;
+}
+
+/* An inner container to hold the flip desplegable. This excludes the inside page */
+.flip-desplegable__container {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.desplegable-front,
+.desplegable-back {
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Styling for the front side of the flip desplegable */
+
+/* container for the front side */
+.desplegable-front {
+  background-color: #fafbfa;
+  height: 15rem;
+  width: 15rem;
+}
+
+/* Front side's top section */
+.desplegable-front__tp {
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.desplegable-front__tp--as-jur {
+  background: linear-gradient(to bottom, var(--primary-color), #174561);
+}
+
+.desplegable-front__tp--der-adm {
+  background: linear-gradient(to bottom, var(--secondary-color), #749687);
+}
+
+/* Front desplegable's bottom section */
+.desplegable-front__bt {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling for the back side of the flip desplegable */
+
+.desplegable-back {
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
+}
+
+/* Specifically targeting the <video> element */
+.video__container {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Inside page */
+
+.inside-page {
+  background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 15rem;
+  z-index: 1;
+}
+
+.inside-page__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+/* Functionality ====================================*/
+
+/* This is to keep the desplegable centered (within its container) when opened */
+.desplegable:hover {
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+  width: 30rem;
+}
+
+/* When the desplegable is hovered, the flip desplegable container will rotate */
+.desplegable:hover .flip-desplegable__container {
+  transform: rotateY(-180deg);
+}
+
+/* When the desplegable is hovered, the shadow on the inside page will shrink to the left */
+.desplegable:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
 }
