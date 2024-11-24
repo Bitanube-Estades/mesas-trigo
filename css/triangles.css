@@ -93,18 +93,27 @@
   position: absolute;
   top: 0;
   height: 100%;
+  display: none;
+  width: 3rem;
+}
+
+.triangle__andorra--vertical .triangle__andorra--vertical--div {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  transform: scale(0);
-  width: 3rem;
-  transition: transform 0.5s ease;
+  animation: appear-vertical 1s ease forwards;
 }
 
-.triangle__andorra--vertical .triangle__andorra--vertical--div {
-  transform: scale(1);
-  transition: transform 1s ease 0.5s;
+@keyframes appear-vertical {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .triangle__andorra--vertical .logo {
@@ -133,52 +142,6 @@
   font-size: 3.5rem;
   text-shadow: 1px -1px 5px rgba(149, 193, 173, 0.6);
 }
-
-/* .triangle__details{
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5rem;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 2.5s ease 0.5s, visibility 2s ease;
-}
-
-.triangle__andorra--vertical .triangle__details,
-.triangle__madrid--min .triangle__details{
-  opacity: 0;
-  visibility:hidden;
-  transition: opacity 2s ease, visibility 2s ease;
-}
-
-.triangle__details h2{
-  font-size: 7rem;
-}
-
-.triangle__details p{
-  padding: 2rem;
-  color: rgb(247, 237, 237);
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.61);
-}
-
-.triangle__details p span {
-  font-weight: bold;
-}
-
-.triangle__madrid__details{
-  top: 0;
-  right: 0;
-}
-
-.triangle__andorra__details{
-  bottom: 0;
-  left: 0;
-} */
 
 .triangle__img {
   width: 100%;
@@ -303,7 +266,7 @@
   transition: 0.5s visibility, 0.5s opacity;
 }
 
-.triangle__andorra--vertical .card_bis_container#item__andorra{
+.triangle__andorra--vertical .card_bis_container#item__andorra {
   visibility: hidden;
   opacity: 0;
 }
