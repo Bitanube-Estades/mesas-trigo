@@ -63,7 +63,7 @@
   transition: transform 0.5s ease 1s;
 }
 
-.triangle__madrid--return img {
+.triangle__madrid--return .arrow {
   width: 50%;
   height: 50%;
   object-fit: contain;
@@ -71,7 +71,7 @@
   transition: transform 0.3s ease;
 }
 
-.triangle__madrid--return--hover img {
+.triangle__madrid--return--hover .arrow {
   transform: scale(1.1) rotate(-45deg);
 }
 
