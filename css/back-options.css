@@ -239,13 +239,13 @@
   margin-top: 0.2rem;
 }
 
-.inside-page__heading--as-jur,
-.desplegable-front__text-view--as-jur {
+.inside-page__heading--first-card,
+.desplegable-front__text-view--first-card {
   color: var(--primary-color);
 }
 
-.inside-page__heading--der-adm,
-.desplegable-front__text-view--der-adm {
+.inside-page__heading--second-card,
+.desplegable-front__text-view--second-card {
   color: var(--secondary-color);
 }
 
@@ -291,6 +291,15 @@
   height: 50%;
   justify-content: space-evenly;
   padding: 3rem;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.option__abogados--hover .desplegables__area,
+.option__economistas--hover .desplegables__area {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* desplegables__section ============================================*/
@@ -375,11 +384,11 @@
   padding: 0.75rem;
 }
 
-.desplegable-front__tp--as-jur {
+.desplegable-front__tp--first-card {
   background: linear-gradient(to bottom, var(--primary-color), #174561);
 }
 
-.desplegable-front__tp--der-adm {
+.desplegable-front__tp--second-card {
   background: linear-gradient(to bottom, var(--secondary-color), #749687);
 }
 
