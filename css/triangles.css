@@ -4,7 +4,7 @@
   height: 100%;
   top: 0;
   right: 0;
-  filter: drop-shadow(0 0 1rem var(--secondary-color));
+  filter: drop-shadow(0 0.5rem 0.5rem var(--secondary-color));
   transition: width 1s ease, height 1s ease;
 }
 
@@ -12,6 +12,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: auto;
 }
 
 .triangle--bg {
@@ -80,8 +81,9 @@
   height: 100%;
   bottom: 0;
   left: 0;
-  filter: drop-shadow(0 0 2rem var(--primary-color));
+  filter: drop-shadow(1rem 0.5rem 0.5rem var(--primary-color));
   transition: width 1s ease, height 1s ease;
+  pointer-events: none;
 }
 
 .triangle__andorra {
@@ -194,6 +196,7 @@
   transform-style: preserve-3d;
   opacity: 1;
   transition: transform 1s, opacity 1s, visibility 1s;
+  z-index: 7;
 }
 
 .triangle__madrid--min .cards_item#item__madrid {
