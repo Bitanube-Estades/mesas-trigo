@@ -18,8 +18,8 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
-  const buttonCardAndorra = document.querySelector("#button__card__andorra");
   const buttonCardMadrid = document.querySelector("#button__card__madrid");
+  const buttonCardAndorra= document.querySelector("#button__card__andorra");
   const triangleMadridReturn = document.querySelector(
     ".triangle__madrid--return"
   );
@@ -85,6 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
     //         landingInitial = false;
     //     }
     // }
+  });
+
+  // per que apareixin les opcions de mesas-trigo clickant sobre la card d'andorra
+  document.querySelectorAll(".face").forEach(face => {
+    face.addEventListener("click", (e) => {
+      e.stopPropagation();
+      minimizeTriangles();
+      landingInitial = false;
+    });
   });
 
   buttonCardAndorra.addEventListener("click", (e) => {

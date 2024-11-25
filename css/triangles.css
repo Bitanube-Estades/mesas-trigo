@@ -193,16 +193,15 @@
   max-width: 800px;
   margin: 0 auto;
   opacity: 1;
+  transition: visibility 0.2s 0.3s, opacity 0.2s  0.3s;
 }
 
-.triangle__madrid--min .cards_item#item__madrid {
+.triangle__madrid--min .cards_item {
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
-/*.cards_item:hover {*/
-/*  transform: rotateY(20deg) rotateX(5deg);*/
-/*}*/
 
 #item__madrid {
   justify-content: flex-end;
@@ -229,7 +228,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 1rem;
   height: 65%;
   background-color: rgb(0, 0, 0, 0.5);
@@ -257,8 +256,8 @@
   background-color: white;
   border: solid 2px black;
   border-top: none;
-  padding: 2rem;
-
+  padding: 1rem;
+  padding-right: 5rem;
 }
 
 .card__template--inf h2{
@@ -317,12 +316,13 @@
   left: 0;
   margin: 3rem;
   opacity: 1;
-  transition: 0.5s visibility, 0.5s opacity;
+  transition: visibility 0.2s 0.3s, opacity 0.2s  0.3s;
 }
 
 .triangle__andorra--vertical .card_bis_container#item__andorra {
   visibility: hidden;
   opacity: 0;
+  transition: 0.5s visibility, 0.5s opacity;
 }
 
 .card_bis {
@@ -369,12 +369,17 @@
   max-width: 200px;
 }
 
-.card_bis .face.face1 .content h3 {
+.card_bis .face.face1 .content h2 {
   margin: 10px 0 0;
   padding: 0;
   color: #fff;
   text-align: center;
   font-size: 1.5em;
+}
+
+.card_bis .face.face1 .content p{
+  color: #fff;
+  text-align: justify;
 }
 
 .card_bis .face.face2 {
