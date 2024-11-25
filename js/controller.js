@@ -18,13 +18,10 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
-  const buttonCardMadrid = document.querySelector("#button__card__madrid");
-  const buttonCardAndorra= document.querySelector("#button__card__andorra");
+  const buttonCardAndorra = document.querySelector("#button__card__andorra");
   const triangleMadridReturn = document.querySelector(
     ".triangle__madrid--return"
   );
-
-
 
   // Saber si només es veuen els dos triangles grans
   let landingInitial = true;
@@ -88,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // per que apareixin les opcions de mesas-trigo clickant sobre la card d'andorra
-  document.querySelectorAll(".face").forEach(face => {
+  document.querySelectorAll(".face").forEach((face) => {
     face.addEventListener("click", (e) => {
       e.stopPropagation();
       minimizeTriangles();
@@ -100,11 +97,5 @@ document.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
     minimizeTriangles();
     landingInitial = false;
-  });
-
-  buttonCardMadrid.addEventListener("click", (e) => {
-    e.stopPropagation();
-    window.location.href =
-      "https://www.linkedin.com/company/mesastrigo-morales-arce/?originalSubdomain=es";
   });
 });

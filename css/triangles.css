@@ -193,7 +193,7 @@
   max-width: 800px;
   margin: 0 auto;
   opacity: 1;
-  transition: visibility 0.2s 0.3s, opacity 0.2s  0.3s;
+  transition: visibility 0.2s 0.3s, opacity 0.2s 0.3s;
 }
 
 .triangle__madrid--min .cards_item {
@@ -202,12 +202,11 @@
   transition: opacity 0.5s, visibility 0.5s;
 }
 
-
 #item__madrid {
   justify-content: flex-end;
 }
 
-.card__template{
+.card__template {
   position: relative;
   width: 100%;
   height: 100%;
@@ -216,15 +215,15 @@
   transition: margin-top 0.2s, width 0.2s, box-shadow 0.2s;
 }
 
-.card__template:hover{
+.card__template:hover {
   margin-top: -10px;
   width: calc(100% - 10px);
-  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 
-.card__template--sup{
+.card__template--sup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -236,7 +235,7 @@
   padding-right: 5rem;
 }
 
-.card__template--sup p{
+.card__template--sup p {
   color: #cbcbcb;
   text-align: justify;
   opacity: 0;
@@ -245,13 +244,13 @@
   transition: opacity 0.8s, visibility 0.8s, transform 0.5s;
 }
 
-.card__template:hover p{
+.card__template:hover p {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
 }
 
-.card__template--inf{
+.card__template--inf {
   height: 35%;
   background-color: white;
   border: solid 2px black;
@@ -260,15 +259,15 @@
   padding-right: 5rem;
 }
 
-.card__template--inf h2{
+.card__template--inf h2 {
   margin-bottom: 1rem;
 }
 
-.card__template:hover .card__template--inf h2{
+.card__template:hover .card__template--inf h2 {
   color: var(--fourth-color);
 }
 
-.card__template--button{
+.card__template--button {
   position: absolute;
   bottom: 2px;
   right: 0;
@@ -285,7 +284,7 @@
   transition: height 0.2s, opacity 0.2s, visibility 0.2s;
 }
 
-.card__template:hover .card__template--button{
+.card__template:hover .card__template--button {
   height: 80%;
   visibility: visible;
   opacity: 1;
@@ -297,11 +296,11 @@
   gap: 10px;
 }
 
-.card__template .card__template--button p{
+.card__template .card__template--button p {
   opacity: 0;
 }
 
-.card__template:hover .card__template--button p{
+.card__template:hover .card__template--button p {
   text-align: center;
   word-break: break-word;
   opacity: 1;
@@ -316,10 +315,8 @@
   left: 0;
   margin: 3rem;
   opacity: 1;
-  transition: visibility 0.2s 0.3s, opacity 0.2s  0.3s;
+  transition: visibility 0.2s 0.3s, opacity 0.2s 0.3s;
 }
-
-
 
 .triangle__andorra--vertical .card_bis_container#item__andorra {
   visibility: hidden;
@@ -330,31 +327,21 @@
 .card_bis {
   position: relative;
   width: 550px;
-  transition: margin-top 0.2s 0.3s, width 0.2s 0.3s, box-shadow 0.2s 0.3s;
+  transition: margin-top 0.2s 0.3s, width 0.2s 0.3s;
 }
 
-.card_bis:hover{
+.card_bis:hover {
   margin-top: -10px;
-  width: 540px;
-  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
 .card_bis .face {
   height: 200px;
-  transition: 0.5s;
-}
-
-.card_bis:hover .face{
-  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  transition: background-color 0.5s, transform 0.5s, opacity 0.5s;
 }
 
 .card_bis .face.face1 {
   position: relative;
-  background: #3333339f;
+  background-color: #3333339f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -363,8 +350,19 @@
 }
 
 .card_bis:hover .face.face1 {
-  background: var(--primary-color);
+  background-color: var(--primary-color);
   transform: translateY(0);
+  box-shadow: none;
+}
+
+.card_bis:hover .face.face1:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  background-color: black;
 }
 
 .card_bis .face.face1 .content {
@@ -382,10 +380,6 @@
   opacity: 1;
 }
 
-.card_bis .face.face1 .content img {
-  max-width: 200px;
-}
-
 .card_bis .face.face1 .content h2 {
   margin: 10px 0 0;
   padding: 0;
@@ -394,20 +388,18 @@
   font-size: 1.5em;
 }
 
-.card_bis .face.face1 .content p{
+.card_bis .face.face1 .content p {
   color: #fff;
   text-align: justify;
 }
 
 .card_bis .face.face2 {
   position: relative;
-  background: #fff;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   transform: translateY(-100px);
   opacity: 0;
 }
@@ -415,6 +407,9 @@
 .card_bis:hover .face.face2 {
   transform: translateY(0);
   opacity: 1;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .card_bis .face.face2 .content p {
