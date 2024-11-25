@@ -189,14 +189,10 @@
   width: 50%;
   height: 50%;
   display: flex;
-  padding: 1rem;
+  padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  transform: rotateY(30deg) rotateX(10deg);
-  transform-style: preserve-3d;
   opacity: 1;
-  transition: transform 1s, opacity 1s, visibility 1s;
-  z-index: 7;
 }
 
 .triangle__madrid--min .cards_item#item__madrid {
@@ -204,80 +200,113 @@
   visibility: hidden;
 }
 
-.cards_item:hover {
-  transform: rotateY(20deg) rotateX(5deg);
-}
+/*.cards_item:hover {*/
+/*  transform: rotateY(20deg) rotateX(5deg);*/
+/*}*/
 
 #item__madrid {
   justify-content: flex-end;
 }
 
-.card_image {
-  max-height: 150px;
-  img {
-    width: 100%;
-    max-width: 800px;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100px;
-    position: relative;
-    top: -100px;
-    background: linear-gradient(0deg, #091014 10%, rgba(0, 0, 0, 0) 100%);
-  }
+.card__template{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: margin-top 0.2s, width 0.2s, border 0.2s;
 }
 
-.card {
-  background-color: #091014b4;
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+.card__template:hover{
+  margin-top: -10px;
+  width: calc(100% - 10px);
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+}
+
+.card__template--sup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  height: 65%;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 1rem;
+  padding-right: 5rem;
+}
+
+.card__template--sup p{
+  color: #cbcbcb;
+  text-align: justify;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: opacity 0.8s, visibility 0.8s, transform 0.5s;
+}
+
+.card__template:hover p{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.card__template--inf{
+  height: 35%;
+  background-color: white;
+  border: solid 2px black;
+  border-top: none;
+  padding: 2rem;
+
+}
+
+.card__template--inf h2{
+  margin-bottom: 1rem;
+}
+
+.card__template:hover .card__template--inf h2{
+  color: var(--fourth-color);
+}
+
+.card__template--button{
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  width: 10%;
+  height: 0%;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: solid 1px black;
+  border-right: none;
+  border-bottom: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: height 0.2s, opacity 0.2s, visibility 0.2s;
+}
+
+.card__template:hover .card__template--button{
+  height: 80%;
+  visibility: visible;
+  opacity: 1;
+  padding: 0.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  gap: 10px;
 }
 
-.card_content {
-  padding: 1rem;
-  z-index: 1;
-  display: block;
+.card__template .card__template--button p{
+  opacity: 0;
 }
 
-.card_title {
-  font-size: 36px;
-  line-height: 40px;
-  margin-bottom: 10px;
-  text-shadow: black 1px 0 15px;
-  color: white;
-}
-
-.card_text {
-  color: #dddacb;
-  font-weight: 200;
-  p {
-    max-width: 700px;
-  }
-}
-
-.card .card_content #button__card__madrid {
-  margin: 15px 0 0;
-  display: inline-block;
-  background-color: #dddacb;
-  font-weight: 900;
-  color: #333;
-  padding: 5px;
-  border: 1px solid #333;
-}
-
-.cards_item .card .card_content #button__card__madrid:hover {
-  background: #333;
-  color: #fff;
+.card__template:hover .card__template--button p{
+  text-align: center;
+  word-break: break-word;
+  opacity: 1;
+  transition: opacity 0.1s 0.2s;
 }
 
 /* ------------------ prueba andorra ---------------------------*/
@@ -367,6 +396,7 @@
 }
 
 .card_bis .face.face2 .content p {
+  text-align: justify;
   margin: 0;
   padding: 0;
 }

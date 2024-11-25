@@ -1,8 +1,14 @@
 const [triangleMadrid, triangleAndorra] =
   document.querySelectorAll(".triangle");
+
 const footer = document.querySelector(".footer");
 
-const footerHeight = footer.offsetHeight;
+let footerHeight = footer.offsetHeight;
+
+window.addEventListener("resize", () => {
+  footerHeight = footer.offsetHeight;
+})
+console.log(footerHeight);
 
 // Funció per calcular l'àrea d'un triangle donat tres punts
 function calculateArea(p1, p2, p3) {
@@ -44,7 +50,7 @@ export function detectTriangleSelected(
   if (!landingInitial) {
     if (triangleAndorra.matches(":hover")) hoveredTriangleIndex = 2;
   }
-  console.log(hoveredTriangleIndex);
+
   return hoveredTriangleIndex;
 }
 

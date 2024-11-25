@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".triangle__madrid--return"
   );
 
+
+
   // Saber si només es veuen els dos triangles grans
   let landingInitial = true;
 
