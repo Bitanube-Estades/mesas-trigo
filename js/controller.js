@@ -1,4 +1,5 @@
 import {
+  calculateFooterHeight,
   calculateOptionsSeparatorHeight,
   detectTriangleSelected,
   trianglesMax,
@@ -28,6 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let triangleHover;
   let optionHover;
+
+  // actualitzem l'alçada del footer pels càlculs dels triangles
+  window.addEventListener("resize", () => {
+    calculateFooterHeight();
+  });
 
   container.addEventListener("mousemove", (event) => {
     const mouseX = event.clientX;

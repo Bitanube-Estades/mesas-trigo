@@ -5,10 +5,9 @@ const footer = document.querySelector(".footer");
 
 let footerHeight = footer.offsetHeight;
 
-window.addEventListener("resize", () => {
+export function calculateFooterHeight() {
   footerHeight = footer.offsetHeight;
-})
-console.log(footerHeight);
+}
 
 // Funció per calcular l'àrea d'un triangle donat tres punts
 function calculateArea(p1, p2, p3) {
