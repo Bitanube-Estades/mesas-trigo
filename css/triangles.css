@@ -213,7 +213,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: margin-top 0.2s, width 0.2s, border 0.2s;
+  transition: margin-top 0.2s, width 0.2s, box-shadow 0.2s;
 }
 
 .card__template:hover{
@@ -319,6 +319,8 @@
   transition: visibility 0.2s 0.3s, opacity 0.2s  0.3s;
 }
 
+
+
 .triangle__andorra--vertical .card_bis_container#item__andorra {
   visibility: hidden;
   opacity: 0;
@@ -327,12 +329,27 @@
 
 .card_bis {
   position: relative;
+  width: 550px;
+  transition: margin-top 0.2s 0.3s, width 0.2s 0.3s, box-shadow 0.2s 0.3s;
+}
+
+.card_bis:hover{
+  margin-top: -10px;
+  width: 540px;
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
 .card_bis .face {
-  width: 550px;
   height: 200px;
   transition: 0.5s;
+}
+
+.card_bis:hover .face{
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
 .card_bis .face.face1 {
