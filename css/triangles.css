@@ -183,7 +183,7 @@
 /* ---------------- Cards Landing -------------- */
 
 /* --------------- prueba madrid ----------------------------*/
-.cards_item {
+.card__item__madrid {
   position: absolute;
   top: 0;
   right: 0;
@@ -197,7 +197,7 @@
   transition: visibility 0.2s 0.3s, opacity 0.2s 0.3s;
 }
 
-.triangle__madrid--min .cards_item {
+.triangle__madrid--min .card__item__madrid {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
@@ -213,54 +213,71 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: margin-top 0.2s, width 0.2s, box-shadow 0.2s;
+  transition: margin-top 0.2s, width 0.2s;
 }
 
 .card__template:hover {
   margin-top: -10px;
   width: calc(100% - 10px);
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  /*box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);*/
+  /*-webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);*/
+  /*-moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);*/
 }
 
 .card__template--sup {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  height: 55%;
+  transform: scaleY(0);
+  transform-origin: bottom;
   background-color: rgb(0, 0, 0, 0.5);
   padding: 1rem;
+}
+
+.card__template:hover .card__template--sup{
+  height: 55%;
+  transform: scaleY(1);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  transition: transform 0.3s;
 }
 
 .card__template--sup p {
   color: #cbcbcb;
   text-align: justify;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0);
-  transition: opacity 0.8s, visibility 0.8s, transform 0.5s;
 }
 
-.card__template:hover p {
+.card__template--sup p span{
+  font-weight: bold;
+}
+
+.card__template:hover .card__template--sup p {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+
 }
 
 .card__template--inf {
   height: 45%;
   background-color: white;
   border: solid 2px black;
-  border-top: none;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
+  z-index: 1;
+  transition: box-shadow 0.2s;
+}
+
+.card__template:hover .card__template--inf{
+  border-top: none;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .card__template:hover .card__template--inf h2 {
@@ -302,134 +319,40 @@
 
 .card__template:hover .flecha{
   left: 100%;
-  transform: translate(10px, -50%);
+  transform: translateX(10px) translateY(-50%);
   transition: all 0.2s;
 }
 
+.card__template:hover .card__template--button:hover .flecha{
+  transform: translateX(20px) translateY(-50%);
+}
 
 
 /* ------------------ prueba andorra ---------------------------*/
 
-.card_bis_container {
+.card__item__andorra {
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: 3rem;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
   opacity: 1;
   transition: visibility 0.2s 0.3s, opacity 0.2s 0.3s;
 }
+.card_template__andorra#item__andorra{
+}
 
-.triangle__andorra--vertical .card_bis_container#item__andorra {
+.triangle__andorra--vertical .card__item__andorra #item__andorra {
   visibility: hidden;
   opacity: 0;
   transition: 0.5s visibility, 0.5s opacity;
 }
 
-.card_bis {
-  position: relative;
-  width: 550px;
-  transition: margin-top 0.2s 0.3s, width 0.2s 0.3s;
-}
-
-.card_bis:hover {
-  margin-top: -10px;
-}
-
-.card_bis .face {
-  height: 200px;
-  transition: background-color 0.5s, transform 0.5s, opacity 0.5s;
-}
-
-.card_bis .face.face1 {
-  position: relative;
-  background-color: #3333339f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  transform: translateY(100px);
-}
-
-.card_bis:hover .face.face1 {
-  background-color: var(--primary-color);
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-.card_bis:hover .face.face1:after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: -10px;
-  width: 10px;
-  height: 100%;
-  background-color: black;
-}
-
-.card_bis .face.face1 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 70%;
-  height: 100%;
-  opacity: 0.8;
-  transition: 0.5s;
-}
-
-.card_bis:hover .face.face1 .content {
-  opacity: 1;
-}
-
-.card_bis .face.face1 .content h2 {
-  margin: 10px 0 0;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-.card_bis .face.face1 .content p {
-  color: #fff;
-  text-align: justify;
-}
-
-.card_bis .face.face2 {
-  position: relative;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  transform: translateY(-100px);
-  opacity: 0;
-}
-
-.card_bis:hover .face.face2 {
-  transform: translateY(0);
-  opacity: 1;
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
-}
-
-.card_bis .face.face2 .content p {
-  text-align: justify;
-  margin: 0;
-  padding: 0;
-}
-
-.card_bis .face.face2 .content #button__card__andorra {
-  margin: 15px 0 0;
-  display: inline-block;
-  font-weight: 900;
-  color: #333;
-  padding: 5px;
-  border: 1px solid #333;
+.card__item__andorra .card__template--button{
   cursor: pointer;
-}
-
-.card_bis .face.face2 .content #button__card__andorra:hover {
-  background: #333;
-  color: #fff;
 }

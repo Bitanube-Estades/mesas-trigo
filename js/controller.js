@@ -19,7 +19,7 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
-  const buttonCardAndorra = document.querySelector("#button__card__andorra");
+  const cardAndorra = document.querySelector("#item__andorra");
   const triangleMadridReturn = document.querySelector(
     ".triangle__madrid--return"
   );
@@ -90,14 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
   });
 
-  // per que apareixin les opcions de mesas-trigo clickant sobre la card d'andorra
-  document.querySelectorAll(".face").forEach((face) => {
-    face.addEventListener("click", (e) => {
-      e.stopPropagation();
-      minimizeTriangles();
-      landingInitial = false;
-    });
+  // que mostri les opcions al clickar sobre la card d'andorra
+  cardAndorra.addEventListener("click", (e) => {
+    e.stopPropagation();
+    minimizeTriangles();
+    landingInitial = false;
   });
+
 
   buttonCardAndorra.addEventListener("click", (e) => {
     e.stopPropagation();
