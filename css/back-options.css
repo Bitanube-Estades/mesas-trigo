@@ -71,390 +71,146 @@
   opacity: 0.6;
 }
 
-.card3-box {
+.option__box {
   padding: 3rem 3rem 3rem calc(10% + 5rem);
   height: 100%;
   width: 80%;
   max-width: 1500px;
 }
 
-/* ------------------------ Card -----------------------------*/
+/* --------------------  options --------------------------- */
 
-.card3 {
+.option__template {
+  position: relative;
   width: 100%;
   height: 100%;
-  perspective: 1000px;
-
-  .card-main {
-    height: 100%;
-    border-radius: 50px;
-    transition: all 0.5s ease-in-out;
-    box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px,
-      rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
-
-    .glass {
-      transform-style: preserve-3d;
-      position: absolute;
-      inset: 8px;
-      border-radius: 55px;
-      border-top-right-radius: 40%;
-      background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.349) 0%,
-        rgba(255, 255, 255, 0.815) 100%
-      );
-      backdrop-filter: blur(5px);
-      transform: translate3d(0px, 0px, 25px);
-      border-left: 1px solid white;
-      border-bottom: 1px solid white;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .content {
-      padding: 15px 85px 0px 30px;
-      transform: translate3d(0, 0, 26px);
-      .title {
-        display: block;
-        color: var(--primary-color);
-        font-weight: 900;
-        font-size: 50px;
-      }
-      .text {
-        display: block;
-        width: 95%;
-        color: var(--primary-color);
-        font-size: 15px;
-        margin-top: 20px;
-        transition: 0.5s opacity 0.1s, 0.1s visibility 0.1s;
-      }
-    }
-
-    .bottom {
-      padding: 10px 12px;
-      transform-style: preserve-3d;
-      position: absolute;
-      bottom: 25px;
-      left: 40px;
-      right: 20px;
-      transform: translate3d(0, 0, 26px);
-      visibility: hidden;
-      opacity: 0;
-      transition: 0.2s opacity ease, 0.5s visibility ease;
-
-      .social-buttons-container {
-        transform-style: preserve-3d;
-        .social-button {
-          width: 160px;
-          padding: 5px;
-          background: var(--secondary-color);
-          border-radius: 20px;
-          border: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 1rem;
-          box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
-          color: var(--primary-color);
-
-          &:first-child {
-            transition: transform 0.2s ease-in-out 0.4s,
-              box-shadow 0.2s ease-in-out 0.4s;
-          }
-
-          .svg {
-            width: 30px;
-            fill: var(--primary-color);
-          }
-
-          &:hover {
-            background: var(--primary-color);
-            color: white;
-            .svg {
-              fill: white;
-            }
-          }
-
-          &:active {
-            background: var(--third-color);
-            color: black;
-            .svg {
-              fill: black;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &:hover {
-    .card-main {
-      transform: rotate3d(1, 1, 0, 10deg);
-      box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px,
-        rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
-
-      .bottom {
-        .social-buttons-container {
-          .social-button {
-            transform: translate3d(0, 0, 50px);
-            box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
-          }
-        }
-      }
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: white;
+  border: solid 2px black;
+  padding: 2rem;
+  transition: margin-top 0.2s, width 0.2s, box-shadow 0.2s;
 }
 
-.option__abogados--hover .card3-box .bottom,
-.option__economistas--hover .card3-box .bottom {
-  visibility: visible;
-  opacity: 1;
-  transition: 0.5s opacity 0.2s ease, 0.5s visibility ease;
+.option__template:hover {
+  margin-top: -10px;
+  width: calc(100% - 10px);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 
-.option__abogados--not-hover .card3-box .text,
-.option__economistas--not-hover .card3-box .text {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s opacity, 0.1s visibility 0.4s;
+.option__template:hover .option__template h2 {
+  color: var(--fourth-color);
 }
 
-/* -----------------   Desplegables ----------------*/
-
-.desplegable-front__heading {
-  font-size: 1.5rem;
-  margin-top: 0.25rem;
-  text-align: center;
+.option__template p{
+  text-align: justify;
+  animation: appear-options 0.5s;
 }
 
-/* Main heading for inside page */
-.inside-page__heading {
-  padding-bottom: 1rem;
+@keyframes appear-options {
+  from {
+    opacity: 0;
+  } to {
+      opacity: 1;
+    }
+}
+
+.option__template .option__selectors {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex:1;
+  padding: 3rem;
   width: 100%;
 }
 
-/* Mixed */
-
-/* For both inside page's main heading and 'view me' text on card front cover */
-.inside-page__heading,
-.desplegable-front__text-view {
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin-top: 0.2rem;
+.option__selectors--box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: solid 2px black;
+  flex: 1 1 calc(50% - 2rem);
+  max-width: calc(50% - 2rem);
+  height: 100px;
+  padding: 1rem;
+  transition: box-shadow 0.2s;
 }
 
-.inside-page__heading--first-card,
-.desplegable-front__text-view--first-card {
-  color: var(--primary-color);
+.option__selectors--box.invested {
+  background-color: var(--secondary-color);
 }
 
-.inside-page__heading--second-card,
-.desplegable-front__text-view--second-card {
+.option__selectors--box:hover {
+  margin-top: -10px;
+  width: calc(100% - 10px);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.option__selectors--box p {
+  text-align: center;
+  flex: 0 0 75%;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.option__selectors--box .plus--div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus--box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: var(--secondary-color);
+  height: 34px;
+  width: 34px;
+  font-size: 24px;
+  line-height: 34px;
+  color: white;
+  font-weight: bold;
+}
+
+.option__selectors--box.invested .plus--box{
+  background-color: white;
   color: var(--secondary-color);
 }
 
-/* Front cover */
+/* --------------- estat no hover ------------- */
 
-.desplegable-front__tp {
-  color: #fafbfa;
-}
-
-/* Back cover */
-
-/* For inside page's body text */
-.inside-page__text {
-  color: #333;
-}
-
-/* Icons ===========================================*/
-
-.desplegable-front__icon {
-  fill: #fafbfa;
-  font-size: 3vw;
-  height: 3.25rem;
-  margin-top: -0.5rem;
-  width: 3.25rem;
-}
-
-/* Layout Structure=========================================*/
-
-.main {
-  background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-}
-
-/* Container to hold all cards in one place */
-.desplegables__area {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  height: 50%;
-  justify-content: space-evenly;
-  padding: 3rem;
-  transform: scale(0);
-  opacity: 0;
-  transition: transform 1s, opacity 1s;
-}
-
-.option__abogados--hover .desplegables__area,
-.option__economistas--hover .desplegables__area {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* desplegables__section ============================================*/
-
-/* Area to hold an individual card */
-.desplegables__section {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-}
-
-/* A container to hold the flip card and the inside page */
-.desplegable {
-  background-color: rgba(0, 0, 0, 0.05);
-  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
-  height: 15rem;
-  position: relative;
-  transition: all 1s ease;
-  width: 15rem;
-}
-
-/* Flip card - covering both the front and inside front page */
-
-/* An outer container to hold the flip card. This excludes the inside page */
-.flip-desplegable {
-  height: 15rem;
-  perspective: 100rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  visibility: hidden;
-  width: 15rem;
-  z-index: 100;
-}
-
-/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
-/* This is done so content in the inside page can be selected */
-.flip-desplegable > * {
-  visibility: visible;
-}
-
-/* An inner container to hold the flip desplegable. This excludes the inside page */
-.flip-desplegable__container {
-  height: 100%;
-  position: absolute;
-  right: 0;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  transition: all 1s ease;
-  width: 100%;
-}
-
-.desplegable-front,
-.desplegable-back {
-  backface-visibility: hidden;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* Styling for the front side of the flip desplegable */
-
-/* container for the front side */
-.desplegable-front {
-  background-color: #fafbfa;
-  height: 15rem;
-  width: 15rem;
-}
-
-/* Front side's top section */
-.desplegable-front__tp {
-  align-items: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
-  display: flex;
-  flex-direction: column;
-  height: 12rem;
-  justify-content: center;
-  padding: 0.75rem;
-}
-
-.desplegable-front__tp--first-card {
-  background: linear-gradient(to bottom, var(--primary-color), #174561);
-}
-
-.desplegable-front__tp--second-card {
-  background: linear-gradient(to bottom, var(--secondary-color), #749687);
-}
-
-/* Front desplegable's bottom section */
-.desplegable-front__bt {
-  align-items: center;
-  display: flex;
+.option__abogados--not-hover .option__template{
   justify-content: center;
 }
 
-/* Styling for the back side of the flip desplegable */
+.option__abogados--not-hover .option__template p{
+  display: none;
 
-.desplegable-back {
-  background-color: #fafbfa;
-  transform: rotateY(180deg);
 }
 
-/* Specifically targeting the <video> element */
-.video__container {
-  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
-  height: auto;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
+/* ----------------- estat hover ------------*/
+
+.option__abogados--hover .option__template{
+  gap: 2rem;
 }
 
-/* Inside page */
-
-.inside-page {
-  background-color: #fafbfa;
-  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
-  height: 100%;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  width: 15rem;
-  z-index: 1;
-}
-
-.inside-page__container {
-  align-items: center;
+.option__abogados--hover .option__selectors{
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  text-align: center;
-  width: 100%;
+  animation: appear-options 0.5s;
+
 }
 
-/* Functionality ====================================*/
 
-/* This is to keep the desplegable centered (within its container) when opened */
-.desplegable:hover {
-  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
-  width: 30rem;
-}
 
-/* When the desplegable is hovered, the flip desplegable container will rotate */
-.desplegable:hover .flip-desplegable__container {
-  transform: rotateY(-180deg);
-}
 
-/* When the desplegable is hovered, the shadow on the inside page will shrink to the left */
-.desplegable:hover .inside-page {
-  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
-}
+
