@@ -337,14 +337,14 @@
   width: 50%;
   height: 50%;
   display: flex;
-  align-items: flex-end;
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
   opacity: 1;
   transition: visibility 0.2s 0.3s, opacity 0.2s 0.3s;
 }
-.card_template__andorra#item__andorra{
+.card__item__andorra #item__andorra{
+  justify-content: flex-end;
 }
 
 .triangle__andorra--vertical .card__item__andorra #item__andorra {
