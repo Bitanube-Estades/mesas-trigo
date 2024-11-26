@@ -75,6 +75,15 @@
   transform: scale(1.1) rotate(-45deg);
 }
 
+.arrow::before {
+  font-size: 3.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .triangle__container__andorra {
   position: absolute;
   width: 100%;
