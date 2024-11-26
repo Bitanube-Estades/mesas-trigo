@@ -230,10 +230,9 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  height: 65%;
+  height: 55%;
   background-color: rgb(0, 0, 0, 0.5);
   padding: 1rem;
-  padding-right: 5rem;
 }
 
 .card__template--sup p {
@@ -252,61 +251,62 @@
 }
 
 .card__template--inf {
-  height: 35%;
+  height: 45%;
   background-color: white;
   border: solid 2px black;
   border-top: none;
   padding: 1rem;
-  padding-right: 5rem;
-}
-
-.card__template--inf h2 {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .card__template:hover .card__template--inf h2 {
   color: var(--fourth-color);
 }
 
+
 .card__template--button {
-  position: absolute;
-  bottom: 2px;
-  right: 0;
-  width: 10%;
-  height: 0%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   text-decoration: none;
   color: black;
-  background-color: white;
-  border: solid 1px black;
-  border-right: none;
-  border-bottom: none;
-  visibility: hidden;
-  opacity: 0;
-  transition: height 0.2s, opacity 0.2s, visibility 0.2s;
+  height: 30px;
 }
 
-.card__template:hover .card__template--button {
-  height: 80%;
-  visibility: visible;
-  opacity: 1;
-  padding: 0.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 
 .card__template .card__template--button p {
-  opacity: 0;
+  transform: scaleX(0);
+  white-space: nowrap;
+  transform-origin: left center;
+  transition: transform 0.3s, width 0.3s ;
 }
 
 .card__template:hover .card__template--button p {
-  text-align: center;
-  word-break: break-word;
   opacity: 1;
-  transition: opacity 0.1s 0.2s;
+  transform: scaleX(1);
 }
+
+.flecha{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transition: all 0.35s;
+  transform: translate(0, -50%);
+}
+
+.card__template:hover .flecha{
+  left: 100%;
+  transform: translate(10px, -50%);
+  transition: all 0.2s;
+}
+
+
 
 /* ------------------ prueba andorra ---------------------------*/
 
