@@ -106,7 +106,7 @@
   color: var(--fourth-color);
 }
 
-.option__template p{
+.option__template p {
   text-align: justify;
   animation: appear-options 0.5s;
 }
@@ -114,9 +114,10 @@
 @keyframes appear-options {
   from {
     opacity: 0;
-  } to {
-      opacity: 1;
-    }
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .option__template .option__selectors {
@@ -125,7 +126,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  flex:1;
+  flex: 1;
   padding: 3rem;
   width: 100%;
 }
@@ -182,35 +183,32 @@
   font-weight: bold;
 }
 
-.option__selectors--box.invested .plus--box{
+.option__selectors--box.invested .plus--box {
   background-color: white;
   color: var(--secondary-color);
 }
 
+.option__selectors--box .plus--box:hover {
+  background-color: var(--primary-color);
+}
+
 /* --------------- estat no hover ------------- */
 
-.option__abogados--not-hover .option__template{
+.option__abogados--not-hover .option__template {
   justify-content: center;
 }
 
-.option__abogados--not-hover .option__template p{
+.option__abogados--not-hover .option__template p {
   display: none;
-
 }
 
 /* ----------------- estat hover ------------*/
 
-.option__abogados--hover .option__template{
+.option__abogados--hover .option__template {
   gap: 2rem;
 }
 
-.option__abogados--hover .option__selectors{
+.option__abogados--hover .option__selectors {
   display: flex;
   animation: appear-options 0.5s;
-
 }
-
-
-
-
-
