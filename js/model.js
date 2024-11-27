@@ -64,16 +64,27 @@ export const trianglesMax = [
     { x: 0, y: 0 },
     { x: window.innerWidth, y: window.innerHeight - footerHeight },
     { x: 0, y: window.innerHeight },
-  ],
+  ]
 ];
 
-export const trianglesMin = [
+export let trianglesMin = [
   /* MADRID */ [
     { x: window.innerWidth * 0.85, y: 0 },
     { x: window.innerWidth, y: 0 },
     { x: window.innerWidth, y: (window.innerHeight - footerHeight) * 0.25 },
-  ],
+  ]
 ];
+
+// per actualitzar les coordenades del triangle quan es canvia de tamany
+export function recalculateTrianglesMin () {
+  trianglesMin = [
+    /* MADRID */ [
+      { x: window.innerWidth * 0.85, y: 0 },
+      { x: window.innerWidth, y: 0 },
+      { x: window.innerWidth, y: (window.innerHeight - footerHeight) * 0.25 },
+    ]
+  ];
+}
 
 // Calcula la alçada de la divisió de les dues opcions advocats/economistes
 export function calculateOptionsSeparatorHeight(option) {

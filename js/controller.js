@@ -1,7 +1,7 @@
 import {
   calculateFooterHeight,
   calculateOptionsSeparatorHeight,
-  detectTriangleSelected,
+  detectTriangleSelected, recalculateTrianglesMin,
   trianglesMax,
   trianglesMin,
 } from "./model.js";
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // actualitzem l'alçada del footer pels càlculs dels triangles
   window.addEventListener("resize", () => {
     calculateFooterHeight();
+    recalculateTrianglesMin();
   });
 
   container.addEventListener("mousemove", (event) => {
@@ -102,10 +103,4 @@ document.addEventListener("DOMContentLoaded", () => {
     landingInitial = false;
   });
 
-
-  buttonCardAndorra.addEventListener("click", (e) => {
-    e.stopPropagation();
-    minimizeTriangles();
-    landingInitial = false;
-  });
 });
