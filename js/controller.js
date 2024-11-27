@@ -20,6 +20,7 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   const cardAndorra = document.querySelector("#item__andorra");
+  const triangleAndorra = document.querySelector(".triangle__andorra");
   const triangleMadridReturn = document.querySelector(
     ".triangle__madrid--return"
   );
@@ -70,24 +71,28 @@ document.addEventListener("DOMContentLoaded", () => {
       returnHover();
       optionHover = undefined;
       optionsClassHoverRemove();
-    } else {
+    }  else {
       optionHover = undefined;
       optionsClassHoverRemove();
     }
   });
 
+  // tornar a la página d'inici al clickar al icono return
   triangleMadridReturn.addEventListener("click", (e) => {
     e.stopPropagation();
     if (!landingInitial && triangleHover === 1) {
       maximizeTriangles();
       landingInitial = true;
     }
-    // if (triangleHover === 2) {
-    //     if (landingInitial) {
-    //         minimizeTriangles();
-    //         landingInitial = false;
-    //     }
-    // }
+  });
+
+  // tornar a la página d'inici al clickar l'element vertical de mesas trigo
+  triangleAndorra.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!landingInitial && triangleHover === 2) {
+      maximizeTriangles();
+      landingInitial = true;
+    }
   });
 
   // que mostri les opcions al clickar sobre la card d'andorra

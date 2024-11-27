@@ -29,13 +29,6 @@
   transition: opacity 1s ease;
 }
 
-.option__abogados .option__img {
-  top: 0;
-}
-
-.option__abogados .option__img {
-  bottom: 0;
-}
 
 .option__abogados {
   justify-content: flex-start;
@@ -102,8 +95,8 @@
   -moz-box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 
-.option__template:hover .option__template h2 {
-  color: var(--fourth-color);
+.option__template h2 {
+  font-size: 2rem;
 }
 
 .option__template p {
@@ -138,7 +131,7 @@
   background-color: white;
   border: solid 2px black;
   flex: 1 1 calc(50% - 2rem);
-  max-width: calc(50% - 2rem);
+  max-width: 300px;
   height: 100px;
   padding: 1rem;
   transition: box-shadow 0.2s;
@@ -194,21 +187,25 @@
 
 /* --------------- estat no hover ------------- */
 
-.option__abogados--not-hover .option__template {
+.option__abogados--not-hover .option__template,
+.option__economistas--not-hover .option__template{
   justify-content: center;
 }
 
-.option__abogados--not-hover .option__template p {
+.option__abogados--not-hover .option__template p,
+.option__economistas--not-hover .option__template p{
   display: none;
 }
 
 /* ----------------- estat hover ------------*/
 
-.option__abogados--hover .option__template {
+.option__abogados--hover .option__template,
+.option__economistas--hover .option__template{
   gap: 2rem;
 }
 
-.option__abogados--hover .option__selectors {
+.option__abogados--hover .option__selectors,
+.option__economistas--hover .option__selectors{
   display: flex;
   animation: appear-options 0.5s;
 }
