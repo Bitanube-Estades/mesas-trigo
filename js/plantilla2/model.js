@@ -49,7 +49,7 @@ export function detectTriangleSelected(
     if (!landingInitial) {
         if (triangleAndorra.matches(":hover")) hoveredTriangleIndex = 2;
     }
-    console.log(hoveredTriangleIndex);
+
     return hoveredTriangleIndex;
 }
 

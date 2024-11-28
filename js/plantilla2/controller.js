@@ -5,22 +5,17 @@ import {
   // trianglesMin,
 } from "./model.js";
 import {
-  returnNotHover,
-  triangleAndorraHover,
-  triangleMadridHover,
+  containerAndorraHover,
+  containerMadridHover, containerSeparatorHover,
 } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
       const container = document.querySelector(".main__container");
-      const cardAndorra = document.querySelector("#item__andorra");
-      const triangleAndorra = document.querySelector(".triangle__andorra");
-
 
   // Saber si estem a la página inicial
   let landingInitial = true;
 
   let triangleHover;
-  let optionHover;
 
   // actualitzem l'alçada del footer pels càlculs dels triangles
   window.addEventListener("resize", () => {
@@ -43,10 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
         landingInitial
     );
 
-    // if (landingInitial) {
-    //   if (triangleHover === 1) triangleMadridHover();
-    //   if (triangleHover === 2) triangleAndorraHover();
-    // }
+    if (landingInitial) {
+      if (triangleHover === 1) containerMadridHover();
+      else if (triangleHover === 2) containerAndorraHover();
+      else containerSeparatorHover();
+    }
 
     // que el l'imatge del return torni al seu tamany normal quan no està hover
     // returnNotHover();

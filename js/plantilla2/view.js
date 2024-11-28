@@ -1,64 +1,42 @@
-const triangleMadrid = document.querySelector(".triangle__container__madrid");
-const triangleAndorra = document.querySelector(".triangle__container__andorra");
-const triangleAndorraVertical = document.querySelector(".triangle__andorra");
-const returnImageContainer = document.querySelector(
-  ".triangle__madrid--return"
-);
-const abogados = document.querySelector(".option__abogados");
-const economistas = document.querySelector(".option__economistas");
-// const abogadosLink = document.querySelector(".option__abogados--link");
-// const economistasLink = document.querySelector(".option__economistas--link");
+const containerMadrid = document.querySelector(".container__madrid");
+const containerAndorra = document.querySelector(".container__andorra");
+const containerSeparator = document.querySelector(".container__separator");
 
-export function triangleMadridHover() {
-  triangleAndorra.classList.remove("triangle__madrid--hover");
-  triangleMadrid.classList.add("triangle__madrid--hover");
+export function containerMadridHover() {
+  containerSeparator.classList.remove("hover-andorra");
+  containerAndorra.classList.remove("hover");
+  containerMadrid.classList.add("hover");
+  containerSeparator.classList.add("hover-madrid");
 }
 
-export function triangleAndorraHover() {
-  triangleMadrid.classList.remove("triangle__madrid--hover");
-  triangleAndorra.classList.add("triangle__madrid--hover");
+export function containerAndorraHover() {
+  containerSeparator.classList.remove("hover-madrid");
+  containerMadrid.classList.remove("hover");
+  containerAndorra.classList.add("hover");
+  containerSeparator.classList.add("hover-andorra");
 }
+
+export function containerSeparatorHover() {
+  containerAndorra.classList.remove("hover");
+  containerMadrid.classList.remove("hover");
+  containerSeparator.classList.remove("hover-andorra");
+  containerSeparator.classList.remove("hover-madrid");
+}
+
 
 export function minimizeTriangles() {
-  triangleMadrid.classList.add("triangle__madrid--min");
-  triangleAndorra.classList.add("triangle__andorra--min");
-  triangleAndorraVertical.classList.add("triangle__andorra--vertical");
+  containerMadrid.classList.add("container__madrid--min");
+  containerAndorra.classList.add("container__andorra--min");
+  // triangleAndorraVertical.classList.add("triangle__andorra--vertical");
 }
 
 export function maximizeTriangles() {
-  triangleMadrid.classList.remove("triangle__madrid--min");
-  triangleAndorra.classList.remove("triangle__andorra--min");
-  triangleAndorraVertical.classList.remove("triangle__andorra--vertical");
+  containerMadrid.classList.remove("container__madrid--min");
+  containerAndorra.classList.remove("container__andorra--min");
+  // triangleAndorraVertical.classList.remove("triangle__andorra--vertical");
 }
 
-export function returnHover() {
-  returnImageContainer.classList.add("triangle__madrid--return--hover");
-}
 
-export function returnNotHover() {
-  returnImageContainer.classList.remove("triangle__madrid--return--hover");
-}
 
-export function abogadosHover() {
-  economistas.classList.remove("option__economistas--hover");
-  abogados.classList.remove("option__abogados--not-hover");
 
-  abogados.classList.add("option__abogados--hover");
-  economistas.classList.add("option__economistas--not-hover");
-}
 
-export function economistasHover() {
-  abogados.classList.remove("option__abogados--hover");
-  economistas.classList.remove("option__economistas--not-hover");
-
-  economistas.classList.add("option__economistas--hover");
-  abogados.classList.add("option__abogados--not-hover");
-}
-
-export function optionsClassHoverRemove() {
-  abogados.classList.remove("option__abogados--hover");
-  economistas.classList.remove("option__economistas--not-hover");
-
-  economistas.classList.remove("option__economistas--hover");
-  abogados.classList.remove("option__abogados--not-hover");
-}
