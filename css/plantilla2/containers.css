@@ -1,25 +1,25 @@
-.container{
-    position:absolute;
+.container {
+    position: absolute;
     width: 100%;
     height: 100%;
     transition: clip-path 1s;
-}
 
-.container__img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
 
-.container--bg{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0.2;
-    background-color: black;
-    transition: opacity 3s;
+    & .bg {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0.2;
+        background-color: black;
+        transition: opacity 3s;
+    }
 }
 
 .container__madrid{
@@ -37,4 +37,57 @@
 .container__separator{
     clip-path: polygon(0% 15%, 0% 0%, 15% 0%, 100% 85%, 100% 100%, 85% 100%);
     background-color: var(--primary-color);
+
+    & .element{
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+
+            & img{
+                max-width: 200px;
+            }
+
+            .box--text {
+                position: relative;
+                top: 20px;
+                left: 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                & h2{
+                    font-size: 2rem;
+                    font-weight: 200;
+                    color: white;
+                }
+
+                & p{
+                    font-weight: 200;
+                    color: white;
+                }
+            }
+
+
+        }
+    }
 }
+
+.element--andorra{
+    top: 0;
+    left: -2%;
+}
+
+.element--madrid{
+    bottom: 0;
+    right: 2%;
+}
+
