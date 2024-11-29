@@ -1,16 +1,18 @@
 import {
   calculateFooterHeight,
-  detectTriangleSelected, recalculateTriangles,
+  detectTriangleSelected,
+  recalculateTriangles,
   trianglesMax,
   // trianglesMin,
 } from "./model.js";
 import {
   containerAndorraHover,
-  containerMadridHover, containerSeparatorHover,
+  containerMadridHover,
+  containerSeparatorHover,
 } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-      const container = document.querySelector(".main__container");
+  const container = document.querySelector(".main__container");
 
   // Saber si estem a la página inicial
   let landingInitial = true;
@@ -32,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // let triangles = landingInitial ? trianglesMax : trianglesMin;
 
     triangleHover = detectTriangleSelected(
-        mouseX,
-        mouseY,
-        triangles,
-        landingInitial
+      mouseX,
+      mouseY,
+      triangles,
+      landingInitial
     );
 
     if (landingInitial) {
@@ -65,5 +67,4 @@ document.addEventListener("DOMContentLoaded", () => {
   //     landingInitial = true;
   //   }
   // });
-
 });
