@@ -201,12 +201,28 @@
     &.hover-madrid {
       & .element--madrid {
         transform: scale(1.1);
+
+        & .box--text h2 {
+          color: var(--secondary-color);
+        }
+
+        & .box--text p {
+          color: var(--secondary-color);
+        }
       }
     }
 
     &.hover-andorra {
       & .element--andorra {
         transform: scale(1.1);
+
+        & .box--text h2 {
+          color: var(--secondary-color);
+        }
+
+        & .box--text p {
+          color: var(--secondary-color);
+        }
       }
     }
   }
