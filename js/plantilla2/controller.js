@@ -9,10 +9,12 @@ import {
   containerAndorraHover,
   containerMadridHover,
   containerSeparatorHover,
+  showMadrid,
 } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
+  const madridSaberButton = document.querySelector("#saber-mas--madrid");
 
   // Saber si estem a la página inicial
   let landingInitial = true;
@@ -50,21 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // returnNotHover();
   });
 
-  // tornar a la página d'inici al clickar al icono return
-  // triangleMadridReturn.addEventListener("click", (e) => {
-  //   e.stopPropagation();
-  //   if (!landingInitial && triangleHover === 1) {
-  //     maximizeTriangles();
-  //     landingInitial = true;
-  //   }
-  // });
-
-  // tornar a la página d'inici al clickar l'element vertical de mesas trigo
-  // triangleAndorra.addEventListener("click", (e) => {
-  //   e.stopPropagation();
-  //   if (!landingInitial && triangleHover === 2) {
-  //     maximizeTriangles();
-  //     landingInitial = true;
-  //   }
-  // });
+  madridSaberButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    landingInitial = !landingInitial;
+    showMadrid();
+  });
 });

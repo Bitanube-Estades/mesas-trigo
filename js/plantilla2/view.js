@@ -1,7 +1,7 @@
+const mainContainer = document.querySelector(".main__container");
 const containerMadrid = document.querySelector(".container__madrid");
 const containerAndorra = document.querySelector(".container__andorra");
 const containerSeparator = document.querySelector(".container__separator");
-const buttonSaberMasAndorra = document.querySelector(".saber-mas-andorra");
 
 export function containerMadridHover() {
   containerSeparator.classList.remove("hover-andorra");
@@ -27,11 +27,13 @@ export function containerSeparatorHover() {
 export function minimizeTriangles() {
   containerMadrid.classList.add("container__madrid--min");
   containerAndorra.classList.add("container__andorra--min");
-  // triangleAndorraVertical.classList.add("triangle__andorra--vertical");
 }
 
 export function maximizeTriangles() {
   containerMadrid.classList.remove("container__madrid--min");
   containerAndorra.classList.remove("container__andorra--min");
-  // triangleAndorraVertical.classList.remove("triangle__andorra--vertical");
+}
+
+export function showMadrid() {
+  mainContainer.classList.toggle("show__madrid");
 }
