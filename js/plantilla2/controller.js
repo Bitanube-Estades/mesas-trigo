@@ -15,6 +15,7 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
   const madridSaberButton = document.querySelector("#saber-mas--madrid");
+  const returnButton = document.querySelector(".arrow");
 
   // Saber si estem a la página inicial
   let landingInitial = true;
@@ -47,14 +48,28 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (triangleHover === 2) containerAndorraHover();
       else containerSeparatorHover();
     }
-
-    // que el l'imatge del return torni al seu tamany normal quan no està hover
-    // returnNotHover();
   });
+
+  // escollir opció
+  let chosenOption;
 
   madridSaberButton.addEventListener("click", (e) => {
     e.stopPropagation();
-    landingInitial = !landingInitial;
-    showMadrid();
+    if (landingInitial) {
+      landingInitial = false;
+      showMadrid();
+      chosenOption = "madrid";
+    }
+  });
+
+  returnButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!landingInitial) {
+      if (chosenOption === "madrid") {
+        showMadrid();
+        chosenOption = undefined;
+      }
+      landingInitial = true;
+    }
   });
 });

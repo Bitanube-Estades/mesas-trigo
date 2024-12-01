@@ -45,11 +45,6 @@ export function detectTriangleSelected(
     }
   });
 
-  // per saber si estem sobre l'element vertical de l'esquerra
-  if (!landingInitial) {
-    if (triangleAndorra.matches(":hover")) hoveredTriangleIndex = 2;
-  }
-
   return hoveredTriangleIndex;
 }
 
