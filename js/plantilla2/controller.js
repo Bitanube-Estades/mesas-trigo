@@ -9,6 +9,7 @@ import {
   containerAndorraHover,
   containerMadridHover,
   containerSeparatorHover,
+  returnShow,
   showMadrid,
 } from "./view.js";
 
@@ -67,8 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!landingInitial) {
       if (chosenOption === "madrid") {
         showMadrid();
-        chosenOption = undefined;
       }
+      chosenOption = undefined;
+      containerSeparatorHover();
+      returnShow();
+      setTimeout(returnShow, 1000);
       landingInitial = true;
     }
   });

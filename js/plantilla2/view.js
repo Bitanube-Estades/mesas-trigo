@@ -37,3 +37,7 @@ export function maximizeTriangles() {
 export function showMadrid() {
   mainContainer.classList.toggle("show__madrid");
 }
+
+export function returnShow() {
+  mainContainer.classList.toggle("return-show");
+}
