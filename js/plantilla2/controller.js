@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const boxTextMadrid = document.querySelector(".element--madrid .box .box--text");
   const boxImageAndorra = document.querySelector(".element--andorra .box img");
   const boxTextAndorra = document.querySelector(".element--andorra .box .box--text");
-  const madridSaberButton = document.querySelector("#saber-mas--madrid");
   const returnButton = document.querySelector("#return");
 
   // Saber si estem a la página inicial
@@ -55,17 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // escollir opció
-  let chosenOption;
-
-  madridSaberButton.addEventListener("click", (e) => {
+  container.addEventListener("click", (e) => {
     e.stopPropagation();
     if (landingInitial) {
-      landingInitial = false;
-      showMadrid();
-      chosenOption = "madrid";
+      if (triangleHover === 1 || boxImageMadrid.matches(':hover') || boxTextMadrid.matches(':hover')) {
+        landingInitial = false;
+        showMadrid();
+        chosenOption = "madrid";
+      }
+      if (triangleHover === 2 || boxImageAndorra.matches(':hover') || boxTextAndorra.matches(':hover')) {
+        console.log("andorra");
+      }
     }
-  });
+  })
+
+  // opció seleccionada a mostrar (madrid o andorra)
+  let chosenOption;
 
   returnButton.addEventListener("click", (e) => {
     e.stopPropagation();
