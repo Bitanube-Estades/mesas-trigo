@@ -2,6 +2,7 @@ const mainContainer = document.querySelector(".main__container");
 const containerMadrid = document.querySelector(".container__madrid");
 const containerAndorra = document.querySelector(".container__andorra");
 const containerSeparator = document.querySelector(".container__separator");
+const optionBoxMadrid = document.querySelector("#option__container--madrid .option__box");
 
 export function containerMadridHover() {
   containerSeparator.classList.remove("hover-andorra");
@@ -36,6 +37,9 @@ export function maximizeTriangles() {
 
 export function showMadrid() {
   mainContainer.classList.toggle("show__madrid");
+  setTimeout(() => {
+    optionBoxMadrid.style.width = `calc(100% - ${containerSeparator.offsetWidth}px`
+  },1100)
 }
 
 export function returnShow() {
