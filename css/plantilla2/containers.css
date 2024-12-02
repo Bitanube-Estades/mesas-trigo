@@ -78,6 +78,8 @@
     }
 
     &.hover {
+      cursor: pointer;
+
       & .image {
         transform: scale(1.1);
         filter: grayscale(100%);
@@ -286,13 +288,24 @@
           transform: scale(1.1);
           transition: transform 0.5s;
 
-          & .box--text h2 {
-            color: var(--secondary-color);
+          & .box {
+            & img{
+              cursor: pointer;
+            }
+
+            & .box--text{
+              cursor: pointer;
+
+              & h2 {
+                color: var(--secondary-color);
+              }
+
+              & p {
+                color: var(--secondary-color);
+              }
+            }
           }
 
-          & .box--text p {
-            color: var(--secondary-color);
-          }
         }
       }
 
@@ -301,12 +314,22 @@
           transform: scale(1.1);
           transition: transform 0.5s;
 
-          & .box--text h2 {
-            color: var(--secondary-color);
-          }
+          & .box {
+            & img{
+              cursor: pointer;
+            }
 
-          & .box--text p {
-            color: var(--secondary-color);
+            & .box--text{
+              cursor: pointer;
+
+              & h2 {
+                color: var(--secondary-color);
+              }
+
+              & p {
+                color: var(--secondary-color);
+              }
+            }
           }
         }
       }

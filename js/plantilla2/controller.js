@@ -15,6 +15,10 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
+  const boxImageMadrid = document.querySelector(".element--madrid .box img");
+  const boxTextMadrid = document.querySelector(".element--madrid .box .box--text");
+  const boxImageAndorra = document.querySelector(".element--andorra .box img");
+  const boxTextAndorra = document.querySelector(".element--andorra .box .box--text");
   const madridSaberButton = document.querySelector("#saber-mas--madrid");
   const returnButton = document.querySelector("#return");
 
@@ -45,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (landingInitial) {
-      if (triangleHover === 1) containerMadridHover();
-      else if (triangleHover === 2) containerAndorraHover();
+      if (triangleHover === 1 || boxImageMadrid.matches(':hover') || boxTextMadrid.matches(':hover')) containerMadridHover();
+      else if (triangleHover === 2 || boxImageAndorra.matches(':hover') || boxTextAndorra.matches(':hover')) containerAndorraHover();
       else containerSeparatorHover();
     }
   });
