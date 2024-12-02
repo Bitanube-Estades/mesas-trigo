@@ -192,6 +192,13 @@
           justify-content: flex-end;
           align-items: center;
 
+          &:hover {
+            cursor: pointer;
+            & .arrow {
+              transform: scale(1.1) rotate(-45deg);
+            }
+          }
+
           & .return--content {
             display: flex;
             flex-direction: column;
@@ -214,9 +221,6 @@
                 align-items: center;
               }
 
-              &:hover {
-                transform: scale(1.1) rotate(-45deg);
-              }
             }
 
             & p {

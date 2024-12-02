@@ -16,7 +16,7 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
   const madridSaberButton = document.querySelector("#saber-mas--madrid");
-  const returnButton = document.querySelector(".arrow");
+  const returnButton = document.querySelector("#return");
 
   // Saber si estem a la página inicial
   let landingInitial = true;
