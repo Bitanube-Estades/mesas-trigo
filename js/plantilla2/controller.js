@@ -9,16 +9,22 @@ import {
   containerAndorraHover,
   containerMadridHover,
   containerSeparatorHover,
-  returnShow,
+  returnShowAndorra,
+  returnShowMadrid,
+  showAndorra,
   showMadrid,
 } from "./view.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
   const boxImageMadrid = document.querySelector(".element--madrid .box img");
-  const boxTextMadrid = document.querySelector(".element--madrid .box .box--text");
+  const boxTextMadrid = document.querySelector(
+    ".element--madrid .box .box--text"
+  );
   const boxImageAndorra = document.querySelector(".element--andorra .box img");
-  const boxTextAndorra = document.querySelector(".element--andorra .box .box--text");
+  const boxTextAndorra = document.querySelector(
+    ".element--andorra .box .box--text"
+  );
   const returnButton = document.querySelector("#return");
 
   // Saber si estem a la página inicial
@@ -48,39 +54,64 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (landingInitial) {
-      if (triangleHover === 1 || boxImageMadrid.matches(':hover') || boxTextMadrid.matches(':hover')) containerMadridHover();
-      else if (triangleHover === 2 || boxImageAndorra.matches(':hover') || boxTextAndorra.matches(':hover')) containerAndorraHover();
+      if (
+        triangleHover === 1 ||
+        boxImageMadrid.matches(":hover") ||
+        boxTextMadrid.matches(":hover")
+      )
+        containerMadridHover();
+      else if (
+        triangleHover === 2 ||
+        boxImageAndorra.matches(":hover") ||
+        boxTextAndorra.matches(":hover")
+      )
+        containerAndorraHover();
       else containerSeparatorHover();
     }
   });
 
+  // opció seleccionada a mostrar (madrid o andorra)
+  let chosenOption;
+
   container.addEventListener("click", (e) => {
     e.stopPropagation();
     if (landingInitial) {
-      if (triangleHover === 1 || boxImageMadrid.matches(':hover') || boxTextMadrid.matches(':hover')) {
+      if (
+        triangleHover === 1 ||
+        boxImageMadrid.matches(":hover") ||
+        boxTextMadrid.matches(":hover")
+      ) {
         landingInitial = false;
         showMadrid();
         chosenOption = "madrid";
       }
-      if (triangleHover === 2 || boxImageAndorra.matches(':hover') || boxTextAndorra.matches(':hover')) {
-        console.log("andorra");
+      if (
+        triangleHover === 2 ||
+        boxImageAndorra.matches(":hover") ||
+        boxTextAndorra.matches(":hover")
+      ) {
+        landingInitial = false;
+        showAndorra();
+        chosenOption = "andorra";
       }
+      containerSeparatorHover();
     }
-  })
-
-  // opció seleccionada a mostrar (madrid o andorra)
-  let chosenOption;
+  });
 
   returnButton.addEventListener("click", (e) => {
     e.stopPropagation();
     if (!landingInitial) {
       if (chosenOption === "madrid") {
         showMadrid();
+        returnShowMadrid();
+        setTimeout(returnShowMadrid, 1000);
+      } else {
+        showAndorra();
+        returnShowAndorra();
+        setTimeout(returnShowAndorra, 1000);
       }
       chosenOption = undefined;
       containerSeparatorHover();
-      returnShow();
-      setTimeout(returnShow, 1000);
       landingInitial = true;
     }
   });
