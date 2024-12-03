@@ -399,6 +399,10 @@
             & .box {
               &#box--madrid {
                 display: flex;
+
+                &:hover{
+                  cursor: pointer;
+                }
               }
             }
           }
@@ -463,6 +467,10 @@
             & .box {
               &#box--andorra {
                 display: flex;
+
+                &:hover{
+                  cursor: pointer;
+                }
               }
             }
           }

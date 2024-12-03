@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ".element--andorra .box .box--text"
   );
   const returnButton = document.querySelector("#return");
+  const logoMadridVertical = document.querySelector("#box--madrid")
+  const logoAndorraVertical = document.querySelector("#box--andorra")
+
 
   // Saber si estem a la página inicial
   let landingInitial = true;
@@ -115,4 +118,33 @@ document.addEventListener("DOMContentLoaded", () => {
       landingInitial = true;
     }
   });
+
+  logoMadridVertical.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!landingInitial) {
+      if (chosenOption === "madrid") {
+        showMadrid();
+        returnShowMadrid();
+        setTimeout(returnShowMadrid, 1000);
+        chosenOption = undefined;
+        containerSeparatorHover();
+        landingInitial = true;
+      }
+    }
+  });
+
+  logoAndorraVertical.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!landingInitial) {
+      if (chosenOption === "andorra") {
+        showAndorra();
+        returnShowAndorra();
+        setTimeout(returnShowAndorra, 1000);
+        chosenOption = undefined;
+        containerSeparatorHover();
+        landingInitial = true;
+      }
+    }
+  });
+
 });
