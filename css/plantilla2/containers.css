@@ -207,7 +207,7 @@
           &:hover {
             cursor: pointer;
             & .arrow {
-              transform: scale(1.1) rotate(-45deg);
+              transform: scale(1.1) translateX(-10px);
             }
           }
 
@@ -400,7 +400,7 @@
               &#box--madrid {
                 display: flex;
 
-                &:hover{
+                &:hover {
                   cursor: pointer;
                 }
               }
@@ -468,7 +468,7 @@
               &#box--andorra {
                 display: flex;
 
-                &:hover{
+                &:hover {
                   cursor: pointer;
                 }
               }
