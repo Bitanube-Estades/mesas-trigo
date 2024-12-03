@@ -39,7 +39,7 @@
       background: -webkit-linear-gradient(90deg, #95c1ad 0%, #62957d 80%);
       background: -moz-linear-gradient(90deg, #95c1ad 0%, #62957d 80%);
       border: solid 2px var(--primary-color);
-      max-width: 130px;
+      /*max-width: 130px;*/
       height: 50px;
       padding: 1rem;
       overflow: hidden;

@@ -5,6 +5,9 @@ const containerSeparator = document.querySelector(".container__separator");
 const optionBoxMadrid = document.querySelector(
   "#option__container--madrid .option__box"
 );
+const optionBoxAndorra = document.querySelector(
+    "#option__container--andorra .option__box"
+);
 
 export function containerMadridHover() {
   containerSeparator.classList.remove("hover-andorra");
@@ -50,6 +53,9 @@ export function returnShowMadrid() {
 
 export function showAndorra() {
   mainContainer.classList.toggle("show__andorra");
+  setTimeout(() => {
+    optionBoxAndorra.style.width = `calc(100% - ${containerSeparator.offsetWidth}px`;
+  }, 1100);
 }
 
 export function returnShowAndorra() {

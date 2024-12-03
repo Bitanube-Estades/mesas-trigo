@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showAndorra();
         chosenOption = "andorra";
       }
-      containerSeparatorHover();
+      setTimeout(containerSeparatorHover, 1000);
     }
   });
 
