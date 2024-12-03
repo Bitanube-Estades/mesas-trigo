@@ -162,6 +162,23 @@
     &.container__andorra {
       & .option__container {
         justify-content: flex-start;
+
+        & .option__box{
+          justify-content: center;
+          align-items: center;
+          & .main__grid--container{
+            width: 50%;
+            height: 700px;
+
+            & .title{
+              align-items: flex-start;
+            }
+
+            & .grid--box{
+              grid-auto-rows: 210px;
+            }
+          }
+        }
       }
     }
 
