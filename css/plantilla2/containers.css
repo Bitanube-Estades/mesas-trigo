@@ -126,31 +126,6 @@
     &.container__separator {
       clip-path: polygon(0% 15%, 0% 0%, 15% 0%, 100% 85%, 100% 100%, 85% 100%);
       background: #102d3f;
-      background: linear-gradient(
-        115deg,
-        #102d3f 0%,
-        #102d3f 36%,
-        #95c1ad 50%,
-        #102d3f 64%,
-        #102d3f 100%
-      );
-      background: -webkit-linear-gradient(
-        115deg,
-        #102d3f 0%,
-        #102d3f 36%,
-        #95c1ad 50%,
-        #102d3f 64%,
-        #102d3f 100%
-      );
-      background: -moz-linear-gradient(
-        115deg,
-        #102d3f 0%,
-        #102d3f 36%,
-        #95c1ad 50%,
-        #102d3f 64%,
-        #102d3f 100%
-      );
-      /* transition: width 0.5s 0.6s, clip-path 0.5s 0.6s; */
 
       & .separator__vertical {
         position: absolute;
