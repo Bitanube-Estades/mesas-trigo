@@ -50,9 +50,7 @@
             align-items: center;
             font-size: 2.5rem;
             height: 25%;
-            background-image: linear-gradient(135deg, #102d3f 0%, #62957d 80%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--secondary-color);
           }
 
           & .grid--box{
@@ -73,9 +71,7 @@
               & h4 {
                 font-size: 1.5rem;
                 align-self: flex-start;
-                background-image: linear-gradient(135deg, #102d3f 0%, #62957d 80%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color:var(--secondary-color);
               }
 
               & p{
@@ -133,15 +129,17 @@
           font-size: 160px;
           line-height: 150px;
           font-weight: bold;
-          background-image: linear-gradient(90deg, #102d3f 0%, #62957d 80%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          /*background-image: linear-gradient(90deg, #102d3f 0%, #62957d 80%);*/
+          /*-webkit-background-clip: text;*/
+          /*-webkit-text-fill-color: transparent;*/
+          color:var(--secondary-color);
         }
 
         & > *:nth-child(odd){
-          background-image: linear-gradient(90deg, #95c1ad 0%, #62957d 80%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          /*background-image: linear-gradient(90deg, #95c1ad 0%, #62957d 80%);*/
+          /*-webkit-background-clip: text;*/
+          /*-webkit-text-fill-color: transparent;*/
+          color: var(--primary-color);
         }
       }
     }
