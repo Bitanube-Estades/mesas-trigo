@@ -1,52 +1,17 @@
 .main__container {
-  & #slogan{
+  & #slogan {
     z-index: 1;
     margin: auto;
     transform: scale(1);
+    width: 70%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border: solid 12px var(--secondary-color);
 
-    & .clip-text{
-      font-size: 4rem;
-      font-weight: bold;
-      font-style: italic;
-      line-height: 1;
-      position: relative;
-      display: inline-block;
-      margin: .25em;
-      padding: .5em .75em;
-      text-align: center;
-      /* Color fallback */
-      color: #fff;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      &:before,
-      &:after{
-        position: absolute;
-        content: '';
-      }
-
-      &::before{
-        z-index: -2;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color:var(--secondary-color);
-      }
-
-      &::after{
-        position: absolute;
-        z-index: -1;
-        top: .125em;
-        right: .125em;
-        bottom: .125em;
-        left: .125em;
-        background-color: var(--primary-color);
-      }
-    }
-
-    & .clip-text_two {
-      background-color: var(--secondary-color);
+    & h1{
+      font-size: 3.5rem;
+      color: var(--secondary-color);
     }
   }
 
@@ -69,7 +34,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      opacity: 0.2;
+      opacity: 0.8;
       background-color: #102d3f;
       mix-blend-mode: hard-light;
       transition: all 0.5s;
@@ -132,11 +97,10 @@
 
       & .image {
         transform: scale(1.1);
-        filter: grayscale(100%);
       }
 
       & .bg {
-        opacity: 0.8;
+        opacity: 0.2;
       }
 
       & .saber-mas {
