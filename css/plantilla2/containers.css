@@ -33,7 +33,6 @@
       opacity: 0;
       text-transform: uppercase;
       color: var(--primary-color);
-      font-weight: 200;
       background: #95c1ad;
       background: linear-gradient(90deg, #95c1ad 0%, #62957d 80%);
       background: -webkit-linear-gradient(90deg, #95c1ad 0%, #62957d 80%);
@@ -255,12 +254,10 @@
 
             & h2 {
               font-size: 2rem;
-              font-weight: 200;
               color: white;
             }
 
             & p {
-              font-weight: 200;
               color: white;
             }
           }
