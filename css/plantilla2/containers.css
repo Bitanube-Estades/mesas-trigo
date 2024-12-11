@@ -86,9 +86,9 @@
 
       &:hover {
         margin-top: -10px;
-        box-shadow: 10px 10px 0px 0px var(--primary-color);
-        -webkit-box-shadow: 10px 10px 0px 0px var(--primary-color);
-        -moz-box-shadow: 10px 10px 0px 0px var(--primary-color);
+        box-shadow: 10px 10px 0 0 var(--primary-color);
+        -webkit-box-shadow: 10px 10px 0 0 var(--primary-color);
+        -moz-box-shadow: 10px 10px 0 0 var(--primary-color);
         cursor: pointer;
 
         &:after {

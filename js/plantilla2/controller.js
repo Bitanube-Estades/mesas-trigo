@@ -8,7 +8,7 @@ import {
 import {
   containerAndorraHover,
   containerMadridHover,
-  containerSeparatorHover,
+  containerSeparatorHover, placeCursorVisitar,
   returnShowAndorra,
   returnShowMadrid,
   showAndorra,
@@ -57,18 +57,23 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (landingInitial) {
+
       if (
         triangleHover === 1 ||
         boxImageMadrid.matches(":hover") ||
         boxTextMadrid.matches(":hover")
-      )
+      ) {
         containerMadridHover();
+        placeCursorVisitar(mouseX, mouseY);
+      }
       else if (
         triangleHover === 2 ||
         boxImageAndorra.matches(":hover") ||
         boxTextAndorra.matches(":hover")
-      )
+      ) {
         containerAndorraHover();
+        placeCursorVisitar(mouseX, mouseY);
+      }
       else containerSeparatorHover();
     }
   });
