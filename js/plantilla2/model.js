@@ -1,6 +1,7 @@
 const [containerMadrid, containerAndorra, containerSeparator] =
   document.querySelectorAll(".container");
 const footer = document.querySelector(".footer");
+const sloganDiv = document.querySelector("#slogan");
 
 export let footerHeight = footer.offsetHeight;
 
@@ -84,6 +85,10 @@ export function recalculateTriangles() {
       { x: 0, y: window.innerHeight - footerHeight },
     ],
   ];
+}
+
+export function sloganHover() {
+  return sloganDiv.matches(":hover");
 }
 
 

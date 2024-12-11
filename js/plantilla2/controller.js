@@ -1,7 +1,7 @@
 import {
   calculateFooterHeight,
   detectTriangleSelected,
-  recalculateTriangles,
+  recalculateTriangles, sloganHover,
   trianglesMax,
   // trianglesMin,
 } from "./model.js";
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (landingInitial) {
 
-      if (
+      if ( !sloganHover() &&
         triangleHover === 1 ||
         boxImageMadrid.matches(":hover") ||
         boxTextMadrid.matches(":hover")
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         containerMadridHover();
         placeCursorVisitar(mouseX, mouseY);
       }
-      else if (
+      else if ( !sloganHover() &&
         triangleHover === 2 ||
         boxImageAndorra.matches(":hover") ||
         boxTextAndorra.matches(":hover")
