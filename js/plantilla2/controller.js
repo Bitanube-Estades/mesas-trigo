@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
     recalculateTriangles();
   });
 
+  container.addEventListener("mouseleave", () => {
+    containerSeparatorHover();
+  });
+
   container.addEventListener("mousemove", (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;

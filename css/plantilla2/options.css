@@ -106,10 +106,80 @@
             display: flex;
             align-items: center;
 
-            & .saber-mas{
-              transform: none;
-              position: static;
-              opacity: 1;
+            & .btn-link{
+              position: relative;
+              background: 0 0;
+              font-size: 15px;
+              text-transform: uppercase;
+              letter-spacing: .1em;
+              font-weight: bold;
+              line-height: 61px;
+              padding: 0 54px;
+              color: var(--primary-color);
+
+              & .btn-divider{
+                &:before,
+                &:after{
+                  content: '';
+                  background-color: var(--secondary-color);
+                  position: absolute;
+                  -webkit-transition: all .22s cubic-bezier(.645,.045,.355,1);
+                  -moz-transition: all .22s cubic-bezier(.645, .045, .355, 1);
+                  -ms-transition: all .22s cubic-bezier(.645, .045, .355, 1);
+                  -o-transition: all .22s cubic-bezier(.645, .045, .355, 1);
+                  transition: all .22s cubic-bezier(.645,.045,.355,1);
+                }
+
+                &.btn-divider-1{
+                  &:before{
+                    width: 30px;
+                    height: 2px;
+                    top: 0;
+                    left: 0;
+                  }
+                  &:after{
+                    top: 0;
+                    left: 0;
+                    height: 30px;
+                    width: 2px;
+                  }
+                }
+
+                &.btn-divider-2{
+                  &:before{
+                    width: 30px;
+                    height: 2px;
+                    bottom: 0;
+                    right: 0;
+                  }
+                  &:after{
+                    bottom: 0;
+                    right: 0;
+                    height: 30px;
+                    width: 2px;
+                  }
+                }
+              }
+
+              &:hover{
+                & .btn-divider-1{
+                  &:before{
+                    width: 100%
+                  }
+                  &:after{
+                    height: 100%
+                  }
+                }
+
+                & .btn-divider-2{
+                  &:before{
+                    width: 100%
+                  }
+                  &:after{
+                    height: 100%;
+                  }
+                }
+              }
             }
           }
         }
