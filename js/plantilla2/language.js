@@ -1,11 +1,13 @@
-const langs = {
-    es: {
-        slogan: "hola"
-    },
-    en: {
-        slogan: "hello"
-    },
-};
+async function importLanguage(lang) {
+    try{
+        const response = await fetch(`/translations/${lang}.json`)
+        return response.json();
+    } catch {
+        alert('Error al cargar las traducciones');
+    }
+
+}
+
 const avalaibleLanguages = ['es', 'en'];
 
 const defaultLanguage = 'en';
@@ -28,9 +30,9 @@ flags.forEach(flag=>{
 })
 
 
-function langChange(choisedLang) {
+async function langChange(choisedLang) {
 
-    const select = langs[choisedLang];
+    const select = await importLanguage(choisedLang);
 
     const elements = document.querySelectorAll('[data-lang]');
 
