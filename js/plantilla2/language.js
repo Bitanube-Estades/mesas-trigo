@@ -1,12 +1,4 @@
-async function importLanguage(lang) {
-    try{
-        const response = await fetch(`/translations/${lang}.json`)
-        return response.json();
-    } catch {
-        alert('Error al cargar las traducciones');
-    }
-
-}
+const cursorImg = document.querySelector("#cursor-img")
 
 const avalaibleLanguages = ['es', 'en', 'ca', 'fr'];
 
@@ -29,12 +21,23 @@ flags.forEach(flag=>{
     })
 })
 
+async function importLanguage(lang) {
+    try{
+        const response = await fetch(`/translations/${lang}.json`)
+        return response.json();
+    } catch {
+        alert('Error al cargar las traducciones');
+    }
+
+}
 
 async function langChange(choisedLang) {
 
     const select = await importLanguage(choisedLang);
 
     document.documentElement.lang = choisedLang;
+
+    cursorImg.src = `assets/images/cursor-hover-${choisedLang}.png`
 
     const elements = document.querySelectorAll('[data-lang]');
 
