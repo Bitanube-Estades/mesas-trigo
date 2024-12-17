@@ -8,9 +8,9 @@ async function importLanguage(lang) {
 
 }
 
-const avalaibleLanguages = ['es', 'en'];
+const avalaibleLanguages = ['es', 'en', 'ca', 'fr'];
 
-const defaultLanguage = 'en';
+const defaultLanguage = 'es';
 
 const browserLanguage = (window.navigator.userLanguage || window.navigator.language).substring(0, 2);
 
@@ -33,6 +33,8 @@ flags.forEach(flag=>{
 async function langChange(choisedLang) {
 
     const select = await importLanguage(choisedLang);
+
+    document.documentElement.lang = choisedLang;
 
     const elements = document.querySelectorAll('[data-lang]');
 

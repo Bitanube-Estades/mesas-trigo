@@ -19,7 +19,7 @@
           position: absolute;
           top: 0;
           right: 0;
-          width: 35%;
+          width: 33%;
           height: 40%;
           overflow: hidden;
           & .option--img{
@@ -39,25 +39,26 @@
         & .main__grid--container{
           display: flex;
           flex-direction: column;
+          justify-content: space-evenly;
           gap: 2rem;
-          margin: 2rem;
+          margin: 0 2rem;
           max-width: 700px;
+          height: 100%;
 
 
           & .title{
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.5rem;
-            height: 25%;
-            color: var(--secondary-color);
+            font-size: 2.4rem;
+            color: var(--primary-color);
           }
 
           & .grid--box{
-            height: 60%;
+            height: 50%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: minmax(100px, auto);
+            grid-auto-rows: 1fr;
 
             & .item {
               display: flex;
@@ -66,7 +67,7 @@
               gap: 1rem;
               border-style: solid;
               border-color: black;
-              padding: 2rem 1rem 2rem 0;
+              padding: 1rem 1rem 1rem 0;
 
               & h4 {
                 font-size: 1.5rem;
@@ -102,7 +103,6 @@
           }
 
           & .grid--button{
-            height: 15%;
             display: flex;
             align-items: center;
 
@@ -187,17 +187,17 @@
 
       & .vertical--text--box{
         display: flex;
-        width: 40%;
         align-items: center;
         justify-content: center;
+        padding-right: 3rem;
         gap: 1rem;
         pointer-events: none;
 
         & .vertical--text{
           writing-mode: vertical-lr;
           rotate: 180deg;
-          font-size: 160px;
-          line-height: 150px;
+          font-size: 150px;
+          line-height: 130px;
           font-weight: bold;
           /*background-image: linear-gradient(90deg, #102d3f 0%, #62957d 80%);*/
           /*-webkit-background-clip: text;*/
@@ -219,8 +219,7 @@
 
         & .option__box{
           & .main__grid--container{
-            margin: 2rem auto;
-            max-width: 600px;
+            margin: 0 auto;
           }
         }
       }
@@ -231,19 +230,11 @@
         justify-content: flex-start;
 
         & .option__box{
-          justify-content: center;
+          justify-content: space-evenly;
           align-items: center;
           & .main__grid--container{
             width: 50%;
-            height: 700px;
 
-            & .title{
-              align-items: flex-start;
-            }
-
-            & .grid--box{
-              grid-auto-rows: 210px;
-            }
           }
         }
       }
