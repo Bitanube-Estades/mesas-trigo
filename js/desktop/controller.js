@@ -3,7 +3,6 @@ import {
   detectTriangleSelected,
   recalculateTriangles, sloganHover,
   trianglesMax,
-  // trianglesMin,
 } from "./model.js";
 import {
   containerAndorraHover,
@@ -14,6 +13,8 @@ import {
   showAndorra,
   showMadrid,
 } from "./view.js";
+import {langChange} from "./language.js";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
@@ -28,7 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const returnButton = document.querySelector("#return");
   const logoMadridVertical = document.querySelector("#box--madrid")
   const logoAndorraVertical = document.querySelector("#box--andorra")
+  const flags = document.querySelectorAll(".flag");
 
+  // canvi d'idioma
+  flags.forEach(flag=>{
+    flag.addEventListener("click", async(e) =>{
+      e.preventDefault();
+      await langChange(e.currentTarget.id)
+    })
+  })
 
   // Saber si estem a la página inicial
   let landingInitial = true;

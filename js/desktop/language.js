@@ -1,4 +1,3 @@
-const cursorImg = document.querySelector("#cursor-img")
 
 const avalaibleLanguages = ['es', 'en', 'ca', 'fr'];
 
@@ -8,18 +7,12 @@ const browserLanguage = (window.navigator.userLanguage || window.navigator.langu
 
 let pageLanguage = defaultLanguage;
 
-if (avalaibleLanguages.includes(browserLanguage)) pageLanguage = browserLanguage
+if (avalaibleLanguages.includes(browserLanguage)) pageLanguage = browserLanguage;
 
+// inicialitzar l'idioma de la landing
 langChange(pageLanguage);
 
-const flags = document.querySelectorAll(".flag");
-
-flags.forEach(flag=>{
-    flag.addEventListener("click", (e) =>{
-        e.preventDefault();
-        langChange(e.currentTarget.id);
-    })
-})
+const cursorImg = document.querySelector("#cursor-img")
 
 async function importLanguage(lang) {
     try{
@@ -31,7 +24,7 @@ async function importLanguage(lang) {
 
 }
 
-async function langChange(choisedLang) {
+export async function langChange(choisedLang) {
 
     const select = await importLanguage(choisedLang);
 
