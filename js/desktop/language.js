@@ -23,7 +23,7 @@ flags.forEach(flag=>{
 
 async function importLanguage(lang) {
     try{
-        const response = await fetch(`/translations/${lang}.json`)
+        const response = await fetch(`/translations/desktop/${lang}.json`)
         return response.json();
     } catch {
         alert('Error al cargar las traducciones');
@@ -37,7 +37,7 @@ async function langChange(choisedLang) {
 
     document.documentElement.lang = choisedLang;
 
-    cursorImg.src = `assets/images/cursor-hover-${choisedLang}.png`
+    cursorImg.src = `assets/images/cursors/cursor-hover-${choisedLang}.png`
 
     const elements = document.querySelectorAll('[data-lang]');
 
