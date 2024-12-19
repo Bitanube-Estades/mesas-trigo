@@ -1,12 +1,11 @@
 // import {isMobile} from "./detectMobile.js";
-
-document.addEventListener("DOMContentLoaded", () => {
+$(function() {
     if (window.innerWidth < 1024) {
         import('./mobile/mobController.js');
     } else {
         import('./desktop/controller.js');
     }
-})
+});
 
 
 // NECESARI?????

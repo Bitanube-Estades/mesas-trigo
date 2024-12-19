@@ -17,27 +17,27 @@ import {langChange} from "./language.js";
 
 alert("desktop");
 // document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".main__container");
-  const boxImageMadrid = document.querySelector(".element--madrid .box img");
-  const boxTextMadrid = document.querySelector(
+  const container = $(".main__container");
+  const boxImageMadrid = $(".element--madrid .box img");
+  const boxTextMadrid = $(
     ".element--madrid .box .box--text"
   );
-  const boxImageAndorra = document.querySelector(".element--andorra .box img");
-  const boxTextAndorra = document.querySelector(
+  const boxImageAndorra = $(".element--andorra .box img");
+  const boxTextAndorra = $(
     ".element--andorra .box .box--text"
   );
-  const returnButton = document.querySelector("#return");
-  const logoMadridVertical = document.querySelector("#box--madrid")
-  const logoAndorraVertical = document.querySelector("#box--andorra")
-  const flags = document.querySelectorAll(".flag");
+  const returnButton = $("#return");
+  const logoMadridVertical = $("#box--madrid")
+  const logoAndorraVertical = $("#box--andorra")
+  const flags = $(".flag");
 
   // canvi d'idioma
-  flags.forEach(flag=>{
-    flag.addEventListener("click", async(e) =>{
-      e.preventDefault();
-      await langChange(e.currentTarget.id)
-    })
+
+  $(flags).on("click", async(e) =>{
+    e.preventDefault();
+    await langChange(e.currentTarget.id)
   })
+
 
   // Saber si estem a la página inicial
   let landingInitial = true;
@@ -50,11 +50,11 @@ alert("desktop");
     recalculateTriangles();
   });
 
-  container.addEventListener("mouseleave", () => {
+  container.on("mouseleave", () => {
     containerSeparatorHover();
   });
 
-  container.addEventListener("mousemove", (event) => {
+  container.on("mousemove", (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
@@ -72,16 +72,16 @@ alert("desktop");
 
       if ( !sloganHover() &&
         triangleHover === 1 ||
-        boxImageMadrid.matches(":hover") ||
-        boxTextMadrid.matches(":hover")
+        boxImageMadrid.is(":hover") ||
+        boxTextMadrid.is(":hover")
       ) {
         containerMadridHover();
         placeCursorVisitar(mouseX, mouseY);
       }
       else if ( !sloganHover() &&
         triangleHover === 2 ||
-        boxImageAndorra.matches(":hover") ||
-        boxTextAndorra.matches(":hover")
+        boxImageAndorra.is(":hover") ||
+        boxTextAndorra.is(":hover")
       ) {
         containerAndorraHover();
         placeCursorVisitar(mouseX, mouseY);
@@ -93,7 +93,7 @@ alert("desktop");
   // opció seleccionada a mostrar (madrid o andorra)
   let chosenOption;
 
-  container.addEventListener("click", (e) => {
+  container.on("click", (e) => {
     e.stopPropagation();
     if (landingInitial) {
       if (
@@ -118,7 +118,7 @@ alert("desktop");
     }
   });
 
-  returnButton.addEventListener("click", (e) => {
+  returnButton.on("click", (e) => {
     e.stopPropagation();
     if (!landingInitial) {
       if (chosenOption === "madrid") {
@@ -136,7 +136,7 @@ alert("desktop");
     }
   });
 
-  logoMadridVertical.addEventListener("click", (e) => {
+  logoMadridVertical.on("click", (e) => {
     e.stopPropagation();
     if (!landingInitial) {
       if (chosenOption === "madrid") {
@@ -150,7 +150,7 @@ alert("desktop");
     }
   });
 
-  logoAndorraVertical.addEventListener("click", (e) => {
+  logoAndorraVertical.on("click", (e) => {
     e.stopPropagation();
     if (!landingInitial) {
       if (chosenOption === "andorra") {
