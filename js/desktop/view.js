@@ -36,16 +36,6 @@ export function containerSeparatorHover() {
 
 }
 
-export function minimizeTriangles() {
-  containerMadrid.classList.add("container__madrid--min");
-  containerAndorra.classList.add("container__andorra--min");
-}
-
-export function maximizeTriangles() {
-  containerMadrid.classList.remove("container__madrid--min");
-  containerAndorra.classList.remove("container__andorra--min");
-}
-
 export function showMadrid() {
   mainContainer.classList.toggle("show__madrid");
   setTimeout(() => {

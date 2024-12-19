@@ -15,8 +15,8 @@ import {
 } from "./view.js";
 import {langChange} from "./language.js";
 
-
-document.addEventListener("DOMContentLoaded", () => {
+alert("desktop");
+// document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".main__container");
   const boxImageMadrid = document.querySelector(".element--madrid .box img");
   const boxTextMadrid = document.querySelector(
@@ -65,8 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     triangleHover = detectTriangleSelected(
       mouseX,
       mouseY,
-      triangles,
-      landingInitial
+      triangles
     );
 
     if (landingInitial) {
@@ -165,4 +164,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-});
+// });

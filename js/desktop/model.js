@@ -1,5 +1,3 @@
-const [containerMadrid, containerAndorra, containerSeparator] =
-  document.querySelectorAll(".container");
 const footer = document.querySelector(".footer");
 const sloganDiv = document.querySelector("#slogan");
 
@@ -36,8 +34,7 @@ function isMouseInTriangle(mouseX, mouseY, triangle) {
 export function detectTriangleSelected(
   mouseX,
   mouseY,
-  triangles,
-  landingInitial
+  triangles
 ) {
   let hoveredTriangleIndex = null;
   triangles.forEach((triangle, index) => {

@@ -1,33 +1,22 @@
+// import {isMobile} from "./detectMobile.js";
 
-if (window.innerWidth <= 768) {
-    console.log("Es un móvil");
-    document.body.innerHTML = "hola"
-} else {
-    createLink(["/css/desktop/style.css", "/css/desktop/containers.css", "/css/desktop/options.css", "/css/desktop/footer.css"]);
-    await import('./desktop/controller.js');
-}
-
-
-
-
-window.addEventListener("resize",async() => {
-
-    if (window.innerWidth <= 768) {
-        console.log("Es un móvil");
-        document.body.innerHTML = "hola"
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth < 1024) {
+        import('./mobile/mobController.js');
     } else {
-        createLink(["/css/desktop/style.css", "/css/desktop/containers.css", "/css/desktop/options.css", "/css/desktop/footer.css"]);
-        await import('./desktop/controller.js');
-
+        import('./desktop/controller.js');
     }
 })
 
-function createLink(paths) {
-    paths.forEach(path => {
-        const newLink = document.createElement("link");
-        newLink.rel = "stylesheet";
-        newLink.href = path;
 
-        document.head.appendChild(newLink);
-    })
-}
+// NECESARI?????
+// window.addEventListener("resize",() => {
+//
+//     if (window.innerWidth <= 768) {
+//         import('./mobile/mobController.js');
+//     } else {
+//         import('./desktop/controller.js');
+//     }
+// })
+
+
