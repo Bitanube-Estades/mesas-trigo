@@ -1,11 +1,11 @@
-const footer = document.querySelector(".footer");
-const sloganDiv = document.querySelector("#slogan");
+const footer = $(".footer");
+const sloganDiv = $("#slogan");
 
-export let footerHeight = footer.offsetHeight;
+export let footerHeight = footer.outerHeight();
 
 // calcular l'alçada del footer per poder calcular bé les coordenades dels vértices dels triangles
 export function calculateFooterHeight() {
-  footerHeight = footer.offsetHeight;
+  footerHeight = footer.outerHeight();
 }
 
 // Funció per calcular l'àrea d'un triangle donat tres punts
@@ -85,7 +85,7 @@ export function recalculateTriangles() {
 }
 
 export function sloganHover() {
-  return sloganDiv.matches(":hover");
+  return sloganDiv.is(":hover");
 }
 
 

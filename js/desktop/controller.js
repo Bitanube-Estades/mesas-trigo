@@ -98,8 +98,8 @@ alert("desktop");
     if (landingInitial) {
       if (
         triangleHover === 1 ||
-        boxImageMadrid.matches(":hover") ||
-        boxTextMadrid.matches(":hover")
+        boxImageMadrid.is(":hover") ||
+        boxTextMadrid.is(":hover")
       ) {
         landingInitial = false;
         showMadrid();
@@ -107,8 +107,8 @@ alert("desktop");
       }
       if (
         triangleHover === 2 ||
-        boxImageAndorra.matches(":hover") ||
-        boxTextAndorra.matches(":hover")
+        boxImageAndorra.is(":hover") ||
+        boxTextAndorra.is(":hover")
       ) {
         landingInitial = false;
         showAndorra();
