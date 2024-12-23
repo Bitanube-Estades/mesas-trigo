@@ -1,5 +1,5 @@
 const footer = $(".footer");
-const sloganDiv = $("#slogan");
+
 
 export let footerHeight = footer.outerHeight();
 
@@ -84,8 +84,5 @@ export function recalculateTriangles() {
   ];
 }
 
-export function sloganHover() {
-  return sloganDiv.is(":hover");
-}
 
 

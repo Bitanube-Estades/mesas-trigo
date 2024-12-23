@@ -4,20 +4,14 @@
     margin: auto;
     transform: scale(1);
     width: 70%;
-    filter: drop-shadow(0 0 1rem var(--secondary-color));
+    text-align: center;
+    pointer-events: none;
 
-    & #slogan{
-      clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 85% 100%, 15% 100%);
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--primary-color);
-      /*border: solid 12px var(--secondary-color);*/
-
-      & h1{
-        font-size: clamp(20px, 3vw, 60px);
-        color: var(--secondary-color);
-      }
+    & h1{
+      font-size: clamp(20px, 3vw, 60px);
+      color: var(--secondary-color);
     }
+
   }
 
   & .container {
@@ -378,7 +372,7 @@
         }
       }
     }
-    & #slogan{
+    & #slogan-wrapper{
       transform: scale(0);
       opacity: 0;
       transition: all 0.5s 0.15s;
@@ -454,7 +448,7 @@
       }
     }
 
-    & #slogan{
+    & #slogan-wrapper{
       transform: scale(0);
       opacity: 0;
       transition: all 0.5s 0.15s;
@@ -490,7 +484,7 @@
       }
     }
 
-    & #slogan{
+    & #slogan-wrapper{
       transition: all 0.3s 0.3s;
     }
   }
@@ -525,7 +519,7 @@
       }
     }
 
-    & #slogan{
+    & #slogan-wrapper{
       transition: all 0.3s 0.3s;
     }
   }

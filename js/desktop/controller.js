@@ -1,7 +1,7 @@
 import {
   calculateFooterHeight,
   detectTriangleSelected,
-  recalculateTriangles, sloganHover,
+  recalculateTriangles,
   trianglesMax,
 } from "./model.js";
 import {
@@ -69,15 +69,13 @@ import {langChange} from "./language.js";
 
     if (landingInitial) {
 
-      if ( !sloganHover() &&
-        triangleHover === 1 ||
+      if ( triangleHover === 1 ||
         boxImageMadrid.is(":hover") ||
         boxTextMadrid.is(":hover")
       ) {
         containerMadridHover();
       }
-      else if ( !sloganHover() &&
-        triangleHover === 2 ||
+      else if ( triangleHover === 2 ||
         boxImageAndorra.is(":hover") ||
         boxTextAndorra.is(":hover")
       ) {
