@@ -12,7 +12,6 @@ if (avalaibleLanguages.includes(browserLanguage)) pageLanguage = browserLanguage
 // inicialitzar l'idioma de la landing
 langChange(pageLanguage);
 
-const cursorImg = document.querySelector("#cursor-img")
 
 async function importLanguage(lang) {
     try{
@@ -29,8 +28,6 @@ export async function langChange(choisedLang) {
     const select = await importLanguage(choisedLang);
 
     document.documentElement.lang = choisedLang;
-
-    cursorImg.src = `assets/images/cursors/cursor-hover-${choisedLang}.png`
 
     const elements = document.querySelectorAll('[data-lang]');
 

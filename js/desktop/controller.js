@@ -7,7 +7,7 @@ import {
 import {
   containerAndorraHover,
   containerMadridHover,
-  containerSeparatorHover, placeCursorVisitar,
+  containerSeparatorHover,
   returnShowAndorra,
   returnShowMadrid,
   showAndorra,
@@ -15,7 +15,6 @@ import {
 } from "./view.js";
 import {langChange} from "./language.js";
 
-alert("desktop");
 // document.addEventListener("DOMContentLoaded", () => {
   const container = $(".main__container");
   const boxImageMadrid = $(".element--madrid .box img");
@@ -76,7 +75,6 @@ alert("desktop");
         boxTextMadrid.is(":hover")
       ) {
         containerMadridHover();
-        placeCursorVisitar(mouseX, mouseY);
       }
       else if ( !sloganHover() &&
         triangleHover === 2 ||
@@ -84,7 +82,6 @@ alert("desktop");
         boxTextAndorra.is(":hover")
       ) {
         containerAndorraHover();
-        placeCursorVisitar(mouseX, mouseY);
       }
       else containerSeparatorHover();
     }

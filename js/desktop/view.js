@@ -8,14 +8,12 @@ const optionBoxMadrid = document.querySelector(
 const optionBoxAndorra = document.querySelector(
     "#option__container--andorra .option__box"
 );
-const cursorVisitar = document.querySelector(".cursor-visitar");
 
 export function containerMadridHover() {
   containerSeparator.classList.remove("hover-andorra");
   containerAndorra.classList.remove("hover");
   containerMadrid.classList.add("hover");
   containerSeparator.classList.add("hover-madrid");
-  cursorVisitar.classList.add("cursor-hover");
 }
 
 export function containerAndorraHover() {
@@ -23,8 +21,6 @@ export function containerAndorraHover() {
   containerMadrid.classList.remove("hover");
   containerAndorra.classList.add("hover");
   containerSeparator.classList.add("hover-andorra");
-  cursorVisitar.classList.add("cursor-hover");
-
 }
 
 export function containerSeparatorHover() {
@@ -32,8 +28,6 @@ export function containerSeparatorHover() {
   containerMadrid.classList.remove("hover");
   containerSeparator.classList.remove("hover-andorra");
   containerSeparator.classList.remove("hover-madrid");
-  cursorVisitar.classList.remove("cursor-hover");
-
 }
 
 export function showMadrid() {
@@ -56,10 +50,4 @@ export function showAndorra() {
 
 export function returnShowAndorra() {
   mainContainer.classList.toggle("return-show--andorra");
-}
-
-// ------------------    Prova imatge cursor  ----------------------
-export function placeCursorVisitar (posX, posY) {
-  cursorVisitar.style.top = `${posY}px`;
-  cursorVisitar.style.left = `${posX}px`;
 }
