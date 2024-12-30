@@ -2,11 +2,11 @@ import {
   calculateFooterHeight,
   detectTriangleSelected,
   recalculateTriangles,
-  trianglesMax,
+  triangles,
 } from "./model.js";
 import {
-  containerAndorraHover,
-  containerMadridHover,
+  containerMadrid,
+  containerAndorra,
   containerSeparatorHover,
   returnShowAndorra,
   returnShowMadrid,
@@ -41,7 +41,9 @@ import {langChange} from "./language.js";
   // Saber si estem a la página inicial
   let landingInitial = true;
 
+  // Per saber sonbre quina opció estem
   let triangleHover;
+  let optionHover = null;
 
   // actualitzem l'alçada del footer pels càlculs dels triangles
   window.addEventListener("resize", () => {
@@ -57,10 +59,6 @@ import {langChange} from "./language.js";
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
-    // Donem les mesures dels triangles grans o petits depenent en quin estat es troba la landing
-    let triangles = trianglesMax;
-    // let triangles = landingInitial ? trianglesMax : trianglesMin;
-
     triangleHover = detectTriangleSelected(
       mouseX,
       mouseY,
@@ -73,15 +71,22 @@ import {langChange} from "./language.js";
         boxImageMadrid.is(":hover") ||
         boxTextMadrid.is(":hover")
       ) {
-        containerMadridHover();
+        containerMadrid.trigger("mouseenter");
+        optionHover = 'madrid';
       }
       else if ( triangleHover === 2 ||
         boxImageAndorra.is(":hover") ||
         boxTextAndorra.is(":hover")
       ) {
-        containerAndorraHover();
+        containerAndorra.trigger("mouseenter");
+        optionHover = 'andorra';
+
       }
-      else containerSeparatorHover();
+      else{
+        containerMadrid.trigger("mouseleave");
+        containerAndorra.trigger("mouseleave");
+        optionHover = null;
+      }
     }
   });
 
@@ -92,18 +97,14 @@ import {langChange} from "./language.js";
     e.stopPropagation();
     if (landingInitial) {
       if (
-        triangleHover === 1 ||
-        boxImageMadrid.is(":hover") ||
-        boxTextMadrid.is(":hover")
+        optionHover === 'madrid'
       ) {
         landingInitial = false;
         showMadrid();
         chosenOption = "madrid";
       }
       if (
-        triangleHover === 2 ||
-        boxImageAndorra.is(":hover") ||
-        boxTextAndorra.is(":hover")
+          optionHover === 'andorra'
       ) {
         landingInitial = false;
         showAndorra();

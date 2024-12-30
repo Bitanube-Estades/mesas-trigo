@@ -1,53 +1,56 @@
-const mainContainer = document.querySelector(".main__container");
-const containerMadrid = document.querySelector(".container__madrid");
-const containerAndorra = document.querySelector(".container__andorra");
-const containerSeparator = document.querySelector(".container__separator");
-const optionBoxMadrid = document.querySelector(
+const mainContainer = $(".main__container");
+export const containerMadrid = $(".container__madrid");
+export const containerAndorra = $(".container__andorra");
+const containerSeparator = $(".container__separator");
+const optionBoxMadrid = $(
   "#option__container--madrid .option__box"
 );
-const optionBoxAndorra = document.querySelector(
+const optionBoxAndorra = $(
     "#option__container--andorra .option__box"
 );
 
-export function containerMadridHover() {
-  containerSeparator.classList.remove("hover-andorra");
-  containerAndorra.classList.remove("hover");
-  containerMadrid.classList.add("hover");
-  containerSeparator.classList.add("hover-madrid");
+containerMadrid.on( "mouseenter", containerMadridHover ).on( "mouseleave", containerSeparatorHover )
+containerAndorra.on( "mouseenter", containerAndorraHover ).on( "mouseleave", containerSeparatorHover )
+
+function containerMadridHover() {
+  containerSeparator.removeClass("hover-andorra");
+  containerAndorra.removeClass("hover");
+  containerMadrid.addClass("hover");
+  containerSeparator.addClass("hover-madrid");
 }
 
-export function containerAndorraHover() {
-  containerSeparator.classList.remove("hover-madrid");
-  containerMadrid.classList.remove("hover");
-  containerAndorra.classList.add("hover");
-  containerSeparator.classList.add("hover-andorra");
+function containerAndorraHover() {
+  containerSeparator.removeClass("hover-madrid");
+  containerMadrid.removeClass("hover");
+  containerAndorra.addClass("hover");
+  containerSeparator.addClass("hover-andorra");
 }
 
 export function containerSeparatorHover() {
-  containerAndorra.classList.remove("hover");
-  containerMadrid.classList.remove("hover");
-  containerSeparator.classList.remove("hover-andorra");
-  containerSeparator.classList.remove("hover-madrid");
+  containerAndorra.removeClass("hover");
+  containerMadrid.removeClass("hover");
+  containerSeparator.removeClass("hover-andorra");
+  containerSeparator.removeClass("hover-madrid");
 }
 
 export function showMadrid() {
-  mainContainer.classList.toggle("show__madrid");
+  mainContainer.toggleClass("show__madrid");
   setTimeout(() => {
-    optionBoxMadrid.style.width = `calc(100% - ${containerSeparator.offsetWidth}px`;
+    optionBoxMadrid.width(`calc(100% - ${containerSeparator.outerWidth()}px`);
   }, 1100);
 }
 
 export function returnShowMadrid() {
-  mainContainer.classList.toggle("return-show--madrid");
+  mainContainer.toggleClass("return-show--madrid");
 }
 
 export function showAndorra() {
-  mainContainer.classList.toggle("show__andorra");
+  mainContainer.toggleClass("show__andorra");
   setTimeout(() => {
-    optionBoxAndorra.style.width = `calc(100% - ${containerSeparator.offsetWidth}px`;
+    optionBoxAndorra.width(`calc(100% - ${containerSeparator.outerWidth()}px`);
   }, 1100);
 }
 
 export function returnShowAndorra() {
-  mainContainer.classList.toggle("return-show--andorra");
+  mainContainer.toggleClass("return-show--andorra");
 }
