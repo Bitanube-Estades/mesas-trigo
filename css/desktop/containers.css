@@ -10,6 +10,7 @@
     & h1{
       font-size: clamp(20px, 3vw, 60px);
       color: var(--secondary-color);
+      text-shadow: rgb(16, 45, 63) 1px 0px 0px, rgb(16, 45, 63) 0.540302px 0.841471px 0px, rgb(16, 45, 63) -0.416147px 0.909297px 0px, rgb(16, 45, 63) -0.989992px 0.14112px 0px, rgb(16, 45, 63) -0.653644px -0.756802px 0px, rgb(16, 45, 63) 0.283662px -0.958924px 0px, rgb(16, 45, 63) 0.96017px -0.279415px 0px;
     }
 
   }
@@ -214,7 +215,7 @@
             align-items: flex-end;
 
             & h2 {
-              font-size: 2rem;
+              font-size: 1.5rem;
               color: white;
             }
 
