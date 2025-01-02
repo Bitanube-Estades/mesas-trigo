@@ -504,3 +504,43 @@
     }
   }
 }
+
+/* -------------- MOBILE / TABLETS --------------*/
+
+@media (max-width: 1024px){
+  .main__container {
+    align-items: center;
+    justify-content: center;
+
+    & .container{
+      position: static;
+      height: 40%;
+      width: 95%;
+      clip-path: none !important;
+      border: solid 2px var(--secondary-color);
+      border-radius: 10px;
+      margin: 1rem;
+
+      & .container--bg{
+        position: static;
+      }
+
+      &.container__madrid{
+
+      }
+
+      &.container__andorra{
+        order:2;
+      }
+
+      &.container__separator{
+        display: none;
+      }
+    }
+
+    & #slogan-wrapper{
+      order: 1;
+      margin: 1rem;
+    }
+  }
+}

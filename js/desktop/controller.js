@@ -8,12 +8,9 @@ import {
   containerMadrid,
   containerAndorra,
   containerSeparatorHover,
-  returnShowAndorra,
-  returnShowMadrid,
-  showAndorra,
-  showMadrid, containerSeparator, showOptions,
+  containerSeparator, showOptions,
 } from "./view.js";
-import {langChange} from "./language.js";
+import {langChange} from "../language.js";
 
 // document.addEventListener("DOMContentLoaded", () => {
   const container = $(".main__container");
@@ -109,7 +106,6 @@ import {langChange} from "./language.js";
     element.on("click", (e) => {
       e.stopPropagation();
       if (!landingInitial) {
-        console.log(chosenOption)
         showOptions[chosenOption][0](); // funció show
         showOptions[chosenOption][1](); // funció returnShow
         setTimeout(showOptions[chosenOption][1], 1000);
