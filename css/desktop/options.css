@@ -270,7 +270,7 @@
         width: 100%;
         visibility: visible;
         opacity: 1;
-        transition: opacity 0.3s 1s, width 0.1s 1s;
+        transition: opacity 0.3s 1.1s;
       }
     }
   }
@@ -281,7 +281,7 @@
         width: 100%;
         visibility: visible;
         opacity: 1;
-        transition: opacity 0.3s 1s, width 0.1s 1s;
+        transition: opacity 0.3s 1.1s;
       }
     }
   }
