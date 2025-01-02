@@ -11,7 +11,7 @@ import {
   returnShowAndorra,
   returnShowMadrid,
   showAndorra,
-  showMadrid,
+  showMadrid, containerSeparator, showOptions,
 } from "./view.js";
 import {langChange} from "./language.js";
 
@@ -83,8 +83,7 @@ import {langChange} from "./language.js";
 
       }
       else{
-        containerMadrid.trigger("mouseleave");
-        containerAndorra.trigger("mouseleave");
+        containerSeparator.trigger("mouseenter");
         optionHover = null;
       }
     }
@@ -96,68 +95,30 @@ import {langChange} from "./language.js";
   container.on("click", (e) => {
     e.stopPropagation();
     if (landingInitial) {
-      if (
-        optionHover === 'madrid'
-      ) {
-        landingInitial = false;
-        showMadrid();
-        chosenOption = "madrid";
-      }
-      if (
-          optionHover === 'andorra'
-      ) {
-        landingInitial = false;
-        showAndorra();
-        chosenOption = "andorra";
-      }
+      // amb el valor de l'optionHover, cridem la funció per mostrar les options
+      landingInitial = false;
+      chosenOption = optionHover;
+      showOptions[optionHover][0]();
+
       setTimeout(containerSeparatorHover, 1000);
     }
   });
 
-  returnButton.on("click", (e) => {
-    e.stopPropagation();
-    if (!landingInitial) {
-      if (chosenOption === "madrid") {
-        showMadrid();
-        returnShowMadrid();
-        setTimeout(returnShowMadrid, 1000);
-      } else {
-        showAndorra();
-        returnShowAndorra();
-        setTimeout(returnShowAndorra, 1000);
-      }
-      chosenOption = undefined;
-      containerSeparatorHover();
-      landingInitial = true;
-    }
-  });
+  // per gestionar el retorn tant del "return" com del logo
+  [returnButton, logoAndorraVertical, logoMadridVertical].forEach((element) => {
+    element.on("click", (e) => {
+      e.stopPropagation();
+      if (!landingInitial) {
+        console.log(chosenOption)
+        showOptions[chosenOption][0](); // funció show
+        showOptions[chosenOption][1](); // funció returnShow
+        setTimeout(showOptions[chosenOption][1], 1000);
 
-  logoMadridVertical.on("click", (e) => {
-    e.stopPropagation();
-    if (!landingInitial) {
-      if (chosenOption === "madrid") {
-        showMadrid();
-        returnShowMadrid();
-        setTimeout(returnShowMadrid, 1000);
         chosenOption = undefined;
         containerSeparatorHover();
         landingInitial = true;
       }
-    }
-  });
-
-  logoAndorraVertical.on("click", (e) => {
-    e.stopPropagation();
-    if (!landingInitial) {
-      if (chosenOption === "andorra") {
-        showAndorra();
-        returnShowAndorra();
-        setTimeout(returnShowAndorra, 1000);
-        chosenOption = undefined;
-        containerSeparatorHover();
-        landingInitial = true;
-      }
-    }
-  });
+    });
+  })
 
 // });
