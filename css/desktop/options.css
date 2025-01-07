@@ -145,22 +145,34 @@
               padding: 0 54px;
               color: var(--primary-color);
 
+              & .span-option{
+                font-size: 12px;
+              }
 
               @media (max-width: 1400px){
                 & {
                   font-size: 14px;
+                  & .span-option{
+                    font-size: 11px;
+                  }
                 }
               }
 
               @media (max-width: 1320px){
                 & {
                   font-size: 12px;
+                  & .span-option{
+                    font-size: 9px;
+                  }
                 }
               }
 
               @media (min-width: 1800px){
                 & {
                   font-size: 20px;
+                  & .span-option{
+                    font-size: 16px;
+                  }
                 }
               }
 
