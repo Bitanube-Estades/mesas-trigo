@@ -514,23 +514,21 @@
 
     & .container{
       position: static;
-      height: 40%;
-      width: 95%;
+      height: 50%;
       clip-path: none !important;
-      border: solid 2px var(--secondary-color);
-      border-radius: 10px;
-      margin: 1rem;
 
       & .container--bg{
-        position: static;
+        position: relative;
       }
 
       &.container__madrid{
-
+        .container--bg{
+          border-bottom: solid 2px black;
+        }
       }
 
       &.container__andorra{
-        order:2;
+
       }
 
       &.container__separator{
@@ -539,8 +537,10 @@
     }
 
     & #slogan-wrapper{
-      order: 1;
-      margin: 1rem;
+      position: absolute;
+     & h1{
+       font-size: 4.5vw;
+     }
     }
   }
 }
