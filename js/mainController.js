@@ -1,6 +1,6 @@
 // import {isMobile} from "./detectMobile.js";
 $(function() {
-    if (window.innerWidth <= 1200 /*&& isMobile.any()*/ ) {
+    if (window.innerWidth <= 1 /*&& isMobile.any()*/ ) {
         import('./mobile/mobController.js');
     } else {
         import('./desktop/controller.js');

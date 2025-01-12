@@ -507,7 +507,7 @@
 
 /* -------------- MOBILE / TABLETS --------------*/
 
-@media (max-width: 1024px){
+/* @media (max-width: 1024px){
   .main__container {
     align-items: center;
     justify-content: center;
@@ -538,9 +538,9 @@
 
     & #slogan-wrapper{
       position: absolute;
-     & h1{
-       font-size: 4.5vw;
-     }
+      & h1{
+        font-size: 4.5vw;
+      }
     }
   }
-}
+} */
