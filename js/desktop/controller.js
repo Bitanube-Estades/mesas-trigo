@@ -2,18 +2,15 @@ import {
   calculateFooterHeight,
   detectTriangleSelected,
   recalculateTriangles,
-  trianglesMax,
+  triangles,
 } from "./model.js";
 import {
-  containerAndorraHover,
-  containerMadridHover,
+  containerMadrid,
+  containerAndorra,
   containerSeparatorHover,
-  returnShowAndorra,
-  returnShowMadrid,
-  showAndorra,
-  showMadrid,
+  containerSeparator, showOptions,
 } from "./view.js";
-import {langChange} from "./language.js";
+import {langChange} from "../language.js";
 
 // document.addEventListener("DOMContentLoaded", () => {
   const container = $(".main__container");
@@ -41,7 +38,9 @@ import {langChange} from "./language.js";
   // Saber si estem a la página inicial
   let landingInitial = true;
 
+  // Per saber sonbre quina opció estem
   let triangleHover;
+  let optionHover = null;
 
   // actualitzem l'alçada del footer pels càlculs dels triangles
   window.addEventListener("resize", () => {
@@ -57,10 +56,6 @@ import {langChange} from "./language.js";
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
-    // Donem les mesures dels triangles grans o petits depenent en quin estat es troba la landing
-    let triangles = trianglesMax;
-    // let triangles = landingInitial ? trianglesMax : trianglesMin;
-
     triangleHover = detectTriangleSelected(
       mouseX,
       mouseY,
@@ -73,15 +68,21 @@ import {langChange} from "./language.js";
         boxImageMadrid.is(":hover") ||
         boxTextMadrid.is(":hover")
       ) {
-        containerMadridHover();
+        containerMadrid.trigger("mouseenter");
+        optionHover = 'madrid';
       }
       else if ( triangleHover === 2 ||
         boxImageAndorra.is(":hover") ||
         boxTextAndorra.is(":hover")
       ) {
-        containerAndorraHover();
+        containerAndorra.trigger("mouseenter");
+        optionHover = 'andorra';
+
       }
-      else containerSeparatorHover();
+      else{
+        containerSeparator.trigger("mouseenter");
+        optionHover = null;
+      }
     }
   });
 
@@ -91,72 +92,29 @@ import {langChange} from "./language.js";
   container.on("click", (e) => {
     e.stopPropagation();
     if (landingInitial) {
-      if (
-        triangleHover === 1 ||
-        boxImageMadrid.is(":hover") ||
-        boxTextMadrid.is(":hover")
-      ) {
-        landingInitial = false;
-        showMadrid();
-        chosenOption = "madrid";
-      }
-      if (
-        triangleHover === 2 ||
-        boxImageAndorra.is(":hover") ||
-        boxTextAndorra.is(":hover")
-      ) {
-        landingInitial = false;
-        showAndorra();
-        chosenOption = "andorra";
-      }
+      // amb el valor de l'optionHover, cridem la funció per mostrar les options
+      landingInitial = false;
+      chosenOption = optionHover;
+      showOptions[optionHover][0]();
+
       setTimeout(containerSeparatorHover, 1000);
     }
   });
 
-  returnButton.on("click", (e) => {
-    e.stopPropagation();
-    if (!landingInitial) {
-      if (chosenOption === "madrid") {
-        showMadrid();
-        returnShowMadrid();
-        setTimeout(returnShowMadrid, 1000);
-      } else {
-        showAndorra();
-        returnShowAndorra();
-        setTimeout(returnShowAndorra, 1000);
-      }
-      chosenOption = undefined;
-      containerSeparatorHover();
-      landingInitial = true;
-    }
-  });
+  // per gestionar el retorn tant del "return" com del logo
+  [returnButton, logoAndorraVertical, logoMadridVertical].forEach((element) => {
+    element.on("click", (e) => {
+      e.stopPropagation();
+      if (!landingInitial) {
+        showOptions[chosenOption][0](); // funció show
+        showOptions[chosenOption][1](); // funció returnShow
+        setTimeout(showOptions[chosenOption][1], 1000);
 
-  logoMadridVertical.on("click", (e) => {
-    e.stopPropagation();
-    if (!landingInitial) {
-      if (chosenOption === "madrid") {
-        showMadrid();
-        returnShowMadrid();
-        setTimeout(returnShowMadrid, 1000);
         chosenOption = undefined;
         containerSeparatorHover();
         landingInitial = true;
       }
-    }
-  });
-
-  logoAndorraVertical.on("click", (e) => {
-    e.stopPropagation();
-    if (!landingInitial) {
-      if (chosenOption === "andorra") {
-        showAndorra();
-        returnShowAndorra();
-        setTimeout(returnShowAndorra, 1000);
-        chosenOption = undefined;
-        containerSeparatorHover();
-        landingInitial = true;
-      }
-    }
-  });
+    });
+  })
 
 // });

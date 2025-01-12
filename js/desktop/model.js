@@ -47,7 +47,7 @@ export function detectTriangleSelected(
 }
 
 // Coordenades dels triangles quan son grans i quan son petits
-export let trianglesMax = [
+export let triangles = [
   /* MADRID */ [
     { x: window.innerWidth * 0.15, y: 0 },
     { x: window.innerWidth, y: 0 },
@@ -60,17 +60,9 @@ export let trianglesMax = [
   ],
 ];
 
-// export let trianglesMin = [
-//   /* MADRID */ [
-//     { x: window.innerWidth * 0.85, y: 0 },
-//     { x: window.innerWidth, y: 0 },
-//     { x: window.innerWidth, y: (window.innerHeight - footerHeight) * 0.25 },
-//   ]
-// ];
-
 // per actualitzar les coordenades del triangle quan es canvia de tamany
 export function recalculateTriangles() {
-  trianglesMax = [
+  triangles = [
     /* MADRID */ [
       { x: window.innerWidth * 0.15, y: 0 },
       { x: window.innerWidth, y: 0 },

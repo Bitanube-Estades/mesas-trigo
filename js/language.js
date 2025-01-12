@@ -15,7 +15,7 @@ langChange(pageLanguage);
 
 async function importLanguage(lang) {
     try{
-        const response = await fetch(`/translations/desktop/${lang}.json`)
+        const response = await fetch(`/translations/${lang}.json`)
         return response.json();
     } catch {
         alert('Error al cargar las traducciones');
