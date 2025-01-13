@@ -40,9 +40,21 @@
             }
           }
 
-          @media (max-width: 1320px){
+          @media (max-width: 1360px){
             & .title{
               font-size: 1.8rem;
+            }
+          }
+
+          @media (max-width: 1170px){
+            & .title{
+              font-size: 1.5rem;
+            }
+          }
+
+          @media (max-width: 1120px){
+            & .title{
+              font-size: 1.3rem;
             }
           }
 
@@ -87,13 +99,33 @@
                   font-size: 0.9rem;
                 }
               }
-              @media (max-width: 1320px){
+              @media (max-width: 1360px){
                 & h4{
                   font-size: 1.1rem;
                 }
 
                 & p{
                   font-size: 0.8rem;
+                }
+              }
+
+              @media (max-width: 1170px){
+                & h4{
+                  font-size: 1rem;
+                }
+
+                & p{
+                  font-size: 0.7rem;
+                }
+              }
+
+              @media (max-width: 1120px){
+                & h4{
+                  font-size: 0.8rem;
+                }
+
+                & p{
+                  font-size: 0.6rem;
                 }
               }
 
@@ -151,9 +183,21 @@
                 }
               }
 
-              @media (max-width: 1320px){
+              @media (max-width: 1360px){
                 & {
                   font-size: 12px;
+                }
+              }
+
+              @media (max-width: 1170px){
+                & {
+                  font-size: 10px;
+                }
+              }
+
+              @media (max-width: 1120px){
+                & {
+                  font-size: 9px;
                 }
               }
 
@@ -253,13 +297,33 @@
                     font-size: 1rem;
                   }
                 }
-                @media (max-width: 1320px){
+                @media (max-width: 1360px){
                   & h4{
                     font-size: 1.3rem;
                   }
   
                   & p{
                     font-size: 1rem;
+                  }
+                }
+
+                @media (max-width: 1170px){
+                  & h4{
+                    font-size: 1.1rem;
+                  }
+
+                  & p{
+                    font-size: 0.8rem;
+                  }
+                }
+
+                @media (max-width: 1120px){
+                  & h4{
+                    font-size: 1.1rem;
+                  }
+
+                  & p{
+                    font-size: 0.8rem;
                   }
                 }
   
@@ -284,9 +348,15 @@
                   }
                 }
   
-                @media (max-width: 1320px){
+                @media (max-width: 1360px){
                   & {
                     font-size: 15px;
+                  }
+                }
+
+                @media (max-width: 1170px){
+                  & {
+                    font-size: 13px;
                   }
                 }
               }
