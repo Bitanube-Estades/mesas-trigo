@@ -165,6 +165,7 @@
           & .grid--button{
             display: flex;
             align-items: center;
+            justify-content: center;
 
             & .btn-link{
               position: relative;
@@ -285,6 +286,12 @@
 
           & .main__grid--container {
             max-width: 900px;
+
+            @media (max-width: 1120px){
+              & .title{
+                font-size: 1.5rem;
+              }
+            }
             
             & .grid--box{
               & .item{
