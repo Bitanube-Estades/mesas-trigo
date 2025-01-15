@@ -8,7 +8,7 @@ import {
   containerMadrid,
   containerAndorra,
   containerSeparatorHover,
-  containerSeparator, showOptions,
+  containerSeparator, showOptions, showLanguagesOptions, globe, languagesOptions,
 } from "./view.js";
 import {langChange} from "../language.js";
 
@@ -25,13 +25,11 @@ import {langChange} from "../language.js";
   const returnButton = $("#return");
   const logoMadridVertical = $("#box--madrid")
   const logoAndorraVertical = $("#box--andorra")
-  const flags = $(".flag");
 
   // canvi d'idioma
-
-  $(flags).on("click", async(e) =>{
+  languagesOptions.on("click", async(e) =>{
     e.preventDefault();
-    await langChange(e.currentTarget.id)
+    await langChange(e.target.id)
   })
 
 
@@ -116,5 +114,11 @@ import {langChange} from "../language.js";
       }
     });
   })
+
+// per mostrar les opcions d'idiomes
+globe.on("click", (e) => {
+  e.stopPropagation();
+  showLanguagesOptions();
+})
 
 // });

@@ -10,21 +10,66 @@
   font-size: 1.3vw;
 
   & .languages {
+    position: relative;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
 
-    & .flag {
-      width: 30px;
-      cursor: pointer;
+    & .languages-options{
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-top: -60%;
+      padding: .5rem;
+      border-radius: 10px;
+      background-color: black;
+      pointer-events: none;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: all 0.3s linear;
 
-      & img {
-        width: 100%;
-        object-fit: contain;
+      &.show{
+        pointer-events: auto;
+        opacity:1;
+        transform: scaleY(1);
+      }
+
+
+      & .language-option{
+          cursor: pointer;
+          border-radius: 10px;
+          padding: 0.5rem;
+
+        &:hover{
+          background-color: var(--secondary-color);
+          color: black;
+        }
       }
     }
+
+    & .globe{
+      transform: scale(1.5);
+      cursor: pointer;
+
+      &:hover{
+        transform:scale(1.6);
+      }
+    }
+
+    /*& .flag {*/
+    /*  width: 30px;*/
+    /*  cursor: pointer;*/
+
+    /*  & img {*/
+    /*    width: 100%;*/
+    /*    object-fit: contain;*/
+    /*  }*/
+    /*}*/
   }
 
   & .text {
