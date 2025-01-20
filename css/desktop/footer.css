@@ -20,7 +20,7 @@
 
     & .languages-options{
       position: absolute;
-      top: 0;
+      bottom: 58px;
       display: flex;
       flex-direction: column;
       width: clamp(100px, 12vw, 200px);
@@ -29,13 +29,14 @@
       background-color: black;
       pointer-events: none;
       opacity: 0;
-      transform: translateY(-105%);
+      transform: scaleY(0);
       transform-origin: bottom;
       transition: all 0.3s linear;
 
       &.show{
         pointer-events: auto;
         opacity:1;
+        transform: scaleY(1);
       }
 
 
