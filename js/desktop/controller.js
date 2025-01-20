@@ -29,7 +29,8 @@ import {langChange} from "../language.js";
   // canvi d'idioma
   languagesOptions.on("click", async(e) =>{
     e.preventDefault();
-    await langChange(e.target.id)
+    await langChange(e.target.id);
+    showLanguagesOptions();
   })
 
 
