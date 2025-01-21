@@ -1,0 +1,76 @@
+.mob__main__container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  background-color: var(--primary-color);
+
+  @media (min-width: 1024px){
+      & {
+          display: none;
+      }
+  }
+
+  & .mob__container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &.container--andorra{
+      transform: translateX(-100%);
+      animation: introAnd 1s ease forwards;
+    }
+
+    &.container--madrid{
+      transform: translateX(100%);
+      animation: introMad 1s ease forwards;
+    }
+
+    & .intro__box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3vh;
+      width:80%;
+
+      & .intro--logo{
+        width: 100%;
+        object-fit:contain;
+      }
+
+      & .intro--text{
+        width: 100%;
+        text-align: right;
+        font-size: 6vw;
+        color: white;
+      }
+    }
+  }
+
+
+}
+
+@keyframes introAnd {
+  0%{
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes introMad {
+  0%{
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

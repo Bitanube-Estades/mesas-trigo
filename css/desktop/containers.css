@@ -1,4 +1,17 @@
 .main__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+
+  @media (max-width: 1024px){
+    & {
+      display: none;
+    }
+  }
+
   & #slogan-wrapper {
     z-index: 1;
     margin: auto;
@@ -528,40 +541,4 @@
 
 /* -------------- MOBILE / TABLETS --------------*/
 
-/* @media (max-width: 1024px){
-  .main__container {
-    align-items: center;
-    justify-content: center;
 
-    & .container{
-      position: static;
-      height: 50%;
-      clip-path: none !important;
-
-      & .container--bg{
-        position: relative;
-      }
-
-      &.container__madrid{
-        .container--bg{
-          border-bottom: solid 2px black;
-        }
-      }
-
-      &.container__andorra{
-
-      }
-
-      &.container__separator{
-        display: none;
-      }
-    }
-
-    & #slogan-wrapper{
-      position: absolute;
-      & h1{
-        font-size: 4.5vw;
-      }
-    }
-  }
-} */
