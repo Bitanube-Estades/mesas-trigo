@@ -14,6 +14,9 @@ export const showOptions = {
   andorra: [showAndorra, returnShowAndorra]
 }
 
+export const globe = $(".globe");
+export const languagesOptions = $(".languages-options");
+
 containerMadrid.on( "mouseenter", containerMadridHover);
 containerAndorra.on( "mouseenter", containerAndorraHover);
 containerSeparator.on( "mouseenter", containerSeparatorHover);
@@ -55,4 +58,8 @@ export function showAndorra() {
 
 export function returnShowAndorra() {
   mainContainer.toggleClass("return-show--andorra");
+}
+
+export function showLanguagesOptions() {
+  languagesOptions.toggleClass("show");
 }
