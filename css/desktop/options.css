@@ -33,6 +33,11 @@
             color: var(--primary-color);
           }
 
+          @media (min-width: 1800px){
+            & .title{
+              font-size: 2.7rem;
+            }
+          }
 
           @media (max-width: 1400px){
             & .title{
@@ -58,11 +63,7 @@
             }
           }
 
-          @media (min-width: 1800px){
-            & .title{
-              font-size: 2.7rem;
-            }
-          }
+
 
           & .grid--box{
             height: 50%;
@@ -86,9 +87,19 @@
               }
 
               & p{
-              color: lightslategray;
+                color: lightslategray;
+                text-align: justify;
               }
 
+              @media (min-width: 1800px){
+                & h4{
+                  font-size: 1.8rem;
+                }
+
+                & p{
+                  font-size: 1.2rem;
+                }
+              }
 
               @media (max-width: 1400px){
                 & h4{
@@ -129,15 +140,7 @@
                 }
               }
 
-              @media (min-width: 1800px){
-                & h4{
-                  font-size: 1.8rem;
-                }
 
-                & p{
-                  font-size: 1.2rem;
-                }
-              }
 
               &.item-1{
                 border-width: 1px 0 0 0;
@@ -178,6 +181,12 @@
               padding: 0 54px;
               color: var(--primary-color);
 
+              @media (min-width: 1800px){
+                & {
+                  font-size: 20px;
+                }
+              }
+
               @media (max-width: 1400px){
                 & {
                   font-size: 14px;
@@ -202,11 +211,7 @@
                 }
               }
 
-              @media (min-width: 1800px){
-                & {
-                  font-size: 20px;
-                }
-              }
+
 
               & .btn-divider{
                 &:before,
@@ -295,6 +300,16 @@
             
             & .grid--box{
               & .item{
+                @media (min-width: 1800px){
+                  & h4{
+                    font-size: 1.8rem;
+                  }
+
+                  & p{
+                    font-size: 1.2rem;
+                  }
+                }
+
                 @media (max-width: 1400px){
                   & h4{
                     font-size: 1.3rem;
@@ -314,7 +329,7 @@
                   }
                 }
 
-                @media (max-width: 1170px), (max-height: 700px){
+                @media (max-width: 1170px), (max-height: 800px){
                   & h4{
                     font-size: 1.1rem;
                   }
@@ -334,15 +349,7 @@
                   }
                 }
   
-                @media (min-width: 1800px){
-                  & h4{
-                    font-size: 1.8rem;
-                  }
-  
-                  & p{
-                    font-size: 1.2rem;
-                  }
-                }
+
               }
             }
 
@@ -361,7 +368,7 @@
                   }
                 }
 
-                @media (max-width: 1170px), (max-height: 700px){
+                @media (max-width: 1170px), (max-height: 800px){
                   & {
                     font-size: 13px;
                   }
