@@ -6,4 +6,4 @@ heightMainContainer();
 
 //             ------------ Prova faceIn Slogan ---------------------------
 // inicialitzem el faceIn del slogan
-sloganIteration();
+//sloganIteration();
