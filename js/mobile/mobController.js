@@ -1,7 +1,9 @@
-import {bgImages} from "./mobView.js";
 import {heightMainContainer} from "./mobModel.js";
+import {sloganIteration} from "./mobView.js";
 
-// actualitzam la alçada al mainContainer descomptan l'alçada del footer
+// actualitzem la alçada al mainContainer descomptan l'alçada del footer
 heightMainContainer();
-// canviem les imatges dels contenidors per les de la versió mobile
-bgImages();
+
+//             ------------ Prova faceIn Slogan ---------------------------
+// inicialitzem el faceIn del slogan
+sloganIteration();
