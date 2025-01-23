@@ -33,8 +33,14 @@
       position: relative;
       font-weight: 600;
       overflow: hidden;
-      height: 40px;
-      padding: 0 40px;
+      height: 6vh;
+      width: 100%;
+      padding: 0 1vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2vw;
+
 
       &:before {
         content: '[';
@@ -64,14 +70,14 @@
       }
 
       & .text {
-        display: inline;
-        float: left;
-        margin: 0;
+        /*display: inline;*/
+        /*float: left;*/
+        /*margin: 0;*/
       }
 
       & .list {
         margin-top: 0;
-        padding-left: 32vw;
+        /*padding-left: 32vw;*/
         text-align: left;
         list-style: none;
 
@@ -83,7 +89,7 @@
         animation-iteration-count: infinite;
 
         & .item {
-          line-height: 40px;
+          /*line-height: 40px;*/
           margin: 0;
           text-align: center;
         }
@@ -115,12 +121,12 @@
 
     &.container--andorra{
       transform: translateX(-100%);
-      animation: introAnd 1s ease forwards, movementAndorra 5s 1s ease infinite;
+      animation: introAnd 1s ease forwards, movementAndorra 6s ease infinite;
     }
 
     &.container--madrid{
       transform: translateX(100%);
-      animation: introMad 1s ease forwards, movementMadrid 5s 1s ease infinite;
+      animation: introMad 1s ease forwards, movementMadrid 6s ease infinite;
     }
 
     & .intro__box{
@@ -192,10 +198,13 @@
   0%{
     transform: scale(1);
   }
-  33.33%{
+  25%{
     transform: scale(1.05);
   }
-  66.66%{
+  50%{
+    transform: scale(1);
+  }
+  75%{
     transform: scale(0.95);
   }
   100%{
@@ -207,10 +216,13 @@
   0%{
     transform: scale(1);
   }
-  33.33%{
+  25%{
     transform: scale(.95);
   }
-  66.66%{
+  50% {
+    transform: scale(1);
+  }
+  75%{
     transform: scale(1.05);
   }
   100%{
@@ -284,16 +296,16 @@
 
 @keyframes change {
   0%, 12.5%, 100% {
-    transform: translate3d(0, 0, 0); /* Primera opción */
+    transform: translate3d(0, 33.5%, 0); /* Primera opción */
   }
   25%, 37.5% {
-    transform: translate3d(0, -32%, 0); /* Segunda opción */
+    transform: translate3d(0, 1%, 0); /* Segunda opción */
   }
   50%, 62.5% {
-    transform: translate3d(0, -65.5%, 0); /* Tercera opción */
+    transform: translate3d(0, -32.5%, 0); /* Tercera opción */
   }
   75%, 87.5% {
-    transform: translate3d(0, -32%, 0); /* Regreso a la segunda opción */
+    transform: translate3d(0, 1%, 0); /* Regreso a la segunda opción */
   }
 }
 
