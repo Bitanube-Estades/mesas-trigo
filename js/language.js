@@ -1,4 +1,6 @@
 
+
+
 const avalaibleLanguages = ['es', 'en', 'ca', 'fr'];
 
 const defaultLanguage = 'es';
@@ -37,4 +39,23 @@ export async function langChange(choisedLang) {
         element.innerHTML = select[key]
     })
 
+}
+
+// ---------------- mostrar opcions idiomes footer -------------------------
+export const globe = $(".globe");
+export const languagesOptions = $(".languages-options");
+
+export function showLanguagesOptions() {
+    languagesOptions.toggleClass("show");
+}
+
+export async function onClickLanguagesOptions(e) {
+    e.preventDefault();
+    await langChange(e.target.id);
+    showLanguagesOptions();
+}
+
+export function onClickGlobe(e) {
+    e.stopPropagation();
+    showLanguagesOptions();
 }

@@ -83,16 +83,6 @@
         transform:scale(1.1);
       }
     }
-
-    /*& .flag {*/
-    /*  width: 30px;*/
-    /*  cursor: pointer;*/
-
-    /*  & img {*/
-    /*    width: 100%;*/
-    /*    object-fit: contain;*/
-    /*  }*/
-    /*}*/
   }
 
   & .text {
@@ -104,4 +94,32 @@
     text-align: center;
     flex: 1;
   }
+
+  @media (max-width: 1023px){
+
+    & .languages {
+      & .languages-options {
+        width: clamp(100px, 50vw, 400px);
+        padding: 2vw;
+        gap: 1vw;
+
+        & .language-option {
+          gap: 4vw;
+
+          & .flag{
+            width: clamp(15px, 10vw, 400px);
+          }
+          & p{
+            font-size: clamp(10px, 6vw, 200px);
+          }
+        }
+      }
+    }
+
+    & .text, .protect-data{
+      display: none;
+    }
+  }
+
+
 }

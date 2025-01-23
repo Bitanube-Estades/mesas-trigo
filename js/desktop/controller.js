@@ -8,9 +8,14 @@ import {
   containerMadrid,
   containerAndorra,
   containerSeparatorHover,
-  containerSeparator, showOptions, showLanguagesOptions, globe, languagesOptions,
+  containerSeparator, showOptions
 } from "./view.js";
-import {langChange} from "../language.js";
+import {
+  globe,
+  languagesOptions,
+  onClickLanguagesOptions,
+  onClickGlobe
+} from "../language.js";
 
 // document.addEventListener("DOMContentLoaded", () => {
   const container = $(".main__container");
@@ -27,12 +32,9 @@ import {langChange} from "../language.js";
   const logoAndorraVertical = $("#box--andorra")
 
   // canvi d'idioma
-  languagesOptions.on("click", async(e) =>{
-    e.preventDefault();
-    await langChange(e.target.id);
-    showLanguagesOptions();
-  })
-
+  languagesOptions.on("click", onClickLanguagesOptions);
+  // per mostrar les opcions d'idiomes
+  globe.on("click", onClickGlobe);
 
   // Saber si estem a la página inicial
   let landingInitial = true;
@@ -116,10 +118,6 @@ import {langChange} from "../language.js";
     });
   })
 
-// per mostrar les opcions d'idiomes
-globe.on("click", (e) => {
-  e.stopPropagation();
-  showLanguagesOptions();
-})
+
 
 // });

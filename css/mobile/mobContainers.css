@@ -27,6 +27,8 @@
     line-height: 40px;
     color: #ecf0f1;
 
+    animation: introSlogan 2s ease forwards;
+
     & .container {
       position: relative;
       font-weight: 600;
@@ -113,21 +115,22 @@
 
     &.container--andorra{
       transform: translateX(-100%);
-      animation: introAnd 1s ease forwards;
+      animation: introAnd 1s ease forwards, movementAndorra 5s 1s ease infinite;
     }
 
     &.container--madrid{
       transform: translateX(100%);
-      animation: introMad 1s ease forwards;
+      animation: introMad 1s ease forwards, movementMadrid 5s 1s ease infinite;
     }
 
     & .intro__box{
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       gap: 3vh;
       width:80%;
+      height: 50%;
 
       & .intro--logo{
         width: 100%;
@@ -148,7 +151,7 @@
 
  /*-----------------------------ANIMACIONS---------------------------  */
 
-/* entrada logos */
+/* inici elements */
 @keyframes introAnd {
   0%{
     transform: translateX(-100%);
@@ -173,6 +176,48 @@
     transform: translateX(0);
   }
 }
+
+@keyframes introSlogan {
+  0% {
+    opacity:0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes movementAndorra {
+  0%{
+    transform: scale(1);
+  }
+  33.33%{
+    transform: scale(1.05);
+  }
+  66.66%{
+    transform: scale(0.95);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes movementMadrid {
+  0%{
+    transform: scale(1);
+  }
+  33.33%{
+    transform: scale(.95);
+  }
+  66.66%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
   /* prova faceIn slogan */
 @keyframes faceInText {
   0% {
