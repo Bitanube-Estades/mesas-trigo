@@ -3,7 +3,6 @@ import {languagesOptions, globe, onClickLanguagesOptions, onClickGlobe} from "..
 //import {sloganIteration} from "./mobView.js";
 import {introBoxes,returnArrow, showMobOptions} from "./mobView.js";
 
-const mainContainer = $(".mob__main__container");
 
 
 // actualitzem la alçada al mainContainer descomptan l'alçada del footer

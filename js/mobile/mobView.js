@@ -1,5 +1,5 @@
 // const slogan = $(".mob__slogan h1");
-const mainContainer = $(".mob__main__container");
+export const mainContainer = $(".mob__main__container");
 export const introBoxes = $(".intro__box");
 export const returnArrow = $(".mob__arrow");
 
