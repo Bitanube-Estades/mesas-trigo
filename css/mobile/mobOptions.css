@@ -1,0 +1,132 @@
+.mob__main__container{
+  & .mob__container{
+
+    & .mob__option{
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      color: white;
+      padding: 0 4vw;
+
+      & .mob__option__title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10%;
+      }
+
+      & .mob__options{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 90%;
+
+        & .mob__options__box{
+          display: flex;
+          flex-direction: column;
+          gap: 5.5vh;
+
+          & h3{
+            color: var(--secondary-color);
+          }
+
+          & p{
+            text-align: justify;
+          }
+
+          & .mob__link__button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & .btn-link{
+              position: relative;
+              background: 0 0;
+              font-size: 3vw;
+              text-transform: uppercase;
+              letter-spacing: .1em;
+              font-weight: bold;
+              line-height: 6vh;
+              padding: 0 6vw;
+              color: var(--secondary-color);
+
+              & .btn-divider{
+                &:before,
+                &:after{
+                  content: '';
+                  background-color: var(--secondary-color);
+                  position: absolute;
+                  -webkit-transition: all .22s cubic-bezier(.645,.045,.355,1);
+                  -moz-transition: all .22s cubic-bezier(.645, .045, .355, 1);
+                  -ms-transition: all .22s cubic-bezier(.645, .045, .355, 1);
+                  -o-transition: all .22s cubic-bezier(.645, .045, .355, 1);
+                  transition: all .22s cubic-bezier(.645,.045,.355,1);
+                }
+
+                &.btn-divider-1{
+                  &:before{
+                    width: 30px;
+                    height: 2px;
+                    top: 0;
+                    left: 0;
+                  }
+                  &:after{
+                    top: 0;
+                    left: 0;
+                    height: 30px;
+                    width: 2px;
+                  }
+                }
+
+                &.btn-divider-2{
+                  &:before{
+                    width: 30px;
+                    height: 2px;
+                    bottom: 0;
+                    right: 0;
+                  }
+                  &:after{
+                    bottom: 0;
+                    right: 0;
+                    height: 30px;
+                    width: 2px;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.show-mob-andorra{
+    & .container--andorra{
+      animation-play-state: paused;
+      & .mob__option{
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s 1.3s;
+      }
+    }
+  }
+
+  &.show-mob-madrid{
+    & .container--madrid {
+      animation-play-state: paused;
+      & .mob__option{
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s 1.3s;
+      }
+    }
+  }
+}
