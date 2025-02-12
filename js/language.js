@@ -42,9 +42,13 @@ export async function langChange(choisedLang) {
 
     const select = await importLanguage(choisedLang);
 
+    console.log(select);
+
     document.documentElement.lang = choisedLang;
 
     const elements = document.querySelectorAll('[data-lang]');
+
+    console.log(elements);
 
     elements.forEach((element) => {
         try {
