@@ -31,6 +31,10 @@ async function importLanguage(lang) {
 
 export async function langChange(choisedLang) {
     console.log(choisedLang);
+    if (choisedLang === undefined) {
+        choisedLang = 'es';
+    }
+    console.log(choisedLang);
     // Si cambia de idioma, guardarlo para siguientes accesos / refrescar
     if (choisedLang && choisedLang != localStorage.getItem('chosed_lang')) {
         localStorage.setItem('chosed_lang',choisedLang);
@@ -62,7 +66,6 @@ export function showLanguagesOptions() {
 }
 
 export async function onClickLanguagesOptions(e) {
-    console.log(e.target.id);
     e.preventDefault();
     await langChange(e.target.id);
     showLanguagesOptions();
