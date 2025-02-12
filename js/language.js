@@ -20,8 +20,8 @@ langChange(pageLanguage);
 
 async function importLanguage(lang) {
     try{
-        const response = await fetch(`/translations/${lang}.json`)
-        // const response = await fetch(`https://raw.githubusercontent.com/Bitanube-Estades/mesas-trigo/refs/heads/main/translations/${lang}.json`)
+        // const response = await fetch(`/translations/${lang}.json`)
+        const response = await fetch(`https://raw.githubusercontent.com/Bitanube-Estades/mesas-trigo/refs/heads/main/translations/${lang}.json`)
         return response.json();
     } catch {
         alert('Error al cargar las traducciones');
@@ -38,8 +38,10 @@ export async function langChange(choisedLang) {
     // Si cambia de idioma, guardarlo para siguientes accesos / refrescar
     if (choisedLang && choisedLang != localStorage.getItem('chosed_lang')) {
         localStorage.setItem('chosed_lang',choisedLang);
+        console.log("TEST");
     }
 
+    console.log("TEST");
     const select = await importLanguage(choisedLang);
 
     console.log(select);
