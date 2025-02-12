@@ -62,6 +62,7 @@ export function showLanguagesOptions() {
 }
 
 export async function onClickLanguagesOptions(e) {
+    console.log(e.target.id);
     e.preventDefault();
     await langChange(e.target.id);
     showLanguagesOptions();
