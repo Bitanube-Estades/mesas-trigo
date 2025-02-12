@@ -20,6 +20,11 @@
         justify-content: center;
         align-items: center;
         height: 10%;
+        & img {
+          margin-top: 20px;
+          max-height: 100%;
+
+        }
       }
 
       & .mob__options{
@@ -32,14 +37,19 @@
         & .mob__options__box{
           display: flex;
           flex-direction: column;
-          gap: 5.5vh;
+          gap: 3.5vh;
+          text-align: center;
+
+          &:first-child {
+            margin-bottom: 30px;
+          }
 
           & h3{
             color: var(--secondary-color);
           }
 
           & p{
-            text-align: justify;
+            text-align: center;
           }
 
           & .mob__link__button{
@@ -103,6 +113,13 @@
               }
 
             }
+          }
+        }
+
+        & .mob__return {
+          & .mob__arrow {
+            font-size: 45px;
+            margin-top: -100px;
           }
         }
       }

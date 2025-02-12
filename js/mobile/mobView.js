@@ -2,6 +2,7 @@
 export const mainContainer = $(".mob__main__container");
 export const introBoxes = $(".intro__box");
 export const returnArrow = $(".mob__arrow");
+export const returnText = $(".mob__button");
 
 export function showMobOptions(className) {
     mainContainer.toggleClass(className);

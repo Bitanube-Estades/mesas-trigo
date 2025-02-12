@@ -11,6 +11,9 @@ let pageLanguage = defaultLanguage;
 
 if (avalaibleLanguages.includes(browserLanguage)) pageLanguage = browserLanguage;
 
+// Guardar el idioma por si refresca o navega
+pageLanguage = localStorage.getItem('chosed_lang') ?? pageLanguage;
+
 // inicialitzar l'idioma de la landing
 langChange(pageLanguage);
 
@@ -27,6 +30,10 @@ async function importLanguage(lang) {
 }
 
 export async function langChange(choisedLang) {
+    // Si cambia de idioma, guardarlo para siguientes accesos / refrescar
+    if (choisedLang != localStorage.getItem('chosed_lang')) {
+        localStorage.setItem('chosed_lang',choisedLang);
+    }
 
     const select = await importLanguage(choisedLang);
 

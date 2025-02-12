@@ -1,7 +1,7 @@
 import {heightMainContainer} from "./mobModel.js";
 import {languagesOptions, globe, onClickLanguagesOptions, onClickGlobe} from "../language.js";
 //import {sloganIteration} from "./mobView.js";
-import {introBoxes,returnArrow, showMobOptions} from "./mobView.js";
+import {introBoxes, returnArrow, returnText, showMobOptions} from "./mobView.js";
 
 
 
@@ -33,6 +33,12 @@ returnArrow.each(function(){
         showMobOptions(`show-mob-${dataCity}`);
     })
 })
+
+returnText.each(function() {
+    $(this).on('click', function(e) {
+        $(this).closest('.return--content').find('i').click();
+    });
+});
 
 //             ------------ Prova faceIn Slogan ---------------------------
 // inicialitzem el faceIn del slogan

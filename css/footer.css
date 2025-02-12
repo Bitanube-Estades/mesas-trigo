@@ -9,6 +9,11 @@
   color: white;
   font-size: 1.3vw;
 
+  @media all and (max-width: 992px) {
+    position: fixed;
+    bottom: 0;
+  }
+
   & .languages {
     position: relative;
     flex: 1;

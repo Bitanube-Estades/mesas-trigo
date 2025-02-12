@@ -7,11 +7,20 @@
   flex: 1;
   overflow: hidden;
   background-color: var(--primary-color);
+  @media all and (max-width: 992px) {
+    padding-bottom: 50px;
+  }
 
   @media (min-width: 1024px){
       & {
           display: none;
       }
+  }
+  & .mob__divider {
+    background-color: var(--secondary-color);
+    height: 4px;
+    margin: 0 auto;
+    width: 90%;
   }
 
   & .mob__slogan{
