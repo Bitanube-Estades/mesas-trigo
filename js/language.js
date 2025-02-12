@@ -30,6 +30,7 @@ async function importLanguage(lang) {
 }
 
 export async function langChange(choisedLang) {
+    console.log(choisedLang);
     // Si cambia de idioma, guardarlo para siguientes accesos / refrescar
     if (choisedLang && choisedLang != localStorage.getItem('chosed_lang')) {
         localStorage.setItem('chosed_lang',choisedLang);
