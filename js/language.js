@@ -42,8 +42,12 @@ export async function langChange(choisedLang) {
     const elements = document.querySelectorAll('[data-lang]');
 
     elements.forEach((element) => {
-        const key = element.getAttribute('data-lang');
-        element.innerHTML = select[key]
+        try {
+            const key = element.getAttribute('data-lang');
+            element.innerHTML = select[key]
+        } catch(e) {
+            console.warn(e);
+        }
     })
 
 }
