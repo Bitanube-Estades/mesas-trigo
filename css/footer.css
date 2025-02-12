@@ -113,9 +113,10 @@
 
           & .flag{
             width: clamp(15px, 10vw, 400px);
+            flex-shrink: 0;
           }
           & p{
-            font-size: clamp(10px, 6vw, 200px);
+            font-size: clamp(10px, 4.5vw, 200px);
           }
         }
       }
