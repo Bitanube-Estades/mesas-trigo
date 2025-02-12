@@ -14,6 +14,13 @@
       color: white;
       padding: 0 4vw;
       transition: all 0.5s;
+      &.mob__option__madrid {
+        & .mob__option__title {
+          & img {
+            width: 400px;
+          }
+        }
+      }
 
       & .mob__option__title{
         display: flex;

@@ -159,6 +159,9 @@
         width: 100%;
         object-fit:contain;
         max-width: 300px;
+        @media all and (max-width: 600px) {
+          max-width: calc(100dvw - 40px);
+        }
       }
 
       & .intro--text{
