@@ -9,124 +9,122 @@
   color: white;
   font-size: 1.3vw;
   z-index: 5;
+}
 
-  @media all and (max-width: 992px) {
+@media all and (max-width: 992px) {
+  .footer {
     position: fixed;
     bottom: 0;
   }
+}
 
-  & .languages {
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+.footer .languages {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-    & .languages-options{
-      position: absolute;
-      bottom: 58px;
-      display: flex;
-      flex-direction: column;
-      width: clamp(100px, 12vw, 200px);
-      padding: .5vw;
-      border-radius: 10px;
-      background-color: black;
-      pointer-events: none;
-      opacity: 0;
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: all 0.3s linear;
+.footer .languages .languages-options {
+  position: absolute;
+  bottom: 58px;
+  display: flex;
+  flex-direction: column;
+  width: clamp(100px, 12vw, 200px);
+  padding: 0.5vw;
+  border-radius: 10px;
+  background-color: black;
+  pointer-events: none;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: all 0.3s linear;
+}
 
-      &.show{
-        pointer-events: auto;
-        opacity:1;
-        transform: scaleY(1);
-      }
+.footer .languages .languages-options.show {
+  pointer-events: auto;
+  opacity: 1;
+  transform: scaleY(1);
+}
 
+.footer .languages .languages-options .language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 0.5vw;
+}
 
-      & .language-option{
-        display: flex;
-        align-items: center;
-        gap: 0.5vw;
-        cursor: pointer;
-        border-radius: 10px;
-        padding: 0.5vw;
+.footer .languages .languages-options .language-option .flag {
+  width: clamp(15px, 2.5vw, 40px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
 
-        & .flag{
-          width: clamp(15px, 2.5vw, 40px);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          pointer-events: none;
+.footer .languages .languages-options .language-option .flag img {
+  width: 100%;
+  object-fit: contain;
+}
 
-          & img {
-            width: 100%;
-            object-fit: contain;
-          }
-        }
+.footer .languages .languages-options .language-option p {
+  font-size: clamp(10px, 1.3vw, 20px);
+  pointer-events: none;
+}
 
-        & p{
-          font-size: clamp(10px, 1.3vw, 20px);
-          pointer-events: none;
-        }
+.footer .languages .languages-options .language-option:hover {
+  background-color: var(--secondary-color);
+  color: black;
+  font-weight: bold;
+}
 
-        &:hover{
-          background-color: var(--secondary-color);
-          color: black;
-          font-weight: bold;
-        }
-      }
-    }
+.footer .languages .globe {
+  width: 20%;
+  max-width: 35px;
+  cursor: pointer;
+}
 
-    & .globe{
-      width: 20%;
-      max-width: 35px;
-      cursor: pointer;
+.footer .languages .globe:hover {
+  transform: scale(1.1);
+}
 
-      &:hover{
-        transform:scale(1.1);
-      }
-    }
+.footer .text {
+  text-align: center;
+  flex: 1;
+}
+
+.footer .protect-data {
+  text-align: center;
+  flex: 1;
+}
+
+@media (max-width: 1023px) {
+  .footer .languages .languages-options {
+    width: clamp(100px, 50vw, 400px);
+    padding: 2vw;
+    gap: 1vw;
   }
 
-  & .text {
-    text-align: center;
-    flex: 1;
+  .footer .languages .languages-options .language-option {
+    gap: 4vw;
   }
 
-  & .protect-data {
-    text-align: center;
-    flex: 1;
+  .footer .languages .languages-options .language-option .flag {
+    width: clamp(15px, 10vw, 400px);
+    flex-shrink: 0;
   }
 
-  @media (max-width: 1023px){
-
-    & .languages {
-      & .languages-options {
-        width: clamp(100px, 50vw, 400px);
-        padding: 2vw;
-        gap: 1vw;
-
-        & .language-option {
-          gap: 4vw;
-
-          & .flag{
-            width: clamp(15px, 10vw, 400px);
-            flex-shrink: 0;
-          }
-          & p{
-            font-size: clamp(10px, 4.5vw, 200px);
-          }
-        }
-      }
-    }
-
-    & .text, .protect-data{
-      display: none;
-    }
+  .footer .languages .languages-options .language-option p {
+    font-size: clamp(10px, 4.5vw, 200px);
   }
 
-
+  .footer .text,
+  .footer .protect-data {
+    display: none;
+  }
 }

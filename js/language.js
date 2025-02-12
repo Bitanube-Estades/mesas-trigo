@@ -34,7 +34,7 @@ export async function langChange(choisedLang) {
         choisedLang = 'es';
     }
     // Si cambia de idioma, guardarlo para siguientes accesos / refrescar
-    if (choisedLang && choisedLang != localStorage.getItem('chosed_lang')) {
+    if (choisedLang != localStorage.getItem('chosed_lang')) {
         localStorage.setItem('chosed_lang',choisedLang);
     }
 
