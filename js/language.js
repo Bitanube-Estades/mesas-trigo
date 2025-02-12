@@ -30,27 +30,19 @@ async function importLanguage(lang) {
 }
 
 export async function langChange(choisedLang) {
-    console.log(choisedLang);
     if (choisedLang === undefined) {
         choisedLang = 'es';
     }
-    console.log(choisedLang);
     // Si cambia de idioma, guardarlo para siguientes accesos / refrescar
     if (choisedLang && choisedLang != localStorage.getItem('chosed_lang')) {
         localStorage.setItem('chosed_lang',choisedLang);
-        console.log("TEST");
     }
 
-    console.log("TEST");
     const select = await importLanguage(choisedLang);
-
-    console.log(select);
 
     document.documentElement.lang = choisedLang;
 
     const elements = document.querySelectorAll('[data-lang]');
-
-    console.log(elements);
 
     elements.forEach((element) => {
         try {
