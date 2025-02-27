@@ -15,6 +15,7 @@
 
 .mob__main__container .mob__container .mob__option.mob__option__madrid .mob__option__title img {
   width: 400px;
+  max-width: calc(100vw - 40px);
 }
 
 .mob__main__container .mob__container .mob__option .mob__option__title {
