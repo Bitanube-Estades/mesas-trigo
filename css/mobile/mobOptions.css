@@ -14,7 +14,7 @@
 }
 
 .mob__main__container .mob__container .mob__option.mob__option__madrid .mob__option__title img {
-  width: 400px;
+  width: 100%;
   max-width: calc(100vw - 40px);
 }
 
@@ -23,6 +23,7 @@
   justify-content: center;
   align-items: center;
   height: 10%;
+  padding-top: 20px;
 }
 
 .mob__main__container .mob__container .mob__option .mob__option__title img {
@@ -116,7 +117,7 @@
 }
 
 .mob__main__container .mob__container .mob__option .mob__options .mob__return .mob__arrow {
-  font-size: 45px;
+  font-size: 35px;
   margin-top: -100px;
 }
 
