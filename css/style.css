@@ -33,7 +33,14 @@
 @font-face {
     font-family: "OpenSans";
     src: url("../fonts/Open_Sans/OpenSans-Light.ttf") format("opentype");
-    font-weight:400;
+    font-weight: 400;
+    font-style: normal;
+}
+/* Marketpro medium */
+@font-face {
+    font-family: "MarketPro";
+    src: url("../fonts/MarketPro/MarketPro-CondMedium.otf") format("opentype");
+    font-weight: 400;
     font-style: normal;
 }
 
