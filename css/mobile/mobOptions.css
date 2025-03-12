@@ -37,6 +37,13 @@
   justify-content: space-around;
   width: 100%;
   height: 90%;
+  margin-top: 20px;
+}
+.mob__main__container .mob__container .mob__option.mob__option__madrid .mob__options {
+  height: 80%;
+}
+.mob__main__container .mob__container .mob__option.mob__option__madrid .mob__option__title {
+  height: 20%;
 }
 
 .mob__main__container .mob__container .mob__option .mob__options .mob__options__box {
